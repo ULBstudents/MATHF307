@@ -1,4 +1,4 @@
-all: ./NotesDeCours.pdf
+all: NotesDeCours.pdf
 
 clean:
 	rm -f *.aux *.toc *.log *.out
