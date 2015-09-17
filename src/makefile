@@ -4,5 +4,5 @@ clean:
 	rm -f *.aux *.toc *.log *.out
 
 %.pdf: %.tex
-	pdflatex $<
-	pdflatex $<
+	pdflatex -output-directory .. $<
+	pdflatex -output-directory .. $<
