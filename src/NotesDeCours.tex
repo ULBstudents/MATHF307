@@ -7,7 +7,7 @@
 \usepackage[french]{babel} % Exposant
 
 \usepackage{enumerate} % Listes
-\usepackage{amsmath,amsfonts,amssymb} % Matrices, Align
+\usepackage{amsmath,amsfonts,amssymb,amsthm} % Matrices, Align
 \usepackage{graphicx}
 \usepackage{ulem}
 \usepackage{listings} % Lecture du code
@@ -27,10 +27,12 @@
 \usepackage{fancyhdr} % Mise en page spéciale fancyhdr pour les en-têtes
 \pagestyle{fancy}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
 
 \title{\ulbtitle} % Titres
 \author{\ulbauthors} % Auteurs depuis pdfinfo.tex
-\date{\today} % Date de compilation du pdf
+\date{ } % Date de compilation du pdf
 
 
 \renewcommand{\headrulewidth}{0pt}
@@ -40,7 +42,7 @@
 
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[C]{} % Rien en bas de page au milieu
-\fancyfoot[L]{Open source pour ajout ou modification: \ulbbasdepage} % Lien de bas de page à gauche
+\fancyfoot[L]{} % Lien de bas de page à gauche
 \fancyfoot[R]{\thepage} % Numéro de page en bas de page à droite
 \setlength{\headheight}{12.1638pt}
 
@@ -61,6 +63,15 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\newtheorem{defn}{Définition}[section]
+\newtheorem*{exmp}{Exemple}
+\newtheorem{thrm}{Théorème}[section]
+\newtheorem*{demo}{Démonstration}
+\newtheorem*{corll}{Corollaire}
+\newtheorem*{exo}{Exercice}
+\newtheorem{prop}{Proposition}[section]
+
 
 
 \begin{document}

@@ -1,2 +1,140 @@
 
 \section{Théorie des Graphes}
+
+\subsection{Définitions}
+
+\begin{defn}
+Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On nottera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.\\
+
+Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
+\begin{center}
+	\begin{enumerate}
+	\item On dit que x et y sont adjacents.
+
+	\item On dit que e est incidente à x et y. \\
+	\end{enumerate}
+\end{center}
+
+\end{defn}
+
+
+\begin{defn}
+Soit $\Gamma = (V,E,\gamma)$ un graphe.
+
+\begin{enumerate}
+\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appellé un lacet.
+\item Si au moins 2 arêtes sont incidentes à 2 mêmes somments, on les appelle arêtes multiples.
+\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). \\
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Soit $\Gamma = (V,E)$ un graphe. Le degré d'un sommet $v \in V$ est le nombre d'arêtes incidentes à v, les lacets comptant pour 2 arêtes. On note le degré de v par deg(V).
+\end{defn}
+
+\begin{exmp}
+Dans la figure suivante, nous avons 2 sommets de degré 4 et 6 sommets de degré 1.
+\end{exmp}
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=1.5cm,thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\large\bfseries}]
+
+	\node[main node] (c1) {C};
+	\node[main node] (c2) [right of=c1] {C};
+	\node[main node] (h1) [above of=c1] {H};
+	\node[main node] (h2) [left of=c1] {H};
+	\node[main node] (h3) [below of=c1] {H};
+	\node[main node] (h4) [above of=c2] {H};
+	\node[main node] (h5) [right of=c2] {H};
+	\node[main node] (h6) [below of=c2] {H};
+
+	\path[every node/.style={font=\sffamily\small}]
+	(c1) edge node [above] {} (h1)
+		 edge node [left] {} (h2)
+		 edge node [below] {} (h3)
+		 edge node [right] {} (c2)
+	(c2) edge node [above] {} (h4)
+		 edge node [right] {} (h5)
+		 edge node [below] {} (h6) ;
+
+	\end{tikzpicture}
+
+	\caption{Exemple degrés des sommets dans la molécule $C_{2}H_{6}$.}
+\end{figure}
+
+\begin{thrm}
+Soit $\Gamma = (V,E)$, alors $$\sum_{i=1}^{\#V} deg(v_{i}) = 2\#E$$
+\end{thrm}
+
+\begin{demo}
+Chaque arête contribue 2 fois dans la somme des degrés.
+\end{demo}
+
+\begin{corll}
+La somme des degrés des sommets d'un graphe est paire. \\
+\end{corll}
+
+\begin{defn}
+Le graphe complet $K_{n}$ est le graphe simple à n sommets pour lequel chaque paire de sommets est une arête.
+\end{defn}
+
+\begin{exmp}
+<Dessin des graphes complets $K_1 à K_5$>\\
+\end{exmp}
+
+\begin{defn}
+Un graphe ${\Gamma}'=(U,F)$ est un sous-graphe de $\Gamma=(V,E)$ si $ U \subseteq V$ et $F \subseteq E$. On nottera $ {\Gamma}' \leq \Gamma$.
+\end{defn}
+
+\begin{exmp}
+$ K_{m} \leq K_{n}$ si $ m \leq n$.
+\end{exmp}
+
+\begin{exo}
+Montrer que $K_{m}$ possède $ q=\frac{1}{2}n(n-1)$ arêtes.
+\end{exo}
+
+\subsection{Chemins dans les graphes}
+
+\begin{defn}
+
+\end{defn}
+
+\begin{defn}
+
+\end{defn}
+
+\begin{defn}
+
+\end{defn}
+
+\subsection{Arbres}
+
+\begin{defn}
+
+\end{defn}
+
+\begin{defn}
+
+\end{defn}
+
+\begin{exmp}
+
+\end{exmp}
+
+\begin{prop}
+
+\end{prop}
+
+\begin{demo}
+
+\end{demo}
+
+\begin{thrm}
+
+\end{thrm}
+
+\begin{demo}
+
+\end{demo}
