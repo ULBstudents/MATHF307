@@ -98,43 +98,59 @@ Montrer que $K_{m}$ possède $ q=\frac{1}{2}n(n-1)$ arêtes.
 \subsection{Chemins dans les graphes}
 
 \begin{defn}
+Soit $\Gamma = (V,E)$ et $v,w \in V$. Un chemin de v à w de longueur n est une séquence alternée de $(n+1)$ sommets $v_{0},v_{1},...,v_{n}$ et de n arêtes $e_{1},e_{2},...,e_{n}$ de la forme $$ (v_{0},e_{1},v_{1},e_{2},...,e_{n},v_{n})$$ dans laquelle chaque $e_{i}$ est incident à $v_{i-1}$ et $v_{i}$ pour $1 \leq i \leq n$ et $ e_{i} \neq e_{j} , \forall i \neq j \in 1,...,n$ \\
+
+Un chemin est simple si aucun sommet ne se répète sauf peut-être $v_{0}$ et $v_{n}$. \\
+
+Dans un graphe simple on nottera juste la suite des sommets lorsque l'on décrit un chemin. \\
 
 \end{defn}
 
 \begin{defn}
+Un graphe $\Gamma = (V,E)$ est connexe si $\forall x,y \in V : \exists $ un chemin de x à y. \\
 
+La composante connexe de $\Gamma$ contenant x est le sous-graphe ${\Gamma}'$ de $\Gamma$ dont les sommets et les arêtes sont contenus dans un chemin de $\Gamma$ démarrant en x. \\
 \end{defn}
 
 \begin{defn}
+Soit $\Gamma = (V,E)$ et $v \in V$.\\
 
+Un cycle est un chemin de v à v.\\
+
+Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété (mis à part le départ et l'arrivée).\\
 \end{defn}
 
 \subsection{Arbres}
 
 \begin{defn}
-
+Un arbre est un graphe simple connexe qui ne contient aucun cycle.\\
 \end{defn}
 
 \begin{defn}
-
+Dans un arbre, les sommets de degré 1 sont appellés les feuilles.\\
 \end{defn}
 
 \begin{exmp}
-
+<Dessin Arbre>
 \end{exmp}
 
 \begin{prop}
-
+Si T est un arbre avec $p\geq2$ sommets, alors T contient au moins 2 feuilles.
 \end{prop}
 
 \begin{demo}
-
+T a p sommets. Tous les chemins sont de longueur inférieure ou égale à p. Considérons un chemin $v_{0},v_{1},...,v_{r}$ pour $v_{i} \in V$, $i=0,...,r$ de longueur maximale. Alors, $v_{0}$ et $v_{r}$ sont de degré 1.\\
 \end{demo}
 
 \begin{thrm}
-
+Soit T un graphe simple à p sommets. Alors les 3 assertions suivantes sont équivalentes:
+	\begin{enumerate}
+	\item T est un arbre.
+	\item T a $(p-1)$ arêtes et aucun cycle.
+	\item T a $(p-1)$ arêtes et est connexe.
+	\end{enumerate}
 \end{thrm}
 
 \begin{demo}
-
+<Démonstration en 2 parties>.
 \end{demo}
