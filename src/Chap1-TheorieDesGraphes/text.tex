@@ -17,7 +17,6 @@ Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
 
 \end{defn}
 
-
 \begin{defn}
 Soit $\Gamma = (V,E,\gamma)$ un graphe.
 
@@ -95,6 +94,8 @@ $ K_{m} \leq K_{n}$ si $ m \leq n$.
 Montrer que $K_{m}$ possède $ q=\frac{1}{2}n(n-1)$ arêtes.
 \end{exo}
 
+%----------------------------------------------------
+
 \subsection{Chemins dans les graphes}
 
 \begin{defn}
@@ -119,6 +120,8 @@ Un cycle est un chemin de v à v.\\
 
 Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété (mis à part le départ et l'arrivée).\\
 \end{defn}
+
+%----------------------------------------------------
 
 \subsection{Arbres}
 
@@ -154,3 +157,97 @@ Soit T un graphe simple à p sommets. Alors les 3 assertions suivantes sont équ
 \begin{demo}
 <Démonstration en 2 parties>.
 \end{demo}
+
+%----------------------------------------------------
+
+\newpage
+<-- COURS 2 MISSING -->
+\newpage
+
+\begin{thrm}[Dirac 1950]
+Soit $\Gamma = (V,E)$ un graphe simple avec $p \geq 3$ sommets. Si $\forall v \in V: deg(v) \geq \frac{1}{2}p$, alors $\Gamma$ est Hamiltonien.
+\end{thrm}
+
+\begin{demo}
+$\Gamma$ est connexe. Soit C = $(v_{0},v_{1},...,v_{k})$ un plus long chemin simple dans $\Gamma$ avec $v_{0} \neq v_{k}, k < p$.\\
+
+$ deg(v_{0}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{0}$ sont dans $\{v_{1},...,v_{k}\}$\\
+
+$ deg(v_{k}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{k}$ sont dans $\{v_{0},...,v_{k-1}\}$\\
+
+Comme $k < q$, il doit exister $i \in \{0,...,k-1\}$ tel que $\{v_{i},v_{k}\} \in E$ et $\{v_{0},v_{i+1}\} \in E$. On obtient un cycle $\widetilde{C} = (v_{0},v_{1},...,v_{i},v_{k},v_{k-1},...,v_{i+1},v_{0})$ \\
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[mydot/.style={fill,circle,inner sep=2pt},]
+
+		\node[mydot,label={$v_{0}$}] (v0) {};
+		\node[mydot,below right=of v0] (v1) {};
+		\node[mydot,above right=of v1] (v2) {};
+		\node[mydot,below right=of v2,label={$v_{i}$}] (v3) {};
+		\node[mydot,above right=of v3,label={$v_{i+1}$}] (v4) {};
+		\node[mydot,below right=of v4] (v5) {};
+		\node[mydot,above right=of v5] (v6) {};
+		\node[mydot,right=of v6] (v7) {};
+		\node[mydot,above right=of v7] (v8) {};
+		\node[mydot,above right=of v8,label={$v_{k}$}] (v9) {};
+		\begin{pgfonlayer}{background}
+		\Twocolor{(v0)}{(v1)}{red}{green}
+		\Twocolor{(v1)}{(v2)}{red}{green}
+		\Twocolor{(v2)}{(v3)}{red}{green}
+		\Twocolor{(v4)}{(v5)}{green}{red}
+		\Twocolor{(v5)}{(v6)}{green}{red}
+		\Twocolor{(v6)}{(v7)}{green}{red}
+		\Twocolor{(v7)}{(v8)}{green}{red}
+		\Twocolor{(v8)}{(v9)}{green}{red}
+		\end{pgfonlayer}
+		\draw[red,line width=1pt] 
+			(v3) -- (v4);
+		\draw[green,line width=1pt] 
+			(v0) to[out=45,in=135] (v4)
+			(v3) to[out=-45,in=-20,looseness=1] (v9);
+	\end{tikzpicture}
+
+	\caption{Les 2 chemins, C en rouge, $\widetilde{C}$ en vert.}
+\end{figure}
+
+On nq(?) $\widetilde{C}$ est un cycle Hamiltonien.\\
+
+Supposons:\\
+
+$\exists  y \in \widetilde{C} \Rightarrow$ On peut supposer que $\{ v_{j},y\} \in E$ pour $j=\{0,...,k\}$.\\
+
+$\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},v_{i+1},...,v_{k},v_{i},v_{i-1},...,v_{j-1})$. $\overline{C}$ est un chemin plus long que C.
+
+<Second Dessin>
+
+\end{demo}
+
+Illustration: Code de Gray
+
+Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires de longueur n tels que 2 mots adjacents ne diffèrent qu'en une seule position.\\
+
+\begin{exmp}
+<dessin cercles concentriques>
+\end{exmp}
+
+Le code de Grey ci-dessus provient d'un cycles Hamiltonien.\\
+
+<dessin cube et cycle>\\
+
+Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n comme suit:
+
+\begin{enumerate}
+\item On écrit le code de Gray donné d'ordre n en ajoutant à la fin de chaque mot un zero.
+\item On le fait suivre par le même code de Gray parcouru dans l'autre sens et en ajoutant à la fin de chaque mot un 1.
+\end{enumerate}
+
+%----------------------------------------------------
+
+\subsection{Graphes Eulériens}
+
+
+%----------------------------------------------------
+
+\subsection{Application: le problème du voyageur de commerce (TSP)}
+

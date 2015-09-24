@@ -1,2 +1,2 @@
 # MATHF307
-Mathématiques Dsicrètes
+Mathématiques Discrètes

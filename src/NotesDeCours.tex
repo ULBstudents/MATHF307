@@ -28,7 +28,27 @@
 \pagestyle{fancy}
 
 \usepackage{tikz}
-\usetikzlibrary{arrows}
+\usetikzlibrary{positioning,calc,backgrounds,arrows}
+
+\newcommand\Twocolor[4]{
+\path 
+	let 
+	\p1=($ #1 - #2 $ ),
+	\p2=#1,
+	\p3=#2
+	in 
+	node[
+		draw,
+		outer sep=0pt,
+		inner sep=0pt,
+		minimum height=3pt,
+		text width={veclen(\x1,\y1)},
+		rotate={atan((\y3-\y2)/(\x3-\x2))},
+		anchor=west
+	] (mydouble) at #1 {};
+	\draw[#3,line width=1pt] (mydouble.north west) -- (mydouble.north east); 
+	\draw[#4,line width=1pt] (mydouble.south west) -- (mydouble.south east); 
+}
 
 \title{\ulbtitle} % Titres
 \author{\ulbauthors} % Auteurs depuis pdfinfo.tex
@@ -46,24 +66,21 @@
 \fancyfoot[R]{\thepage} % Numéro de page en bas de page à droite
 \setlength{\headheight}{12.1638pt}
 
-
-\pdfinfo{
-	/Title    (\ulbpdfinfotitle)
-	/Author   (\ulbpdfinfoauthors)
-	/Creator  (\ulbpdfinfolink)
-}
-
-
-%Création d'un subsub...section (avec \paragraph{} \subparagraph{})
-%\setcounter{secnumdepth}{5}
-%\setcounter{tocdepth}{5}
-
-
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
+\newtheoremstyle{break}% name
+	{3pt}% Space above
+	{3pt}% Space below
+	{\hangindent 2.5em}% Body font
+	{}% Indent amount
+	{\itshape\bfseries}% Theorem head font
+	{}% Punctuation after theorem head
+	{0.5em}% Space after theorem head
+	{}% Theorem head spec (can be left empty, meaning ‘normal’)
+\theoremstyle{break}
 \newtheorem{defn}{Définition}[section]
 \newtheorem*{exmp}{Exemple}
 \newtheorem{thrm}{Théorème}[section]
@@ -71,8 +88,6 @@
 \newtheorem*{corll}{Corollaire}
 \newtheorem*{exo}{Exercice}
 \newtheorem{prop}{Proposition}[section]
-
-
 
 \begin{document}
 	\maketitle       % Titre
