@@ -8,12 +8,13 @@
 
 \usepackage{enumerate} % Listes
 \usepackage{amsmath,amsfonts,amssymb,amsthm} % Matrices, Align
+\usepackage{thmtools}
 \usepackage{graphicx}
 \usepackage{ulem}
 \usepackage{listings} % Lecture du code
 \usepackage{hyperref} % Hyperlien
 \usepackage{color} % Couleurs
-\usepackage[table]{xcolor} % Couleurs dans les tableaux
+\usepackage[dvipsnames]{xcolor} % Couleurs dans les tableaux
 \usepackage{titlesec}
 \usepackage{subfigure}
 
@@ -72,23 +73,26 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\newtheoremstyle{break}% name
-	{3pt}% Space above
-	{3pt}% Space below
-	{\hangindent 2.5em}% Body font
-	{}% Indent amount
-	{\itshape\bfseries}% Theorem head font
-	{}% Punctuation after theorem head
-	{0.5em}% Space after theorem head
-	{}% Theorem head spec (can be left empty, meaning ‘normal’)
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
 \theoremstyle{break}
-\newtheorem{defn}{Définition}[section]
+
+\declaretheorem[name=Définition,shaded={bgcolor=Gray}]{defn}
+
+\declaretheorem[name=Théorème,shaded={bgcolor=Gray}]{thrm}
+
+\declaretheorem[name=Proposition,shaded={bgcolor=Gray}]{prop}
+
+%\newtheorem{defn}{Définition}[section]
 \newtheorem*{exmp}{Exemple}
-\newtheorem{thrm}{Théorème}[section]
+%\newtheorem{thrm}{Théorème}[section]
 \newtheorem*{demo}{Démonstration}
 \newtheorem*{corll}{Corollaire}
 \newtheorem*{exo}{Exercice}
-\newtheorem{prop}{Proposition}[section]
+%\newtheorem{prop}{Proposition}[section]
 \newtheorem*{lemme}{Lemme}
 
 \begin{document}
