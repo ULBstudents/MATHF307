@@ -1,0 +1,26 @@
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=1.5cm,thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\large\bfseries}]
+
+	\node[main node] (c1) {C};
+	\node[main node] (c2) [right of=c1] {C};
+	\node[main node] (h1) [above of=c1] {H};
+	\node[main node] (h2) [left of=c1] {H};
+	\node[main node] (h3) [below of=c1] {H};
+	\node[main node] (h4) [above of=c2] {H};
+	\node[main node] (h5) [right of=c2] {H};
+	\node[main node] (h6) [below of=c2] {H};
+
+	\path[every node/.style={font=\sffamily\small}]
+	(c1) edge node [above] {} (h1)
+		 edge node [left] {} (h2)
+		 edge node [below] {} (h3)
+		 edge node [right] {} (c2)
+	(c2) edge node [above] {} (h4)
+		 edge node [right] {} (h5)
+		 edge node [below] {} (h6) ;
+
+	\end{tikzpicture}
+
+	\caption{Exemple degrés des sommets dans la molécule $C_{2}H_{6}$.}
+\end{figure}

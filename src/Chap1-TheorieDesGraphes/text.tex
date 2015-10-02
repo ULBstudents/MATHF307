@@ -35,32 +35,7 @@ Soit $\Gamma = (V,E)$ un graphe. Le degré d'un sommet $v \in V$ est le nombre d
 Dans la figure suivante, nous avons 2 sommets de degré 4 et 6 sommets de degré 1.
 \end{exmp}
 
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=1.5cm,thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\large\bfseries}]
-
-	\node[main node] (c1) {C};
-	\node[main node] (c2) [right of=c1] {C};
-	\node[main node] (h1) [above of=c1] {H};
-	\node[main node] (h2) [left of=c1] {H};
-	\node[main node] (h3) [below of=c1] {H};
-	\node[main node] (h4) [above of=c2] {H};
-	\node[main node] (h5) [right of=c2] {H};
-	\node[main node] (h6) [below of=c2] {H};
-
-	\path[every node/.style={font=\sffamily\small}]
-	(c1) edge node [above] {} (h1)
-		 edge node [left] {} (h2)
-		 edge node [below] {} (h3)
-		 edge node [right] {} (c2)
-	(c2) edge node [above] {} (h4)
-		 edge node [right] {} (h5)
-		 edge node [below] {} (h6) ;
-
-	\end{tikzpicture}
-
-	\caption{Exemple degrés des sommets dans la molécule $C_{2}H_{6}$.}
-\end{figure}
+\input{Chap1-TheorieDesGraphes/Figures/Molecule.tikz}
 
 \begin{thrm}
 Soit $\Gamma = (V,E)$, alors $$\sum_{i=1}^{\#V} deg(v_{i}) = 2\#E$$
@@ -79,66 +54,7 @@ Le graphe complet $K_{n}$ est le graphe simple à n sommets pour lequel chaque p
 \end{defn}
 
 \begin{exmp}
-	\begin{minipage}{.2\textwidth}
-		\begin{tikzpicture}
-		 \def \radius {1cm}
-		 \def \margin {8}
-		 \def \n {2}
-		 \foreach \s in {1,...,\n}
-		  \node[draw, circle] (\s) at ({360/\n * (\s - 1)}:\radius) {};
-		 \foreach \s in {1,...,\n}
-		  \foreach \t in {\s,...,\n}
-		   \draw (\t) -- (\s);
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}{.2\textwidth}
-		\begin{tikzpicture}
-		 \def \radius {1cm}
-		 \def \margin {8}
-		 \def \n {3}
-		 \foreach \s in {1,...,\n}
-		  \node[draw, circle] (\s) at ({360/\n * (\s - 1)}:\radius) {};
-		 \foreach \s in {1,...,\n}
-		  \foreach \t in {\s,...,\n}
-		   \draw (\t) -- (\s);
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}{.2\textwidth}
-		\begin{tikzpicture}
-		 \def \radius {1cm}
-		 \def \margin {8}
-		 \def \n {4}
-		 \foreach \s in {1,...,\n}
-		  \node[draw, circle] (\s) at ({360/\n * (\s - 1)}:\radius) {};
-		 \foreach \s in {1,...,\n}
-		  \foreach \t in {\s,...,\n}
-		   \draw (\t) -- (\s);
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}{.2\textwidth}
-		\begin{tikzpicture}
-		 \def \radius {1cm}
-		 \def \margin {8}
-		 \def \n {5}
-		 \foreach \s in {1,...,\n}
-		  \node[draw, circle] (\s) at ({360/\n * (\s - 1)}:\radius) {};
-		 \foreach \s in {1,...,\n}
-		  \foreach \t in {\s,...,\n}
-		   \draw (\t) -- (\s);
-		\end{tikzpicture}
-	\end{minipage}
-	\begin{minipage}{.2\textwidth}
-		\begin{tikzpicture}
-		 \def \radius {1cm}
-		 \def \margin {8}
-		 \def \n {6}
-		 \foreach \s in {1,...,\n}
-		  \node[draw, circle] (\s) at ({360/\n * (\s - 1)}:\radius) {};
-		 \foreach \s in {1,...,\n}
-		  \foreach \t in {\s,...,\n}
-		   \draw (\t) -- (\s);
-		\end{tikzpicture}
-	\end{minipage}
+	\input{Chap1-TheorieDesGraphes/Figures/KnGraphs.tikz}
 \end{exmp}
 
 \begin{defn}
@@ -236,39 +152,7 @@ $ deg(v_{k}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{k}$ sont dans 
 
 Comme $k < q$, il doit exister $i \in \{0,...,k-1\}$ tel que $\{v_{i},v_{k}\} \in E$ et $\{v_{0},v_{i+1}\} \in E$. On obtient un cycle $\widetilde{C} = (v_{0},v_{1},...,v_{i},v_{k},v_{k-1},...,v_{i+1},v_{0})$ \\
 
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}[mydot/.style={fill,circle,inner sep=2pt},]
-
-		\node[mydot,label={$v_{0}$}] (v0) {};
-		\node[mydot,below right=of v0] (v1) {};
-		\node[mydot,above right=of v1] (v2) {};
-		\node[mydot,below right=of v2,label={$v_{i}$}] (v3) {};
-		\node[mydot,above right=of v3,label={$v_{i+1}$}] (v4) {};
-		\node[mydot,below right=of v4] (v5) {};
-		\node[mydot,above right=of v5] (v6) {};
-		\node[mydot,right=of v6] (v7) {};
-		\node[mydot,above right=of v7] (v8) {};
-		\node[mydot,above right=of v8,label={$v_{k}$}] (v9) {};
-		\begin{pgfonlayer}{background}
-		\Twocolor{(v0)}{(v1)}{red}{green}
-		\Twocolor{(v1)}{(v2)}{red}{green}
-		\Twocolor{(v2)}{(v3)}{red}{green}
-		\Twocolor{(v4)}{(v5)}{green}{red}
-		\Twocolor{(v5)}{(v6)}{green}{red}
-		\Twocolor{(v6)}{(v7)}{green}{red}
-		\Twocolor{(v7)}{(v8)}{green}{red}
-		\Twocolor{(v8)}{(v9)}{green}{red}
-		\end{pgfonlayer}
-		\draw[red,line width=1pt] 
-			(v3) -- (v4);
-		\draw[green,line width=1pt] 
-			(v0) to[out=45,in=135] (v4)
-			(v3) to[out=-45,in=-20,looseness=1] (v9);
-	\end{tikzpicture}
-
-	\caption{Les 2 chemins, C en rouge, $\widetilde{C}$ en vert.}
-\end{figure}
+\input{Chap1-TheorieDesGraphes/Figures/CCtildePaths.tikz}
 
 On nq(?) $\widetilde{C}$ est un cycle Hamiltonien.\\
 

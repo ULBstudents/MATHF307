@@ -1,0 +1,33 @@
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[mydot/.style={fill,circle,inner sep=2pt},]
+
+		\node[mydot,label={$v_{0}$}] (v0) {};
+		\node[mydot,below right=of v0] (v1) {};
+		\node[mydot,above right=of v1] (v2) {};
+		\node[mydot,below right=of v2,label={$v_{i}$}] (v3) {};
+		\node[mydot,above right=of v3,label={$v_{i+1}$}] (v4) {};
+		\node[mydot,below right=of v4] (v5) {};
+		\node[mydot,above right=of v5] (v6) {};
+		\node[mydot,right=of v6] (v7) {};
+		\node[mydot,above right=of v7] (v8) {};
+		\node[mydot,above right=of v8,label={$v_{k}$}] (v9) {};
+		\begin{pgfonlayer}{background}
+		\Twocolor{(v0)}{(v1)}{red}{green}
+		\Twocolor{(v1)}{(v2)}{red}{green}
+		\Twocolor{(v2)}{(v3)}{red}{green}
+		\Twocolor{(v4)}{(v5)}{green}{red}
+		\Twocolor{(v5)}{(v6)}{green}{red}
+		\Twocolor{(v6)}{(v7)}{green}{red}
+		\Twocolor{(v7)}{(v8)}{green}{red}
+		\Twocolor{(v8)}{(v9)}{green}{red}
+		\end{pgfonlayer}
+		\draw[red,line width=1pt] 
+			(v3) -- (v4);
+		\draw[green,line width=1pt] 
+			(v0) to[out=45,in=135] (v4)
+			(v3) to[out=-45,in=-20,looseness=1] (v9);
+	\end{tikzpicture}
+
+	\caption{Les 2 chemins, C en rouge, $\widetilde{C}$ en vert.}
+\end{figure}
