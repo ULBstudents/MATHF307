@@ -1,4 +1,6 @@
 
+% COURS 1
+
 \section{Théorie des Graphes}
 
 \subsection{Définitions}
@@ -133,11 +135,13 @@ Soit T un graphe simple à p sommets. Alors les 3 assertions suivantes sont équ
 <Démonstration en 2 parties>.
 \end{demo}
 
-%----------------------------------------------------
+% COURS 2
 
 \newpage
 <-- COURS 2 MISSING -->
 \newpage
+
+% COURS 3
 
 \begin{thrm}[Dirac 1950]
 Soit $\Gamma = (V,E)$ un graphe simple avec $p \geq 3$ sommets. Si $\forall v \in V: deg(v) \geq \frac{1}{2}p$, alors $\Gamma$ est Hamiltonien.
@@ -189,8 +193,125 @@ Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n
 
 \subsection{Graphes Eulériens}
 
+\begin{defn}
+Un cycle Eulérien dans un graphe $\Gamma$ est un cycle qui contient toutes les arêtes de $\Gamma$.
+Un graphe est Eulérien s'il contient un cycle Eulérien.\\
+\end{defn}
 
+\begin{exmp}
+SOME EXAMPLE\\
+\end{exmp}
+
+\begin{prop}
+Si un graphe est Eulérien, alors tous ses sommets sont de degré pair.\\
+\end{prop}
+
+\begin{lemme}
+Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'ensemble E se partitionne en une union de cycles (arête-)disjointe.\\
+\end{lemme}
+
+\begin{exmp}
+<DRAWING 3 CYCLES>\\
+\end{exmp}
+
+\begin{demo}
+Par récurrence, sur le nombre d'arêtes
+	\begin{enumerate}
+		\item Le lemme est vrai pour $q=2$.
+		\item Supposons qu'il soit vrai pour tout graphe à $q \leq k$ arêtes et montrons-le pour un graphe à (k+1) arêtes.
+		\item Soit $v_{0}$ un sommet de $\Gamma$. On démarre un chemin en $v_{0}$ et on le suit jusqu'à ce qu'un sommet soit répété 2 fois. On le note $v_{j}$ et C le cycle de $v_{j}$ à $v_{j}$.
+		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
+		\item Donc, $C_{1} \cup C_{2} \cup ... \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.
+		\item RECHECK THIS DEMO, SEEMS FISHY\\
+	\end{enumerate}
+\end{demo}
+
+\begin{thrm}
+Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulerien si et seulement si chaque sommet a un degré pair.\\
+\end{thrm}
+
+\begin{demo}
+$\Rightarrow$ OK par proposition précédente.\\
+$\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
+	\begin{enumerate}
+		\item Si n=1, c'est bon.
+		\item Si $n>1$, comme $\Gamma$ est connexe, $\exists$ une arête incidente à un $v \in C_{1}$ et un $w \notin C_{1}$. Cette arête est dans $C_{j}$ pour un $j=2,...,n$ (car on a une partitien de E). On attache ce cycle en v. S'il reste des cycles dans la partition, on itère ce procédé jusqu'à avoir utilisé tous les cycles.\\
+	\end{enumerate}
+\end{demo}
 %----------------------------------------------------
 
 \subsection{Application: le problème du voyageur de commerce (TSP)}
 
+\subsubsection{Énoncé du problème}
+
+Énoncé: Un vendeur de livres démarre de chez lui et doit visiter un certain nombre de librairies avant de rentrer chez lui. Comment doit-il choisir sa route pour minimiser la distance parcourue? \\ 
+
+Objet mathématique: Un graphe valué (à chaque arête est associé un nombre appelé poids) où les sommets représentent les librairies et les arêtes représentent les routes.\\
+
+<VALUED K5 GRAPH HERE>\\
+
+Objectif: Trouver un cycle hamiltonien de poids minimal.\\
+
+Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cycles hamiltoniens differents. Par exemple, pour $n=10 \Rightarrow$ 181440 cycles. On ne connait pas encore d'algorithme efficance qui donne une solution au problème.\\
+
+\subsubsection{Arbres couvrant minimum}
+
+\begin{defn}
+Un arbre couvrant dans un graphe $\Gamma$ est un arbre qui est un sous-graphe de $\Gamma$ et qui contient tous les sommets de $\Gamma$.\\
+\end{defn}
+
+\begin{exmp}
+<GRAPH TO MIN SPANNING TREE EXAMPLES HERE>\\
+\end{exmp}
+
+Il existe un algorithme qui donne des arbres couvrants de poids minimum dans un graphe valué.\\
+
+Algorithme de Kurskal:
+\begin{enumerate}[i]
+\item Choisir une arêtes de plus petit poids.
+\item Choisir parmi les arêtes restantes une arête de plus petit poids dont l'inclusion ne crée pas un cycle.
+\item Continuer jusqu'à obtenir un arbre couvrant.\\
+\end{enumerate}
+
+\begin{exmp}
+<GRAPH K5 WITH PATH HERE>\\
+\end{exmp}
+
+Remarque: Si C est un cycles hamiltonien dans un graphe $\Gamma$, alors $\forall e \in E$ arête de C: $ C \setminus\{e\}$ est un arbre couvrant.\\
+
+$\Rightarrow$ (Solution de TSP) $\geq$ (longueur minimum d'un arbre couvrant)\\
+
+Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes incudentes à v. Le reste du chemin est un arbre couvrant de $\Gamma \setminus\{v\}$.\\
+
+$\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)\\
+
+Remarque: $\exists$ borne supérieure à TSP en utilisant des cycles euleriens. \\
+
+\subsection{Ordres partiels}
+
+\begin{defn}
+Soit P un ensemble. Un ordre partiel sur P est une relation sur P, c'est à dire un ensemble de couples $(p_{1},p_{2}) \in P\times P$, noté $p{1} \leq p{2}$ tel que:
+	\begin{enumerate}
+		\item $p \leq p$ (réflexive)
+		\item $(p \leq q$ et $q \leq p ) \Rightarrow p = q$ (anti-symétrique)
+		\item $(p \leq q$ et $q \leq r ) \Rightarrow p \leq r$ (transitive)\\
+	\end{enumerate}
+On note $(P,\leq)$ un ensemble partiellement ordonné.\\
+\end{defn}
+
+\begin{exmp}
+	\begin{enumerate}
+		\item $(\mathbb{N},\leq)$
+		\item $(\mathbb{N},\mid)$ où $a \mid b$ si $\exists c \in \mathbb{Z}$ tel que $a \cdot c = b$ $(a,b \in \mathbb{Z})$\\
+	\end{enumerate}
+\end{exmp}
+
+
+% COURS 4
+
+\newpage
+<-- COURS 4 MISSING -->
+\newpage
+
+
+% COURS 3
