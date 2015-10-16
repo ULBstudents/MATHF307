@@ -1,0 +1,46 @@
+\begin{figure}[htb]
+  \centering
+
+  \begin{minipage}{.2\textwidth}
+
+     \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=1.5cm,thick,main node/.style={circle,draw,font=\sffamily\large\bfseries}]
+
+    \node[main node] (a) {$a$};
+    \node[main node] (b) [right of=a] {$b$};
+    \node[main node] (c) [below of=a] {$c$};
+    \node[main node] (d) [right of=c] {$d$};
+
+
+    \path[every node/.style={font=\sffamily\small}]
+    (a) edge node [right] {} (b)
+       edge node [below] {} (c)
+       edge node [right] {} (d)
+    (c) edge node [right] {} (b)
+    (d) edge node [above] {} (b)
+       edge node [left] {} (c);
+
+    \end{tikzpicture}
+
+  \end{minipage}
+  \begin{minipage}{.2\textwidth}
+    \begin{tikzpicture}[>=stealth',shorten >=1pt,auto,node distance=1.5cm,thick,main node/.style={circle,draw,font=\sffamily\large\bfseries}]
+
+      \node[main node] (d) {${d}'$};
+      \node[main node] (a) [above of=d] {${a}'$};
+      \node[main node] (c) [below left of=d] {${c}'$};
+      \node[main node] (b) [below right of=d] {${b}'$};
+
+
+      \path[every node/.style={font=\sffamily\small}]
+      (a) edge node [right] {} (b)
+         edge node [below] {} (c)
+         edge node [right] {} (d)
+      (c) edge node [right] {} (b)
+      (d) edge node [above] {} (b)
+         edge node [left] {} (c);
+
+    \end{tikzpicture}
+  \end{minipage}
+
+  \caption{ Deux graphes isomorphes }
+\end{figure}

@@ -1,0 +1,21 @@
+\newcommand{\twochildren}{child{node{\null}} child{node{\null}}} 
+
+\begin{figure}[!h]
+\centering
+	\begin{tikzpicture}[style=thick,rotate=-90,scale=0.8] 
+	\tikzstyle{every node}=[circle,inner sep=2pt,draw] 
+	\tikzstyle{level 1}=[sibling distance=20mm]
+	\tikzstyle{level 2}=[sibling distance=10mm] 
+	\tikzstyle{level 3}=[sibling distance=5mm] 
+	\node{\null}[grow'=right] 
+	child{node{\null} 
+	child{node{\null}\twochildren} 
+	child{node{\null}\twochildren} }
+	child{node{\null} 
+	child{node{\null}\twochildren} 
+	child{node{\null}\twochildren} } 
+	child{node{\null} 
+	child{node{\null}\twochildren}
+	child{node{\null}\twochildren} }; 
+	\end{tikzpicture} 
+\end{figure}

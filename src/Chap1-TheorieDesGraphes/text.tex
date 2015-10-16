@@ -9,13 +9,11 @@
 Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On nottera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.\\
 
 Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
-\begin{center}
-	\begin{enumerate}
+\begin{enumerate}
 	\item On dit que x et y sont adjacents.
 
 	\item On dit que e est incidente à x et y. \\
-	\end{enumerate}
-\end{center}
+\end{enumerate}
 
 \end{defn}
 
@@ -23,9 +21,9 @@ Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
 Soit $\Gamma = (V,E,\gamma)$ un graphe.
 
 \begin{enumerate}
-\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appellé un lacet.
-\item Si au moins 2 arêtes sont incidentes à 2 mêmes somments, on les appelle arêtes multiples.
-\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). \\
+	\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appellé un lacet.
+	\item Si au moins 2 arêtes sont incidentes à 2 mêmes somments, on les appelle arêtes multiples.
+	\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). \\
 \end{enumerate}
 \end{defn}
 
@@ -50,6 +48,8 @@ Chaque arête contribue 2 fois dans la somme des degrés.
 \begin{corll}
 La somme des degrés des sommets d'un graphe est paire. \\
 \end{corll}
+
+\newpage
 
 \begin{defn}
 Le graphe complet $K_{n}$ est le graphe simple à n sommets pour lequel chaque paire de sommets est une arête.
@@ -98,9 +98,13 @@ Un cycle est un chemin de v à v.\\
 Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété (mis à part le départ et l'arrivée).\\
 \end{defn}
 
+\newpage
+
 %----------------------------------------------------
 
 \subsection{Arbres}
+
+\subsubsection{Définitions}
 
 \begin{defn}
 Un arbre est un graphe simple connexe qui ne contient aucun cycle.\\
@@ -111,8 +115,11 @@ Dans un arbre, les sommets de degré 1 sont appellés les feuilles.\\
 \end{defn}
 
 \begin{exmp}
-<Dessin Arbre>
+% Cheating a bit putting the image out of the Example. 
+% For some weird reason, the image took precedence to the title.
 \end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/TreeExample.tikz}
 
 \begin{prop}
 Si T est un arbre avec $p\geq2$ sommets, alors T contient au moins 2 feuilles.
@@ -124,22 +131,87 @@ T a p sommets. Tous les chemins sont de longueur inférieure ou égale à p. Con
 
 \begin{thrm}
 Soit T un graphe simple à p sommets. Alors les 3 assertions suivantes sont équivalentes:
-	\begin{enumerate}
-	\item T est un arbre.
-	\item T a $(p-1)$ arêtes et aucun cycle.
-	\item T a $(p-1)$ arêtes et est connexe.
+	\begin{enumerate}[i]
+		\item T est un arbre.
+		\item T a $(p-1)$ arêtes et aucun cycle.
+		\item T a $(p-1)$ arêtes et est connexe.
 	\end{enumerate}
 \end{thrm}
 
 \begin{demo}
-<Démonstration en 2 parties>.
+
+$\mathbf{(i) \Rightarrow (ii)}$\textbf{: Montrer qu'un arbre à p sommets a (p-1) arêtes.}
+
+	Par récurrence:
+		\begin{enumerate}
+			\item p = 1 OK 
+			\item Supposons que ce soit vrai pour tout arbre à $ k \geq 1$ sommets et montrons le pour un arbre à (k+1) sommets. Soit T un tel arbre, il a au moins 2 feuilles. Enlevons une de ces feuilles ainsi que l'arête incidente. On obtient un arbre ${T}'$ à k sommets. Par l'hypothese de récurrence: ${T}'$ a (k-1) arêtes, donc T a k arêtes.
+		\end{enumerate} 
+
+\hspace{-0.5cm}$\mathbf{(ii) \Rightarrow (iii)}$\textbf{: Supposons (ii) et T ne soit pas connexe.}
+
+	Notons $T_{1}, T_{2},...,T_{t}$ les composantes connexes de T avec $t \geq 2$. Chaque $T_{i}$ est un arbre, pour $1 \leq i \leq t$ (car pas de cycle). Soit $p_{i}$ le nombre de sommets de $T_{i}$, alors chaque $T_{i}$ a $(p_{i}-1)$ arêtes.\\
+
+	\begin{minipage}{.5\textwidth}
+		$$\sum_{i=1}^{t} p_{i} = p$$ et $$p-1 = \sum_{i=1}^{t} (p_{i}-1) = p - t $$ 
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+		donc $\Rightarrow t = 1 $
+	\end{minipage}
+
+\hspace{-0.5cm}$\mathbf{(iii) \Rightarrow (i)}$\textbf{: Supposons que T ne soit pas un arbre.}
+
+	Alors, T contient un cycle C. Enlevons une arête de C. On obtient le sous-graphe ${T}'$ de T qui est toujours connexe. Si ${T}'$ contient un cycle, alors on itère le processus. Sinon, ${T}'$ est un arbre à p sommets qui a strictement moins que (p-1) arêtes.
+		
 \end{demo}
 
 % COURS 2
 
+\subsubsection{Arbres couvrants et arbres à poids}
+
+\begin{defn}
+Un arbre couvrant dans un graphe $\Gamma$ est un arbre qui est un sous-graphe de $\Gamma$ et qui contient tous les sommets de $\Gamma$.
+\end{defn}
+
+Dans certains problèmes, certaines arêtes sont plus importantes que d'autres. En théorie des graphes, on modélise cela en assignant une valeur à chaque arête. 
+
+\begin{defn}
+Un arbre à poids est un couple $(\Gamma,w)$ où $\Gamma$ est un arbre w est une fonction $w: E \rightarrow \mathbb{R}^{+}$. Le nombre w(e) est appelé le poids de l'arête e.
+\end{defn}
+
+\begin{exmp}
+% Cheating a bit putting the image out of the Example. 
+% For some weird reason, the image took precedence to the title.
+\end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/WeightedGraph.tikz}
+
+%----------------------------------------------------
+
+\subsection{Isomorphisme}
+
+\begin{defn}
+Deux graphes $\Gamma_{1} = (V_{1},E_{1},\gamma_{1})$ et $\Gamma_{2} = (V_{2},E_{2},\gamma_{2})$ sont isomorphes s'il existe une bijection $f: V_{1} \rightarrow V_{2}$ et une bijection $g: E_{1} \rightarrow E_{2}$ telles que $\forall e \in E_{1}:$ e est incident à v,w $\in V_{1}$ ssi g(e) est incident à f(v),f(w) $\in V_{2}$. Le couple (f,g) est appelé un isomorphisme de graphe et on note $\Gamma_{1} \cong \Gamma_{2}$.
+\end{defn}
+
+Deux graphes isomorphes ont les mêmes propriétés.
+
+\begin{exmp}
+% Cheating a bit putting the image out of the Example. 
+% For some weird reason, the image took precedence to the title.
+\end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/IsomorphGraphs.tikz}
+
 \newpage
-<-- COURS 2 MISSING -->
-\newpage
+
+%----------------------------------------------------
+
+\subsection{Graphes hamiltoniens}
+
+\input{Chap1-TheorieDesGraphes/Figures/HamiltonianGraphAndPath.tikz}
+
+STUFF MISSING HERE
 
 % COURS 3
 
@@ -175,8 +247,10 @@ Illustration: Code de Gray
 Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires de longueur n tels que 2 mots adjacents ne diffèrent qu'en une seule position.\\
 
 \begin{exmp}
-<dessin cercles concentriques>
 \end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/GrayCode.tikz}
+
 
 Le code de Grey ci-dessus provient d'un cycles Hamiltonien.\\
 
@@ -185,8 +259,8 @@ Le code de Grey ci-dessus provient d'un cycles Hamiltonien.\\
 Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n comme suit:
 
 \begin{enumerate}
-\item On écrit le code de Gray donné d'ordre n en ajoutant à la fin de chaque mot un zero.
-\item On le fait suivre par le même code de Gray parcouru dans l'autre sens et en ajoutant à la fin de chaque mot un 1.
+	\item On écrit le code de Gray donné d'ordre n en ajoutant à la fin de chaque mot un zero.
+	\item On le fait suivre par le même code de Gray parcouru dans l'autre sens et en ajoutant à la fin de chaque mot un 1.
 \end{enumerate}
 
 %----------------------------------------------------
@@ -268,9 +342,9 @@ Il existe un algorithme qui donne des arbres couvrants de poids minimum dans un 
 
 Algorithme de Kurskal:
 \begin{enumerate}[i]
-\item Choisir une arêtes de plus petit poids.
-\item Choisir parmi les arêtes restantes une arête de plus petit poids dont l'inclusion ne crée pas un cycle.
-\item Continuer jusqu'à obtenir un arbre couvrant.\\
+	\item Choisir une arêtes de plus petit poids.
+	\item Choisir parmi les arêtes restantes une arête de plus petit poids dont l'inclusion ne crée pas un cycle.
+	\item Continuer jusqu'à obtenir un arbre couvrant.\\
 \end{enumerate}
 
 \begin{exmp}
@@ -286,6 +360,8 @@ Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes i
 $\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)\\
 
 Remarque: $\exists$ borne supérieure à TSP en utilisant des cycles euleriens. \\
+
+%----------------------------------------------------
 
 \subsection{Ordres partiels}
 
@@ -306,12 +382,10 @@ On note $(P,\leq)$ un ensemble partiellement ordonné.\\
 	\end{enumerate}
 \end{exmp}
 
-
 % COURS 4
 
-\newpage
-<-- COURS 4 MISSING -->
-\newpage
+Un ordre partiel (bla bla bla) \\
 
+\input{Chap1-TheorieDesGraphes/Figures/HasseDiagram.tikz}
 
-% COURS 3
+% COURS 5

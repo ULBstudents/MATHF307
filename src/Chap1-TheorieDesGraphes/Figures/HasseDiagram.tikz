@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+  \node (newmax) at (2,6) {$60$};
+  \node (newb) at (2,4) {$20$};
+  \node (newc) at (4,4) {$12$};
+  \node (newf) at (4,2) {$4$};
+
+  \node (max) at (0,4) {$30$};
+  \node (a) at (-2,2) {$15$};
+  \node (b) at (0,2) {$10$};
+  \node (c) at (2,2) {$6$};
+  \node (d) at (-2,0) {$5$};
+  \node (e) at (0,0) {$3$};
+  \node (f) at (2,0) {$2$};
+  \node (min) at (0,-2) {$1$};
+
+  \draw (min) -- (d) -- (a) -- (max) -- (b) -- (f)
+  (e) -- (min) -- (f) -- (c) -- (max)
+  (d) -- (b)
+  (newf) -- (newb) -- (newmax) -- (newc) -- (newf)
+  (max) -- (newmax)
+  (b) -- (newb)
+  (c) -- (newc)
+  (f) -- (newf);
+
+  \draw[preaction={draw=white, -,line width=6pt}] (a) -- (e) -- (c);
+\end{tikzpicture}
