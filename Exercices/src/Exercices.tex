@@ -2,20 +2,20 @@
 
 \usepackage[lmargin=25mm,rmargin=25mm,tmargin=20mm,bmargin=20mm]{geometry}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[frenchb]{babel} 
 \usepackage{amsthm, amssymb, amsmath} 
-\usepackage[T1]{fontenc} 
+\usepackage{thmtools}
 \usepackage{tikz, pgf} 
 \usepackage{graphicx} 
-\usepackage{xcolor} 
+\usepackage{xcolor}
+\usepackage{sectsty}
 \usepackage{url, enumerate} 
 \usepackage{epsfig}
+\usepackage{float}
 
-\theoremstyle{plain} 
-\newtheorem*{theo}{Th\'eor\`eme}
-
-\theoremstyle{definition} 
-\newtheorem{exo}{Exercice}
+\declaretheorem[name=Exercice,shaded={bgcolor=gray}]{exo}
 
 \newcommand{\R}{\mathbb{R}} 
 \newcommand{\Z}{\mathbb{Z}} 
@@ -23,8 +23,8 @@
 
 \renewcommand{\FrenchLabelItem}{\textbullet}
 
-\title{MATH-F-307: Syllabus d'exercices} 
-\author{} 
+\title{MATH-F-307: Syllabus (étudiant) d'exercices} 
+\author{André \textsc{Madeira Cortes}\\Nikita \textsc{Marchant}} 
 \date{ }
 
 \begin{document}
