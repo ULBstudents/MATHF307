@@ -1,0 +1,223 @@
+\documentclass[11pt, a4paper]{article} 
+
+%\parindent 5mm 
+%\parskip 0mm 
+%\addtolength{\textwidth}{3 truecm} 
+%\addtolength{\textheight}{1 truecm} 
+%\setlength{\voffset}{-.6 truecm} 
+%\setlength{\hoffset}{-1.3 truecm} 
+
+\usepackage[lmargin=25mm,rmargin=25mm,tmargin=20mm,bmargin=20mm]{geometry}
+
+\usepackage[frenchb]{babel} 
+\usepackage{amsthm, amssymb, amsmath} 
+\usepackage[T1]{fontenc} 
+\usepackage{tikz, pgf} 
+\usepackage{graphicx} 
+\usepackage{xcolor} 
+\usepackage{url, enumerate} 
+\usepackage{epsfig}
+\usepackage{tikz}
+
+\begin{document} 
+
+\title{MATH-F-307: S\'eance d'exercices 2} 
+\author{} 
+\date{2 octobre 2015}
+
+\theoremstyle{plain} 
+\newtheorem*{theo}{Th\'eor\`eme}
+%\newtheorem{defi}[theo]{D\'efinition} 
+%\newtheorem{lemme}[theo]{Lemme} 
+%\newtheorem{corol}[theo]{Corollaire} 
+%\newtheorem{prop}[theo]{Proposition} 
+%\newtheorem{fait}[theo]{Fait} 
+%\newtheorem{aff}{Affirmation} 
+%\newtheorem*{rapp}{Rappel} 
+%\newtheorem{conj}[theo]{Conjecture} 
+
+\theoremstyle{definition} 
+%\newtheorem{probl}[theo]{Probl\`eme ouvert} 
+%\newtheorem*{ex}{Exemple} 
+%\newtheorem*{rem}{Remarque} 
+\newtheorem{exo}{Exercice}
+
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\N}{\mathbb{N}} 
+
+%\renewcommand{\theenumi}{(\alph{enumi})}
+%\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\FrenchLabelItem}{\textbullet}
+
+\maketitle
+
+
+\begin{exo}
+Terminez les exercices de la s\'eance 1.
+\end{exo}
+
+\begin{exo}
+Consid\'erez la grille $n \times n$, le graphe obtenu selon la Figure~\ref{fig:grille}, avec $n$ un naturel~$\geq 3$.
+D\'emontrez que $n$ est pair si et seulement si le graphe est hamiltonien.
+
+
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale = 0.5]
+\tikzstyle{every node}=[draw,circle,fill=black,minimum size=4pt,inner sep=0pt]
+\node (a00) at (0,0) [shape= circle, draw, fill = white] {};
+\node (a10) at (1,0) [shape= circle, draw, fill = white] {};
+\node (a20) at (2,0) [shape= circle, draw, fill = white] {};
+\node (a30) at (3,0) [shape= circle, draw, fill = white] {};
+\node (a40) at (4,0) [shape= circle, draw, fill = white] {};
+
+\node (a01) at (0,1) [shape= circle, draw, fill = white] {};
+\node (a11) at (1,1) [shape= circle, draw, fill = white] {};
+\node (a21) at (2,1) [shape= circle, draw, fill = white] {};
+\node (a31) at (3,1) [shape= circle, draw, fill = white] {};
+\node (a41) at (4,1) [shape= circle, draw, fill = white] {};
+
+\node (a02) at (0,2) [shape= circle, draw, fill = white] {};
+\node (a12) at (1,2) [shape= circle, draw, fill = white] {};
+\node (a22) at (2,2) [shape= circle, draw, fill = white] {};
+\node (a32) at (3,2) [shape= circle, draw, fill = white] {};
+\node (a42) at (4,2) [shape= circle, draw, fill = white] {};
+
+\node (a03) at (0,3) [shape= circle, draw, fill = white] {};
+\node (a13) at (1,3) [shape= circle, draw, fill = white] {};
+\node (a23) at (2,3) [shape= circle, draw, fill = white] {};
+\node (a33) at (3,3) [shape= circle, draw, fill = white] {};
+\node (a43) at (4,3) [shape= circle, draw, fill = white] {};
+
+\node (a04) at (0,4) [shape= circle, draw, fill = white] {};
+\node (a14) at (1,4) [shape= circle, draw, fill = white] {};
+\node (a24) at (2,4) [shape= circle, draw, fill = white] {};
+\node (a34) at (3,4) [shape= circle, draw, fill = white] {};
+\node (a44) at (4,4) [shape= circle, draw, fill = white] {};
+
+\draw (a00) -- (a01) -- (a02) -- (a03) -- (a04);
+\draw (a10) -- (a11) -- (a12) -- (a13) -- (a14);
+\draw (a20) -- (a21) -- (a22) -- (a23) -- (a24);
+\draw (a30) -- (a31) -- (a32) -- (a33) -- (a34);
+\draw (a40) -- (a41) -- (a42) -- (a43) -- (a44);
+
+\draw (a00) -- (a10) -- (a20) -- (a30) -- (a40);
+\draw (a01) -- (a11) -- (a21) -- (a31) -- (a41);
+\draw (a02) -- (a12) -- (a22) -- (a32) -- (a42);
+\draw (a03) -- (a13) -- (a23) -- (a33) -- (a43);
+\draw (a04) -- (a14) -- (a24) -- (a34) -- (a44);
+\end{tikzpicture}
+\caption{Grille $5 \times 5$.}
+\label{fig:grille}
+\end{figure}
+\end{exo}
+
+\begin{exo}
+Prouvez que pour tout $n \geq 3$, le graphe complet $K_n$ poss\`ede exactement $\frac{1}{2}(n-1)!$ cycles hamiltoniens.
+\end{exo}
+
+\begin{exo}
+Combien d'arbres couvrants poss\`edent les deux graphes de la Figure~\ref{fig:arbrecouvrant}?
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale = 0.6]
+\tikzstyle{every node}=[draw,circle,fill=black,minimum size=4pt,inner sep=0pt]
+\node (a1) at (0,0) [shape= circle, draw, fill = white] {};
+\node (a2) at (1,0) [shape= circle, draw, fill = white] {};
+\node (a3) at (2,1) [shape= circle, draw, fill = white] {};
+\node (a4) at (3,0) [shape= circle, draw, fill = white] {};
+\node (a5) at (4,0) [shape= circle, draw, fill = white] {};
+\node (a6) at (2,-1) [shape= circle, draw, fill = white] {};
+\draw (a1) -- (a2) -- (a3) -- (a4) -- (a5);
+\draw (a2) -- (a6) -- (a4);
+
+\node (b1) at (7,-1) [shape= circle, draw, fill = white] {};
+\node (b2) at (9,-1) [shape= circle, draw, fill = white] {};
+%\node (b3) at (10,0) [shape= circle, draw, fill = white] {};
+\node (b4) at (9,1) [shape= circle, draw, fill = white] {};
+\node (b5) at (7,1) [shape= circle, draw, fill = white] {};
+\draw (b1) -- (b2); -- (b3) -- 
+\draw (b4) -- (b5) -- (b1) -- (b4) -- (b2) -- (b5);
+\end{tikzpicture}
+\caption{}
+\label{fig:arbrecouvrant}
+\end{figure}
+\end{exo}
+
+\begin{exo}
+Montrez que tous les alcools $C_nH_{2n+1}OH$ sont des mol\'ecules dont le graphe est un arbre, en sachant que les valences de $C, O$ et de $H$ sont respectivement $4, 2, 1$.
+\end{exo}
+
+\begin{exo}
+D\'emontrez que si un graphe hamiltonien $G = (V,E)$ est biparti selon la bipartition $V = A \cup B$, alors $|A|= |B|$. En d\'eduire que $K_{n,m}$, le graphe biparti complet, est hamiltonien si et seulement si $m=n \geq 2$.
+
+\end{exo}
+
+\begin{exo}
+Pour chaque graphe de la Figure~\ref{fig:graphes}, d\'eterminez si 
+\begin{enumerate}
+\item le graphe est hamiltonien,
+\item le graphe est eul\'erien,
+\item le graphe est biparti.
+\end{enumerate}
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale = 0.5]
+\tikzstyle{every node}=[draw,circle,fill=black,minimum size=4pt,inner sep=0pt]
+\node (a1) at (0,4) [shape= circle, draw, fill = white] {};
+\node (a2) at (-2,0) [shape= circle, draw, fill = white] {};
+\node (a3) at (2,0) [shape= circle, draw, fill = white] {};
+\node (a4) at (0.6,1.8) [shape= circle, draw, fill = white] {};
+\node (a5) at (-0.6,1.8) [shape= circle, draw, fill = white] {};
+\node (a6) at (0,1.4) [shape= circle, draw, fill = white] {};
+\draw (a1) -- (a2) -- (a3) -- (a1) -- (a5) -- (a2);
+\draw (a2) -- (a6) -- (a4);
+\draw (a3) -- (a4) -- (a5) -- (a6);
+
+\node (a1) at (5,0) [shape= circle, draw, fill = white] {};
+\node (a2) at (7,0) [shape= circle, draw, fill = white] {};
+\node (a3) at (9,0) [shape= circle, draw, fill = white] {};
+\node (a4) at (11,0) [shape= circle, draw, fill = white] {};
+\node (b1) at (5,4) [shape= circle, draw, fill = white] {};
+\node (b2) at (7,4) [shape= circle, draw, fill = white] {};
+\node (b3) at (9,4) [shape= circle, draw, fill = white] {};
+\node (b4) at (11,4) [shape= circle, draw, fill = white] {};
+\draw (a1) -- (a2) -- (a3) -- (a4) -- (b4) -- (b3) -- (b2) -- (b1) -- (a1) -- (b2);
+\draw (a1) -- (b3) -- (a4) -- (b1) -- (a3) -- (b3) ;
+\draw (b2) -- (a2) -- (b4);
+
+
+\node (a1) at (14,-0.5) [shape= circle, draw, fill = white] {};
+\node (a2) at (14,4.5) [shape= circle, draw, fill = white] {};
+\node (a3) at (19,4.5) [shape= circle, draw, fill = white] {};
+\node (a4) at (19,-0.5) [shape= circle, draw, fill = white] {};
+
+\node (b1) at (15,0.5) [shape= circle, draw, fill = white] {};
+\node (b11) at (16,0.5) [shape= circle, draw, fill = white] {};
+\node (b2) at (15,3.5) [shape= circle, draw, fill = white] {};
+\node (b33) at (18,2.5) [shape= circle, draw, fill = white] {};
+\node (b3) at (18,3.5) [shape= circle, draw, fill = white] {};
+\node (b4) at (18,0.5) [shape= circle, draw, fill = white] {};
+
+\node (c1) at (16,1.5) [shape= circle, draw, fill = white] {};
+\node (c2) at (16,2.5) [shape= circle, draw, fill = white] {};
+\node (c3) at (17,2.5) [shape= circle, draw, fill = white] {};
+\node (c4) at (17,1.5) [shape= circle, draw, fill = white] {};
+
+\draw (a1) -- (a2) -- (a3) -- (a4) -- (a1);
+\draw (a1) -- (b1) -- (b2) -- (b3) -- (a3);
+\draw (a1) -- (b11) -- (b4) -- (b33) -- (a3);
+\draw (a2) -- (b2) -- (c2);
+\draw (a4) -- (b4) -- (c4);
+\draw (c1) -- (c2) -- (c3) -- (c4) -- (c1);
+\draw (b1) -- (c1) -- (b11);
+\draw (b33) -- (c3) -- (b3);
+\end{tikzpicture}
+\caption{}
+\label{fig:graphes}
+\end{figure}
+
+\end{exo}
+\thispagestyle{empty}
+\end{document}

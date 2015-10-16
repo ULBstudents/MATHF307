@@ -1,0 +1,132 @@
+\documentclass[11pt, a4paper]{article} 
+
+%\parindent 5mm 
+%\parskip 0mm 
+%\addtolength{\textwidth}{3 truecm} 
+%\addtolength{\textheight}{1 truecm} 
+%\setlength{\voffset}{-.6 truecm} 
+%\setlength{\hoffset}{-1.3 truecm} 
+
+\usepackage[lmargin=25mm,rmargin=25mm,tmargin=20mm,bmargin=20mm]{geometry}
+
+\usepackage[frenchb]{babel} 
+\usepackage{amsthm, amssymb, amsmath} 
+\usepackage[T1]{fontenc} 
+\usepackage{tikz, pgf} 
+\usepackage{graphicx} 
+\usepackage{xcolor} 
+\usepackage{url, enumerate} 
+\usepackage{epsfig}
+
+\begin{document} 
+
+\title{MATH-F-307: S\'eance d'exercices 1} 
+\author{} 
+\date{25 septembre 2015}
+
+\theoremstyle{plain} 
+\newtheorem*{theo}{Th\'eor\`eme}
+%\newtheorem{defi}[theo]{D\'efinition} 
+%\newtheorem{lemme}[theo]{Lemme} 
+%\newtheorem{corol}[theo]{Corollaire} 
+%\newtheorem{prop}[theo]{Proposition} 
+%\newtheorem{fait}[theo]{Fait} 
+%\newtheorem{aff}{Affirmation} 
+%\newtheorem*{rapp}{Rappel} 
+%\newtheorem{conj}[theo]{Conjecture} 
+
+\theoremstyle{definition} 
+%\newtheorem{probl}[theo]{Probl\`eme ouvert} 
+%\newtheorem*{ex}{Exemple} 
+%\newtheorem*{rem}{Remarque} 
+\newtheorem{exo}{Exercice}
+
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\N}{\mathbb{N}} 
+
+%\renewcommand{\theenumi}{(\alph{enumi})}
+%\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\FrenchLabelItem}{\textbullet}
+
+\maketitle
+
+
+\begin{exo}
+Construisez un graphe simple et connexe sur $8$ sommets tel que chaque sommet est contenu dans exactement trois ar\^etes. Pouvez-vous faire la m\^eme chose avec $9$ sommets?
+\end{exo}
+
+\begin{exo}
+Dans un groupe de personnes, il y a toujours deux individus qui connaissent exactement le m\^eme nombre de membres du groupe.
+\begin{enumerate}
+\item Formalisez cette propri\'et\'e dans le vocabulaire des graphes.
+\item D\'emontrez cette propri\'et\'e (par l'absurde).
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^etes. Montrez que $G$ contient un triangle.
+\end{exo}
+
+\begin{exo}
+Soit $G$ un graphe simple avec $2p$ sommets. On suppose que le degr\'e de chaque sommet est au moins \'egal \`a $p$. D\'emontrez que ce graphe est connexe.
+\end{exo}
+
+\begin{exo}
+Soit $G$ un graphe simple.
+\begin{enumerate}
+\item On suppose que $G$ est connexe et que $x$ est un sommet de $G$ de degr\'e $1$. Prouvez que $G\setminus\{x\}$ est connexe.
+\item D\'eduisez-en que, si $G$ est connexe et $|V(G)|=n\geq 2$, alors $G$ contient au moins $n-1$ ar\^etes.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+Donnez un graphe simple et connexe sur au moins $5$ sommets qui est:
+\begin{itemize}
+\item hamiltonien et eul\'erien;
+\item hamiltonien et non eul\'erien;
+\item non hamiltonien et eul\'erien;
+\item non hamiltonien et non eul\'erien.
+\end{itemize}
+\end{exo}
+
+\begin{exo}
+Le graphe
+
+\begin{center}
+\scalebox{.825}{\input{figures2/figure19.eps_t}}
+\end{center}
+
+est-il isomorphe \`a un (ou \`a plusieurs) des graphes ci-dessous~?
+
+\begin{center}
+\scalebox{.825}{\input{figures2/figure20.eps_t}}
+\end{center}
+\end{exo}
+
+\newpage
+\begin{exo}
+Les graphes suivants sont-ils isomorphes~? (Ne vous contentez pas d'une justification approximative : essayez de d\'emontrer rigoureusement vos affirmations.)
+
+\begin{figure}[h!]
+\centering
+\input{figures2/figure21.eps_t}
+\caption{}
+\end{figure}%
+
+\begin{figure}[h!]
+\centering
+\input{figures2/figure22.eps_t}
+\caption{}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\input{figures2/figure23.eps_t}
+\caption{}
+\end{figure}
+
+\end{exo}
+
+
+\end{document}
