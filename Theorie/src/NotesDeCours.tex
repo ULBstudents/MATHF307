@@ -83,11 +83,13 @@
   {\newline}{}%
 \theoremstyle{break}
 
-\declaretheorem[name=Définition,shaded={bgcolor=Gray}]{defn}
+\definecolor{MyGray}{rgb}{0.87,0.87,0.87}
 
-\declaretheorem[name=Théorème,shaded={bgcolor=Gray}]{thrm}
+\declaretheorem[name=Définition,shaded={bgcolor=MyGray}]{defn}
 
-\declaretheorem[name=Proposition,shaded={bgcolor=Gray}]{prop}
+\declaretheorem[name=Théorème,shaded={bgcolor=MyGray}]{thrm}
+
+\declaretheorem[name=Proposition,shaded={bgcolor=MyGray}]{prop}
 
 %\newtheorem{defn}{Définition}[section]
 \newtheorem*{exmp}{Exemple}

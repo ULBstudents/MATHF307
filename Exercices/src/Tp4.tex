@@ -5,11 +5,25 @@
 L'ensemble $\{2^m | m \in \Z\}$ forme-t-il un groupe lorsqu'il est muni de la multiplication usuelle?
 \end{exo}
 
+Soit $X=2^{m}, m \in \Z$ et $(X,.)$ le groupe à analyser. \\
+
+$\forall x,y \in \Z : 2^{x} * 2^{y} = 2^{x+y} \in X$ car $(x+y) \in \Z$. L'ensemble X forme donc bien un groupe lorsqu'il est muni de la multiplication. 
+
+%------------------------------------------------
+
 \vspace*{0.8cm}
 \begin{exo}
 L'ensemble $(\Z/2\Z)^n=\{(x_1,x_2,\ldots,x_n)|x_1,x_2,\ldots,x_n\in \Z/2\Z\}$ avec l'addition d\'efinie par $$(x_1,x_2,\ldots,x_n)+(y_1,y_2,\ldots,y_n)=(x_1+y_1,x_2+y_2,\ldots,x_n+y_n)$$
 (o\`u $x_i+y_i$ est le r\'esultat d'une addition modulo $2$) forme-t-il un groupe?
 \end{exo}
+
+Il faut tester si les 3 propriétés d'un groupe sont respectées.
+
+\begin{enumerate}
+\item Associativité: Chaque composante est calculée avec la forme $x_{i}+y_{i}, \forall i \in \{ 1,2,...,n \}$. $\Z_{2}$ est associatif, l'adition est faite composante par composante, donc $Z_{2}^{n}$ est associatif. Il faut donc à présent montrer que $(x_{i}+y_{i}) + z_{i} = x_{i} + (y_{i} + z_{i})$.
+\end{enumerate}
+
+%------------------------------------------------
 
 \vspace*{0.8cm}
 \begin{exo}
