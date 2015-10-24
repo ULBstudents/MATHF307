@@ -6,7 +6,7 @@
 \subsection{Définitions}
 
 \begin{defn}
-Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On nottera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.\\
+Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On notera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.\\
 
 Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
 \begin{enumerate}
@@ -21,8 +21,8 @@ Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
 Soit $\Gamma = (V,E,\gamma)$ un graphe.
 
 \begin{enumerate}
-	\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appellé un lacet.
-	\item Si au moins 2 arêtes sont incidentes à 2 mêmes somments, on les appelle arêtes multiples.
+	\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appelé un lacet.
+	\item Si au moins 2 arêtes sont incidentes à 2 mêmes sommets, on les appelle arêtes multiples.
 	\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). \\
 \end{enumerate}
 \end{defn}
@@ -60,7 +60,7 @@ Le graphe complet $K_{n}$ est le graphe simple à n sommets pour lequel chaque p
 \end{exmp}
 
 \begin{defn}
-Un graphe ${\Gamma}'=(U,F)$ est un sous-graphe de $\Gamma=(V,E)$ si $ U \subseteq V$ et $F \subseteq E$. On nottera $ {\Gamma}' \leq \Gamma$.
+Un graphe ${\Gamma}'=(U,F)$ est un sous-graphe de $\Gamma=(V,E)$ si $ U \subseteq V$ et $F \subseteq E$. On notera $ {\Gamma}' \leq \Gamma$.
 \end{defn}
 
 \begin{exmp}
@@ -80,7 +80,7 @@ Soit $\Gamma = (V,E)$ et $v,w \in V$. Un chemin de v à w de longueur n est une 
 
 Un chemin est simple si aucun sommet ne se répète sauf peut-être $v_{0}$ et $v_{n}$. \\
 
-Dans un graphe simple on nottera juste la suite des sommets lorsque l'on décrit un chemin. \\
+Dans un graphe simple on notera juste la suite des sommets lorsque l'on décrit un chemin. \\
 
 \end{defn}
 
@@ -145,7 +145,7 @@ $\mathbf{(i) \Rightarrow (ii)}$\textbf{: Montrer qu'un arbre à p sommets a (p-1
 	Par récurrence:
 		\begin{enumerate}
 			\item p = 1 OK 
-			\item Supposons que ce soit vrai pour tout arbre à $ k \geq 1$ sommets et montrons le pour un arbre à (k+1) sommets. Soit T un tel arbre, il a au moins 2 feuilles. Enlevons une de ces feuilles ainsi que l'arête incidente. On obtient un arbre ${T}'$ à k sommets. Par l'hypothese de récurrence: ${T}'$ a (k-1) arêtes, donc T a k arêtes.
+			\item Supposons que ce soit vrai pour tout arbre à $ k \geq 1$ sommets et montrons le pour un arbre à (k+1) sommets. Soit T un tel arbre, il a au moins 2 feuilles. Enlevons une de ces feuilles ainsi que l'arête incidente. On obtient un arbre ${T}'$ à k sommets. Par l’hypothèse de récurrence: ${T}'$ a (k-1) arêtes, donc T a k arêtes.
 		\end{enumerate} 
 
 \hspace{-0.5cm}$\mathbf{(ii) \Rightarrow (iii)}$\textbf{: Supposons (ii) et T ne soit pas connexe.}
@@ -259,7 +259,7 @@ Le code de Grey ci-dessus provient d'un cycles Hamiltonien.\\
 Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n comme suit:
 
 \begin{enumerate}
-	\item On écrit le code de Gray donné d'ordre n en ajoutant à la fin de chaque mot un zero.
+	\item On écrit le code de Gray donné d'ordre n en ajoutant à la fin de chaque mot un zéro.
 	\item On le fait suivre par le même code de Gray parcouru dans l'autre sens et en ajoutant à la fin de chaque mot un 1.
 \end{enumerate}
 
@@ -294,14 +294,14 @@ Par récurrence, sur le nombre d'arêtes
 		\item Le lemme est vrai pour $q=2$.
 		\item Supposons qu'il soit vrai pour tout graphe à $q \leq k$ arêtes et montrons-le pour un graphe à (k+1) arêtes.
 		\item Soit $v_{0}$ un sommet de $\Gamma$. On démarre un chemin en $v_{0}$ et on le suit jusqu'à ce qu'un sommet soit répété 2 fois. On le note $v_{j}$ et C le cycle de $v_{j}$ à $v_{j}$.
-		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
+		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurrence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
 		\item Donc, $C_{1} \cup C_{2} \cup ... \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.
 		\item RECHECK THIS DEMO, SEEMS FISHY\\
 	\end{enumerate}
 \end{demo}
 
 \begin{thrm}
-Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulerien si et seulement si chaque sommet a un degré pair.\\
+Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulérien si et seulement si chaque sommet a un degré pair.\\
 \end{thrm}
 
 \begin{demo}
@@ -309,7 +309,7 @@ $\Rightarrow$ OK par proposition précédente.\\
 $\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
 	\begin{enumerate}
 		\item Si n=1, c'est bon.
-		\item Si $n>1$, comme $\Gamma$ est connexe, $\exists$ une arête incidente à un $v \in C_{1}$ et un $w \notin C_{1}$. Cette arête est dans $C_{j}$ pour un $j=2,...,n$ (car on a une partitien de E). On attache ce cycle en v. S'il reste des cycles dans la partition, on itère ce procédé jusqu'à avoir utilisé tous les cycles.\\
+		\item Si $n>1$, comme $\Gamma$ est connexe, $\exists$ une arête incidente à un $v \in C_{1}$ et un $w \notin C_{1}$. Cette arête est dans $C_{j}$ pour un $j=2,...,n$ (car on a une partition de E). On attache ce cycle en v. S'il reste des cycles dans la partition, on itère ce procédé jusqu'à avoir utilisé tous les cycles.\\
 	\end{enumerate}
 \end{demo}
 %----------------------------------------------------
@@ -326,7 +326,7 @@ Objet mathématique: Un graphe valué (à chaque arête est associé un nombre a
 
 Objectif: Trouver un cycle hamiltonien de poids minimal.\\
 
-Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cycles hamiltoniens differents. Par exemple, pour $n=10 \Rightarrow$ 181440 cycles. On ne connait pas encore d'algorithme efficance qui donne une solution au problème.\\
+Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cycles hamiltoniens différents. Par exemple, pour $n=10 \Rightarrow$ 181440 cycles. On ne connait pas encore d'algorithme efficace qui donne une solution au problème.\\
 
 \subsubsection{Arbres couvrant minimum}
 
@@ -355,11 +355,11 @@ Remarque: Si C est un cycles hamiltonien dans un graphe $\Gamma$, alors $\forall
 
 $\Rightarrow$ (Solution de TSP) $\geq$ (longueur minimum d'un arbre couvrant)\\
 
-Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes incudentes à v. Le reste du chemin est un arbre couvrant de $\Gamma \setminus\{v\}$.\\
+Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes incidentes à v. Le reste du chemin est un arbre couvrant de $\Gamma \setminus\{v\}$.\\
 
 $\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)\\
 
-Remarque: $\exists$ borne supérieure à TSP en utilisant des cycles euleriens. \\
+Remarque: $\exists$ borne supérieure à TSP en utilisant des cycles eulériens. \\
 
 %----------------------------------------------------
 
