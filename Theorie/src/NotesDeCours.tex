@@ -9,6 +9,7 @@
 \usepackage{enumerate} % Listes
 \usepackage{amsmath,amsfonts,amssymb,amsthm} % Matrices, Align
 \usepackage{thmtools}
+\usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{ulem}
 \usepackage{listings} % Lecture du code
@@ -20,6 +21,7 @@
 \usepackage{xstring}
 \usepackage{tkz-graph}
 \usepackage{tkz-berge}
+\usepackage{float}
 
 \usepackage{array} % Tableau pour les formules de math
 \newcolumntype{L}{>{\displaystyle} l}
@@ -54,6 +56,8 @@
 	\draw[#3,line width=1pt] (mydouble.north west) -- (mydouble.north east); 
 	\draw[#4,line width=1pt] (mydouble.south west) -- (mydouble.south east); 
 }
+
+\newcommand{\vmodels}{\rotatebox[origin=c]{90}{$\models$}}
 
 \title{\ulbtitle} % Titres
 \author{\ulbauthors} % Auteurs depuis pdfinfo.tex

@@ -209,9 +209,46 @@ Deux graphes isomorphes ont les mêmes propriétés.
 
 \subsection{Graphes hamiltoniens}
 
+Hamilton propose le problème suivant: Considérons le graphe du dodécaèdre. Est-il possible, en partant d'un des vingts sommets et en suivant les arêtes du graphe, de visiter tous les sommets une et une seule fois et de revenir au sommet de départ? \\
+
+L'exemple suivant montre un chemin qui réponds à ce problème. \\
+
+\begin{exmp}
+% Cheating a bit putting the image out of the Example. 
+% For some weird reason, the image took precedence to the title.
+\end{exmp}
+
 \input{Chap1-TheorieDesGraphes/Figures/HamiltonianGraphAndPath.tikz}
 
-STUFF MISSING HERE
+\begin{defn}
+Un cycle hamiltonien dans un graphe $\Gamma$ est un cycle simple contenant tous les sommets de $\Gamma$. \\
+\end{defn}
+
+Pour donner un exemple de graphe non-hamiltonien on introduit la notion de graphe biparti. 
+
+\begin{defn}
+Un graphe $\Gamma = (V,E)$ est biparti si on peu écrire $V=B \cup W$ avec $B \cap W = \varnothing $ et toute arête de $\Gamma$ joint un sommet dans B à un sommet dans W.\\
+\end{defn}
+
+\begin{exmp}
+<DESSIN GRAPHE BIPARTI PAGE 12>
+\end{exmp}
+
+\begin{lemme}
+Si $\Gamma$ est biparti, alors $\Gamma$ ne contient pas de cycle simple de longueur impaire.
+\end{lemme}
+
+\begin{thrm}
+Un graphe biparti avec un nombre impaire de sommets n'est pas hamiltonien.
+\end{thrm}
+
+\begin{demo}
+Pour être hamiltonien, il doit admettre un cycle simple passant par tous ses sommets, donc de longueur impaire. Ce n'est pas possible à cause du Lemme précédent.
+\end{demo}
+
+\begin{exmp}
+<DESSIN GRAPHE CARRE PAGE 12>
+\end{exmp}
 
 % COURS 3
 
@@ -230,17 +267,20 @@ Comme $k < q$, il doit exister $i \in \{0,...,k-1\}$ tel que $\{v_{i},v_{k}\} \i
 
 \input{Chap1-TheorieDesGraphes/Figures/CCtildePaths.tikz}
 
-On nq(?) $\widetilde{C}$ est un cycle Hamiltonien.\\
+On note que $\widetilde{C}$ est un cycle Hamiltonien.\\
 
 Supposons:\\
 
 $\exists  y \in \widetilde{C} \Rightarrow$ On peut supposer que $\{ v_{j},y\} \in E$ pour $j=\{0,...,k\}$.\\
 
-$\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},v_{i+1},...,v_{k},v_{i},v_{i-1},...,v_{j-1})$. $\overline{C}$ est un chemin plus long que C.
+$\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},v_{i+1},...,v_{k},v_{i},v_{i-1},...,v_{j-1})$. $\overline{C}$ est un chemin plus long que C. \\
 
-<Second Dessin>
+\vspace{-0.8cm}
+
+\input{Chap1-TheorieDesGraphes/Figures/CCtildePaths2.tikz}
 
 \end{demo}
+
 
 Illustration: Code de Gray
 
@@ -251,10 +291,9 @@ Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires d
 
 \input{Chap1-TheorieDesGraphes/Figures/GrayCode.tikz}
 
+Le code de Grey ci-dessus provient d'un cycles hamiltonien sur le graphe du.\\
 
-Le code de Grey ci-dessus provient d'un cycles Hamiltonien.\\
-
-<dessin cube et cycle>\\
+<DESSIN CUBE ET CYCLE>\\
 
 Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n comme suit:
 
@@ -285,7 +324,7 @@ Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'en
 \end{lemme}
 
 \begin{exmp}
-<DRAWING 3 CYCLES>\\
+<DRAWING 3 CYCLES PAGE 15>\\
 \end{exmp}
 
 \begin{demo}
@@ -295,8 +334,7 @@ Par récurrence, sur le nombre d'arêtes
 		\item Supposons qu'il soit vrai pour tout graphe à $q \leq k$ arêtes et montrons-le pour un graphe à (k+1) arêtes.
 		\item Soit $v_{0}$ un sommet de $\Gamma$. On démarre un chemin en $v_{0}$ et on le suit jusqu'à ce qu'un sommet soit répété 2 fois. On le note $v_{j}$ et C le cycle de $v_{j}$ à $v_{j}$.
 		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurrence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
-		\item Donc, $C_{1} \cup C_{2} \cup ... \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.
-		\item RECHECK THIS DEMO, SEEMS FISHY\\
+		\item Donc, $C_{1} \cup C_{2} \cup ... \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.\\
 	\end{enumerate}
 \end{demo}
 
@@ -322,7 +360,7 @@ $\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de c
 
 Objet mathématique: Un graphe valué (à chaque arête est associé un nombre appelé poids) où les sommets représentent les librairies et les arêtes représentent les routes.\\
 
-<VALUED K5 GRAPH HERE>\\
+<VALUED K5 GRAPH HERE PAGE 17>\\
 
 Objectif: Trouver un cycle hamiltonien de poids minimal.\\
 
@@ -359,7 +397,7 @@ Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes i
 
 $\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)\\
 
-Remarque: $\exists$ borne supérieure à TSP en utilisant des cycles eulériens. \\
+Remarque: Il existe une borne supérieure à TSP en utilisant des cycles eulériens. \\
 
 %----------------------------------------------------
 
@@ -375,6 +413,16 @@ Soit P un ensemble. Un ordre partiel sur P est une relation sur P, c'est à dire
 On note $(P,\leq)$ un ensemble partiellement ordonné.\\
 \end{defn}
 
+Remarque: Soit $(P,\leq)$ un ensemble partiellement ordonné, alors on définit un ordre partiel $\geq$ par: $$x \geq y \Leftrightarrow y \leq x$$
+
+\begin{defn}
+Soit P un ensemble.
+	\begin{enumerate}
+		\item $(P,\leq)$ est dit totalement ordonné si $\forall p_{1},p_{2} \in P$, $p_{1} \leq p_{2}$ ou $p_{2} \leq p_{1}$
+		\item Soit $(P,\leq)$ un ordre partiel: une chaîne C est un sous-ensemble de P qui est totalement ordonné.\\
+	\end{enumerate}
+\end{defn}
+
 \begin{exmp}
 	\begin{enumerate}
 		\item $(\mathbb{N},\leq)$
@@ -384,8 +432,73 @@ On note $(P,\leq)$ un ensemble partiellement ordonné.\\
 
 % COURS 4
 
-Un ordre partiel (bla bla bla) \\
+Une relation d'ordre partiel peut se représenter à l'aide d'un graphe dirigé, mais il est très compliqué. On le simplifie en laissant tomber toutes les relations qui s’obtiennent par transitivité et les lacets.\\
+
+Par transitivité et anti-symétrie: on sait qu'il n'y a pas de cycles, on peut se passer des flèches et on note de bas en haut.\\
 
 \input{Chap1-TheorieDesGraphes/Figures/HasseDiagram.tikz}
 
+\begin{defn}
+Soit $(P,\leq)$ un ensemble partiellement ordonné. Une anti-chaîne est un sous-ensemble A de P tel que $\forall a_{1},a_{2} \in A: $ $ a_{1} \nleqslant a_{2} $ et $ a_{2} \nleqslant a_{1} $
+\end{defn}
+
+\begin{exmp}
+(\{1,2,3,6,8\},|), A = \{2,3\} est une anti-chaîne.
+\end{exmp}
+
+\begin{thrm}[Dilworth]
+Soit $(P,\leq)$ un ensemble fini partiellement ordonné. Alors il existe une anti-chaîne A et une partition Q de P par des chaînes telle que $\#Q = \#A$.
+\end{thrm}
+
+\begin{thrm}
+Soit $\Gamma = (V,E)$ un graphe simple. 
+	\begin{enumerate}
+		\item Un couplage M de $\Gamma$ est un sous-ensemble d'arêtes de $\Gamma$, 2 à 2 non adjacentes. Les sommets incidents aux arêtes de M sont dits couplés.
+		\item Un transversal de $\Gamma$ est un sous-ensemble T de V tel que toute arêtes $\Gamma$ est incidente à au moins un sommet de T.\\
+	\end{enumerate}
+\end{thrm}
+
+<IMAGE COUPLAGE TRANSVERSAL ANTICHAINE>
+
+\begin{thrm}[König]
+Soit $\Gamma = (B \vmodels W, E)$ un graphe biparti. La cardinalité maximale d'un couplage de $\Gamma$ est égale à la cardinalité minimum d'un transversal de $\Gamma$.
+\end{thrm}
+
+\begin{demo}
+<DEMO PAS CLAIRE, DEMANDER AU PROF>
+\end{demo}
+
+\newpage
+
 % COURS 5
+
+\begin{demo}
+On va montrer König $\Rightarrow$ Dilworth.\\
+
+Soit $(P,\leq)$ un ordre partiel. On construit un graphe biparti $\Gamma = ( B \vmodels W, E)$ où B = $\{ (p,1) | p \in P \}$ et W = $\{ (p,2) | p \in P \}$ et $\{ (p,1) , (q,2) \} \in E \Leftrightarrow p \leq q$ et $ p \neq q$. \\
+
+Soit M un couplage de cardinalité maximale de $\Gamma$ et T un transversal de cardinalité minimale de $\Gamma$. Par König, $\#M = \#T$.\\
+
+On définit $A \subseteq P$ par $A = \{ p \in P | (p,1) \in T$ et $(p,2) \nsubseteq T \}$ et $\#A \geq \#P - \#T$. \\
+
+On construit des chaînes comme suit: Q = $\{ C_{1},...,C_{n} \}$ où
+
+\[ 
+\left \{
+  \begin{tabular}{c}
+  Soit $C_{i}=\{ p_{0},...,p_{e}\}$, $l\geq 1$ si $\{ (p_{k},1), (p_{k+1},2)\} \in M$ et $(p_{e},1)$ n'est pas incident à M, $(p_{0},2)$ n'est pas incident à M. \\
+  Soit $C_{i}=\{p\}$ si (p,1) et (p,2) ne sont pas incidents à M.\\ 
+  \end{tabular}
+\right .
+\]
+\end{demo}
+
+Alors, Q est une partition de P (car, par construction, $P= \bigcup_{i=1}^{n} C_{i}$ et $C_{i} \cap C_{j} = \varnothing, \forall i \neq j $)\\
+
+Et $\#P = \sum_{i=1}^{n} \#C_{i} = \#M + \#Q$ \\
+
+$\Rightarrow$ $\#Q = \#P - \#M$ \\
+
+$\xRightarrow{(Konig)}$ $\#Q = \#P - \#T \leq \#A$ \\
+
+$\Rightarrow$ $\#Q = \#A $ \\

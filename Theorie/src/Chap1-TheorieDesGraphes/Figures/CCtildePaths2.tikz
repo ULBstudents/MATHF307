@@ -1,0 +1,33 @@
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[mydot/.style={fill,circle,inner sep=2pt},]
+
+		\node[mydot] (v0) {};
+		\node[mydot,below right=of v0] (v1) {};
+		\node[mydot,above right=of v1,label={$v_{j}$}] (v2) {};
+
+		\node[mydot,below=of v2,label={[yshift=-0.6cm]$y$}] (y) {};
+		\node[mydot,above left= 0.5cm of v3,label={$v_{j+1}$}] (vj1) {};
+
+		\node[mydot,below right=of v2] (v3) {};
+		\node[mydot,above right=of v3] (v4) {};
+		\node[mydot,below right=of v4] (v5) {};
+		\node[mydot,above right=of v5] (v6) {};
+		\node[mydot,right=of v6] (v7) {};
+		\node[mydot,above right=of v7] (v8) {};
+		\node[mydot,above right=of v8] (v9) {};
+		\draw[green,line width=1pt] 
+			(v0) -- (v1) -- (v2);
+		\draw[green, line width=1pt]
+			(v4) -- (v5) -- (v6) -- (v7) -- (v8) -- (v9);
+		\draw[green, line width=1pt]
+			(v3) -- (vj1);
+		\draw[green, line width=1pt]
+			(v2) -- (y);
+		\draw[green,line width=1pt] 
+			(v0) to[out=45,in=135] (v4)
+			(v3) to[out=-45,in=-20,looseness=1] (v9);
+	\end{tikzpicture}
+
+	\caption{Chemin $\overline{C}$}
+\end{figure}
