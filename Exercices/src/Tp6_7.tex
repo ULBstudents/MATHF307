@@ -1,0 +1,156 @@
+\section{Séance 6 et 7}
+
+\begin{exo}
+Soient $A$ et $B$ deux ensembles finis avec $|A|=a$ et $|B|=b$ ($a,b \in \mathbb{N}$). Que valent:
+\begin{enumerate}[(i)]
+\item $|A\times B|$,
+\item $|B^A|$ o\`u $B^A:=\{f:A \rightarrow B\}$,
+\item $|\{f:A \rightarrow B: f \mathrm{~est~une~injection~de~} A \mathrm{~dans~}B\}|$,
+\item $|\mathrm{Sym}\,A|$ o\`u $\mathrm{Sym}\,A$ est l'ensemble des permutations de $A$.
+\end{enumerate}
+\end{exo}
+
+\begin{enumerate}[(i)]
+	\item $a\cdot b$
+	\item $b^a$
+	\item voir cahier
+	\item $a!$
+\end{enumerate}
+
+%----------------------------------------------
+
+\begin{exo}
+Quels sont les ensembles $F$ non vides ayant la propri\'et\'e suivante:
+\begin{enumerate}[(i)]
+\item pour tout ensemble $X$, $|F^X|=1$?
+\item pour tout ensemble $Y$, $|Y^F|=1$?
+\end{enumerate}
+\end{exo}
+
+\begin{enumerate}[(i)]
+	\item $|F| = 1 $
+	\item Ensemble vide (mais pas possible par énoncé)
+\end{enumerate}
+
+%----------------------------------------------
+
+\begin{exo}
+Soient $f:A \rightarrow B$ et $g:B \rightarrow C$ deux fonctions. D\'emontrer:
+\begin{enumerate}[(i)]
+\item $g \circ f$ injective $\Rightarrow$ $f$ injective;
+\item $g \circ f$ surjective $\Rightarrow$ $g$ surjective;
+\item $g \circ f$ bijective $\Rightarrow$ ($f$ injective et $g$ surjective).
+\end{enumerate}
+\end{exo}
+
+\begin{enumerate}[(i)]
+	\item Si f non injective, deux éléments $a_{1}$ et $a_{2}$ différents de A vont être envoyés par f sur un élément b de B. De plus, ces deux éléments vont être envoyés par g o f sur un même élément c de C, car g ( f ($a_1$)) = g( b ) = c = g( b) = g ( f ( $a_2$))
+	\item On sait que $\forall c \in C , \exists a \in A$ tel que g o f (a) = c. 
+		On veut montrer que g est surjective. C'est à dire que $\forall c \in C, \exists b \in B$ tel que g (b) = c. 
+		Ceci est vérifié en prenant b = f(a).
+	\item Implication de (i) et (ii)
+\end{enumerate}
+
+%----------------------------------------------
+
+\begin{exo}
+Donner une preuve bijective de l'identit\'e de somme parall\`ele ${k \choose k} + {k+1 \choose k} + \cdots + {m \choose k} = {m+1 \choose k+1}$.
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo}
+Donner deux d\'emonstrations de
+$$
+\sum_{k=0}^n {n \choose k} = 2^n\ .
+$$
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo}
+Qu'obtient-on comme identit\'e sur les coefficients binomiaux en \'ecrivant
+$$
+(x+y)^{2n} = (x+y)^n(x+y)^n\ ?
+$$
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo}
+Qu'obtient-on en d\'erivant la formule du bin\^ome~?
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo}
+Trouver le nombre de solutions de l'\'equation $x + y + z + w = 15$, dans les naturels.
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo} 
+Combien l'\'equation
+$$
+x + y + z + t + u = 60
+$$
+poss\`ede-t-elle de solutions enti\`eres $(x,y,z,t,u)$ telles que
+$$
+x > 0\ ,\quad y \geqslant 9\ , \quad z > -2\ , \quad t \geqslant 0 \quad \textrm{ et }  \quad u > 10 \quad ?
+$$
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo} 
+Trouver le nombre de solutions de l'in\'equation
+$$
+x + y + z + t \leqslant 6
+$$
+%
+\begin{enumerate}[(i)]
+\item dans les naturels;
+\item dans les entiers $>0$;
+\item dans les entiers, avec comme contraintes suppl\'ementaires $x > 2$, $y > -2$, $z > 0$ et $t > -3$.
+\end{enumerate}
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo} 
+Avec les lettres du mot MISSISSIPPI, combien peut-on \'ecrire de mots diff\'erents de 11 lettres~?
+\end{exo}
+
+1 M 4 I 4 S 2 P
+	Mots de 11 lettres
+		(11!)/ ( (4!)*(4!)*(2!)*(1!)
+
+
+%----------------------------------------------
+
+\begin{exo} 
+Avec les lettres du mot 
+%
+\begin{center}
+H\,U\,M\,U\,H\,U\,M\,U\,N\,U\,K\,U\,N\,U\,K\,U\,A\,P\,U\,A\,A
+\end{center}
+(``poisson'' en hawa\"\i{}en), combien peut-on \'ecrire de mots diff\'erents de 21 lettres ne comprenant pas deux lettres U c\^ote \`a c\^ote~?
+\end{exo}
+
+Faire mots de 12 lettres sans U. Rajouter proba de foutre les U dans les 13 places qui restent pour faire des mots de 21 lettres. Donc, (13 9) (13 chouk 9).
+
+%----------------------------------------------
+
+\begin{exo} 
+Si $0 \leqslant m \leqslant n$, que vaut
+$$
+\sum_{k=m}^n {k \choose m}{n \choose k}\quad ?
+$$
+(Hint~: essayer une preuve bijective.)
+\end{exo}
+
+%----------------------------------------------
+
+\begin{exo} 
+Si on jette simultan\'ement $n$ d\`es identiques, combien de r\'esultats diff\'erents peut-on obtenir~? (Deux r\'esultats sont consid\'er\'es comme \'equivalents s'ils ont le m\^eme nombre de 1, le m\^eme nombre de 2, \ldots, le m\^eme nombre de 6.)
+\end{exo}
