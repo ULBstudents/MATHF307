@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=0.5]
+
+\begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5,
+  mytext/.style={text opacity=1,font=\large\bfseries}]
+
+\draw[fill=green, draw = black] (0,0) circle (5);
+\draw[fill=yellow, draw = black] (-1.5,0) circle (3);
+\draw[fill=blue, draw = black] (-1,0) circle (1.5);
+
+\node[mytext] at (0,4) (N) {N};
+\node[mytext] at (-3.8,0) (K) {K};
+\node[mytext] at (-1,0) (M) {M};
+\end{scope}
+\end{tikzpicture}
