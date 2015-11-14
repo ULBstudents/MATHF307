@@ -1,0 +1,24 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale = 0.6]
+\tikzstyle{every node}=[draw,circle,fill=black,minimum size=4pt,inner sep=0pt]
+\node (a1) at (0,0) [shape= circle, draw, fill = white] {};
+\node (a2) at (1,0) [shape= circle, draw, fill = white] {};
+\node (a3) at (2,1) [shape= circle, draw, fill = white] {};
+\node (a4) at (3,0) [shape= circle, draw, fill = white] {};
+\node (a5) at (4,0) [shape= circle, draw, fill = white] {};
+\node (a6) at (2,-1) [shape= circle, draw, fill = white] {};
+\draw (a1) -- (a2) -- (a3) -- (a4) -- (a5);
+\draw (a2) -- (a6) -- (a4);
+
+\node (b1) at (7,-1) [shape= circle, draw, fill = white] {};
+\node (b2) at (9,-1) [shape= circle, draw, fill = white] {};
+%\node (b3) at (10,0) [shape= circle, draw, fill = white] {};
+\node (b4) at (9,1) [shape= circle, draw, fill = white] {};
+\node (b5) at (7,1) [shape= circle, draw, fill = white] {};
+\draw (b1) -- (b2); -- (b3) -- 
+\draw (b4) -- (b5) -- (b1) -- (b4) -- (b2) -- (b5);
+\end{tikzpicture}
+\caption{}
+\label{fig:arbrecouvrant}
+\end{figure}
