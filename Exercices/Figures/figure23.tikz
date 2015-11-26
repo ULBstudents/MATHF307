@@ -1,0 +1,26 @@
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}[scale=2]
+   		\node[draw=none,minimum size=3cm,regular polygon,regular polygon sides=7] (a) {};
+
+		\foreach \x in {1,2,...,7}
+			\draw[fill=white,inner sep=0pt, minimum size=5pt] (a.corner \x) circle (1.5pt);
+		  
+		\draw (a.corner 1) -- (a.corner 2) -- (a.corner 3) -- (a.corner 4) -- (a.corner 5) -- (a.corner 6) -- (a.corner 7) -- (a.corner 1);
+		\draw (a.corner 2) -- (a.corner 7) -- (a.corner 5) -- (a.corner 3) -- (a.corner 1) -- (a.corner 6) -- (a.corner 4) -- (a.corner 2) ;
+
+	\end{tikzpicture}
+\end{minipage}
+\hspace{1.5cm}
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}[scale=2]
+		\node[draw=none,minimum size=3cm,regular polygon,regular polygon sides=7] (a) {};
+
+		\foreach \x in {1,2,...,7}
+  			\draw[fill=white,inner sep=0pt, minimum size=5pt] (a.corner \x) circle (1.5pt);
+
+		\draw (a.corner 1) -- (a.corner 5) -- (a.corner 2) -- (a.corner 6) -- (a.corner 3) -- (a.corner 7) -- (a.corner 4) -- (a.corner 1);
+		\draw (a.corner 1) -- (a.corner 2) -- (a.corner 3) -- (a.corner 4) -- (a.corner 5) -- (a.corner 6) -- (a.corner 7) -- (a.corner 1);
+
+
+	\end{tikzpicture}
+\end{minipage}

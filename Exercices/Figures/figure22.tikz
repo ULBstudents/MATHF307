@@ -1,0 +1,34 @@
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}[scale=0.6]
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (v6) at (0,0) {};
+		\node (v7) at (1.5,0) {};
+		\node (v5) at (0,-1.5) {};
+		\node (v1) at (-1,1) {};
+		\node (v2) at (2.5,1) {};
+		\node (v4) at (-1,-2.5) {};
+		\node (v3) at (2.5,-2.5) {};
+		\draw (v1) -- (v2) -- (v2) -- (v3) -- (v3) -- (v4) -- (v4) -- (-1,1);
+		\draw (v5) -- (v6) -- (v6) -- (v7) -- (v7) -- (v3) -- (v3) -- (v5) -- (v6) -- (v1);
+		\draw (v2) -- (v7);
+	\end{tikzpicture}
+\end{minipage}
+\hspace{1.5cm}
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}[scale=0.6];
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (v1) at (-0.5,0.25) {};
+		\node (v2) at (-1.5,2) {};
+		\node (v5) at (-1.5,-1.5) {};
+		\node (v6) at (1,1) {};
+		\node (v3) at (2,2) {};
+		\node (v7) at (1,-0.5) {};
+		\node (v4) at (2,-1.5) {};
+		\draw (v2) -- (v3) -- (v4) -- (v5) -- (v2) -- (v1) -- (v6) -- (v7) -- (v1) -- (v5);
+		\draw (v3) -- (v6) -- (v7) -- (v4);
+
+	\end{tikzpicture}
+\end{minipage}
