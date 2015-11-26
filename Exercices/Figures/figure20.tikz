@@ -1,0 +1,107 @@
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a00) at (0,0) {};
+        \node (leftup) at (-1,1) {};
+        \node (leftdown) at (-1,-1) {};
+        \node (a01) at (1,0) {};
+        \node (rightup) at (2,1) {};
+        \node (rightdown) at (2,-1) {};
+
+		\draw (a00) -- (leftup);
+		\draw (a00) -- (leftdown);
+		\draw (a00) -- (a01);
+		\draw (a01) -- (rightup);
+		\draw (a01) -- (rightdown);
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a0) at (0,0) {};
+        \node (a1) at (1,0) {};
+        \node (a0side) at (-1,0) {};
+        \node (a0up) at (0,1) {};
+        \node (a0down) at (0,-1) {};
+        \node (a1side) at (2,0) {};
+        \node (a1up) at (1,1) {};
+        \node (a1down) at (1,-1) {};
+
+		\draw (a0side) -- (a0) -- (a1) -- (a1side);
+		\draw (a0up) -- (a0) -- (a0down);
+		\draw (a1up) -- (a1) -- (a1down);
+
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a00) at (0,0) {};
+		\node (a0up) at (0,1) {};
+		\node (a0down) at (0,-1) {};
+		\node (a0ddown) at (0,-2) {};
+		\node (a0left) at (-1,1) {};
+		\node (a0right) at (1,1) {};
+
+		\draw (a0up) -- (a00) -- (a0down) -- (a0ddown);
+		\draw (a00) -- (a0left);
+		\draw (a00) -- (a0right);
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.2\linewidth}
+	\hspace{-1cm}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a00) at (0,0) {};
+        \node (a0up) at (0,1) {};
+        \node (a0down) at (0,-1) {};
+        \node (a0left) at (-1,0) {};
+        \node (a0right) at (1,0) {};
+        \node (a0rright) at (2,0) {};
+
+		\draw (a0left) -- (a00) -- (a0right) -- (a0rright);
+		\draw (a0up) -- (a00) -- (a0down);
+		\draw (a0up) -- (a0left) -- (a0down);
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a00) at (0,0) {};
+		\node (a0up) at (0,1) {};
+		\node (a0down) at (0,-1) {};
+		\node (a0ddown) at (0,-2) {};
+		\node (a0left) at (-1,-1) {};
+		\node (a0right) at (1,0) {};
+
+		\draw (a0up) -- (a00) -- (a0down) -- (a0ddown);
+		\draw (a00) -- (a0left);
+		\draw (a0down) -- (a0right);
+	\end{tikzpicture}
+\end{minipage}
+
+\begin{minipage}[t]{0.2\linewidth}
+   \begin{tikzpicture}
+		\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+        \node (a00) at (0,0) {};
+		\node (a0left) at (-1,0) {};
+		\node (a0right) at (1,0) {};
+		\node (a0rright) at (2,0) {};
+		\node (a0upleft) at (0,1) {};
+		\node (a0upright) at (2,1) {};
+
+		\draw (a0left) -- (a00) -- (a0right) -- (a0rright);
+		\draw (a0upleft) -- (a0right) -- (a0upright);
+	\end{tikzpicture}
+\end{minipage}

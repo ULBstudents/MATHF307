@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}
+
+\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+\node (a00) at (0,0) {};
+\node (aleft) at (-1,0) {};
+\node (aabove) at (0,1) {};
+\node (adown) at (0,-1) {};
+\node (aright) at (1,0) {};
+\node (aright2) at (2,0) {};
+
+\draw (a00) -- (aleft);
+\draw (a00) -- (aright);
+\draw (a00) -- (adown);
+\draw (a00) -- (aabove);
+\draw (aright) -- (aright2);
+\end{tikzpicture}
