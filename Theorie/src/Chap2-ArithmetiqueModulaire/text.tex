@@ -1,2 +1,149 @@
 
 \section{Arithmétique Modulaire}
+
+\subsection{Les entiers et la division euclidienne}
+
+L'ensemble des entiers est noté $\Z$, il contient les entiers naturels ($\N$) et leur opposé. Il est naturellement muni de 2 opérations qui satisfont les propriétés suivantes:
+
+\begin{enumerate}
+\item \textbf{L'addition} +: $\Z \times \Z \rightarrow \Z : (a,b) \rightarrow a+b $\\
+Propriétés: 
+	\begin{enumerate}
+		\item \textbf{Associativité} $(a+b)+c = a+(b+c)$, $\forall a,b,c \in \Z$
+		\item \textbf{Élément neutre} $0 \in \Z$: $a+0=a=0+a$, $\forall a \in \Z$
+		\item \textbf{Opposé} $\forall a \in \Z: \exists -a \in \Z$ tel que $a+(-a) =0=(-a)+a$
+		\item \textbf{Commutativité} $\forall a,b \in \Z: a+b = b+a$	\\
+	\end{enumerate}
+On dit que $(\Z,+)$ est un groupe (a,b,c) commutatif (d).\\
+
+\item \textbf{La multiplication} $\cdot$: $\Z \times \Z \rightarrow \Z : (a,b) \rightarrow a \cdot b$ \\
+Propriétés:
+	\begin{enumerate}
+		\item \textbf{Associativité} $a\cdot(b\cdot c)=(a\cdot b)\cdot c$
+		\item \textbf{Distributivité par rapport à l'addition} \\
+			\begin{minipage}{.2\textwidth}
+				\hspace{0.5cm}$a\cdot (b+c) = ab + ac$\\
+
+				\hspace{0.5cm}$(a+b)\cdot c = ac + bc$\\
+			\end{minipage}
+			\begin{minipage}{.2\textwidth}
+				\hspace{1cm}$\forall a,b,c \in \Z$\\
+			\end{minipage}
+		\item \textbf{Commutativité} $a \cdot b = b\cdot a, \forall a,b \in \Z$
+		\item \textbf{Élément neutre} $1 \in \Z$: $1 \cdot a=a=a \cdot 1$, $\forall a \in \Z$
+		\item $\forall a,b,c \in \Z: a\cdot c = a \cdot b \Rightarrow c=b$ \\
+	\end{enumerate}
+On dit que $(\Z,+,\cdot)$ est un anneau ($(\Z,+)$ est un groupe commutatif et $\cdot$ satisfait a et b) unital (d), commutatif (c) et intègre (e).\\
+\end{enumerate}
+
+On a aussi sur $\Z$ une relation d'ordre $\leq$ telle que:
+
+\begin{enumerate}
+	\item $\leq$ est un ordre total
+	\item $\forall a,b,c \in \Z$, $a\leq b \Rightarrow a+c \leq b+c$
+	\item $\forall a,b,c \in \Z$, $a\leq b$, $c\geq 0 \Rightarrow ac\leq bc$\\
+\end{enumerate}
+
+La valeur absolue est une application\\
+
+\[ |\;|: \Z \rightarrow \N : a \rightarrow
+  \begin{cases}
+    a   & \quad \text{si } a\geq 0 \\
+    -a  & \quad \text{si } a\leq 0 \\
+  \end{cases}
+\]
+
+telle que: 
+
+	\begin{enumerate}
+		\item $\forall a \in \Z: |a| = 0$ ssi $a=0$
+		\item $\forall a,b \in \Z: |a\cdot b| = |a| \cdot |b|$\\
+	\end{enumerate}
+
+Remarque: L'équation $ax = b, a,b\in \Z$ n'a pas toujours de solution dans $\Z$.\\
+
+\begin{defn}
+Soit $a,b \in \Z$, on dit que a divise b, et on note $a|b$, si $\exists c \in \Z$ tel que $ac=b$. On dit aussi que b est un multiple de a.
+\end{defn}
+
+\begin{prop}
+| est une relation:
+
+\begin{enumerate}
+	\item \textbf{Réflexive} $\forall a \in \Z$: $a|a$
+	\item \textbf{Transitive} $\forall a,b,c \in \Z$: $a|b$ et $b|c \Rightarrow a|c$
+	\item \textbf{Anti-symétrique} $\forall a,b \in \Z$: $a|b$ et $b|a \Rightarrow a=\pm b$
+\end{enumerate}
+\end{prop}
+
+\begin{thrm}[Division Euclidienne]
+$\forall a,b \in \Z$, $b \neq 0$, $\exists$ des entiers uniques q et r tels que $a= bq + r$ et $0 \leq r < |b|$
+\end{thrm}
+
+<PAGES 3 À 6>
+
+\subsection{Groupes, anneaux et entiers modulo n}
+
+<PAGES 7 À 18>
+
+\subsubsection{Relation de congruence}
+
+\begin{defn}
+Soient $a,b,k \in \Z, k \neq 0,1,-1$. On dit que a est congru à b modulo k et on note $a \equiv b(mod\;k)$ si $a-b \in k\Z$ (ou encore si $\overline{a} = \overline{b}$ dans $\Z/k\Z$). \\
+\end{defn}
+
+Propriétés:
+
+\begin{enumerate}
+\item La congruence modulo k est une relation d'équivalence.
+	\begin{enumerate}[-]
+	\item \textbf{Réflexivité} $\forall a \in \Z: a \equiv a(mod\;k)$
+	\item \textbf{Symétrie} $\forall a,b \in \Z: a \equiv b(mod\;k) \Leftrightarrow b \equiv a(mod\;k)$
+	\item \textbf{Transitivité} $\forall a,b,c \in \Z:$
+				$ \left\{\begin{matrix}
+				a \equiv b(mod\;k)\\ 
+				b \equiv c(mod\;k)
+				\end{matrix}\right.$ $\quad \Rightarrow a\equiv c(mod\;k)$
+	\end{enumerate}
+
+\item $\forall a_1,b_1,a_2,b_2,k \in \Z, k\neq 0,1,-1$. \\
+Si $a_1 \equiv a_2 (mod\;k)$ et $b_1 \equiv b_2 (mod\;k)$, alors $\left\{\begin{matrix}
+					a_1 + b_1 \equiv a_2 + b_2 (mod\;k)\\ 
+					a_1 b_1 \equiv a_2 b_2 (mod\;k)
+					\end{matrix}\right.$\\
+En conséquence: $\forall c\in \Z: a_1 c \equiv a_2 c(mod\;k)$
+\end{enumerate}
+
+\begin{exmp}
+$6 \equiv 2(mod\;4)$\\
+$7 \equiv 0(mod\;7)$
+\end{exmp}
+
+\subsection{Cryptologie: Le système RSA}
+
+Pour comprendre le système de cryptage RSA, on aura besoin d'un résultat technique.
+
+\begin{lemme}
+$\forall z \in \N: (z+1)^p \equiv n^p + 1(mod p)$ si p est un nombre premier.
+\end{lemme}
+
+\begin{thrm}[Le petit théorème de Fermat]
+Soit $p\in \N$ un nombre premier.\\
+Soit $a\in \N$ un nombre tel que $p\cancel{\;|\;}a$ (p ne divise pas a).\\
+Alors, $a^{p-1} \equiv 1(mod\;p)$\\
+\end{thrm}
+
+\begin{demo}
+Nous allons procéder par plusieurs étapes.\\
+
+\begin{enumerate}
+	\item Montrons par récurrence que $\forall a \in \N: a^p \equiv a(mod\;p)$.\\
+	a = 1 : $1^p = 1(mod\;p)$\\
+	Supposons vrai pour $a \in \N$ et montrons pour $a+1$.\\
+	Par le lemme, on sait que $(a+1)^p \equiv a^p + 1(mod\;p)$. Alors, par hypothèse de récurrence: $(a+1)^p \equiv a + 1(mod\;p)$.\\
+	\item On va maintenant utiliser $p\cancel{\;|\;}a$.\\
+	On a: $\forall a \in \N: a^p \equiv a(mod\;p)$.\\
+	$\Rightarrow$ Dans $\Z/p\Z: \overline{ap}=\overline{a}$ et comme $p\cancel{\;|\;}a: \exists \overline{b} \in \Z/p\Z$ un inverse de $\overline{a}$.\\
+
+\end{enumerate}
+\end{demo}
