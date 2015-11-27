@@ -20,6 +20,20 @@ $$
 $$
 \end{exo}
 
+Soit $M_n$ la matrice de dimension $n\times n$ de l'exercice.\\
+
+Si on calcule le déterminant selon la première ligne, on a 
+
+$$|M_n| = \underbrace{1\cdot (-1)^{1+1} \cdot |M_{n-1}|}_{\text{En enlevant première ligne, première colonne}} + \underbrace{(-1) \cdot (-1)^{1+2} \cdot |X|}_{\text{En enlevant première ligne, deuxième colonne}} = |M_{n-1}| + |X|$$. \\
+
+(X étant la sous-matrice de $M_n$ à laquelle on a enlevé la première ligne et première colonne (DESSIN). Nous pouvons voir que pour calculer le déterminant de X, en appliquant la même méthode on a $1 \cdot (-1)^{1+1} \cdot |M_{n-2}| = |M_{n-2}|$.\\
+
+Maintenant qu'on a le déterminant de X, nous pouvons le remplacer dans la première formule:\\
+
+$|M_{n}| = |M_{n-1}| + |M_{n-2}|$\\
+
+On retombe sur Fibo.
+
 \begin{exo} 
 Que vaut
 $$
@@ -35,13 +49,6 @@ $$
 o\`u $\varphi := \frac{1+\sqrt{5}}{2}$ est le {\DEF nombre d'or}.
 \end{exo}
 
-\begin{exo} 
-Prouver que, pour tout entier $n \geqslant 3$,
-$$
-F_n > \varphi^{n-2}
-$$
-\end{exo}
-
 \begin{exo}
 R\'esoudre les r\'ecurrences 
 %
@@ -55,8 +62,6 @@ R\'esoudre les r\'ecurrences
 \item $a_n = 6a_{n-1} - 9a_{n-2}$ pour $n \geqslant 2$,\hfill
  $a_0 = 1$, \quad $a_1 = 9$
 
-\item $a_n = 4a_{n-1} - 3a_{n-2} + 2^n$ pour $n \geqslant 2$,\hfill
-$a_0 = 1$, \quad $a_1 = 11$
 \end{enumerate}
 \end{exo}
 
@@ -64,18 +69,12 @@ $a_0 = 1$, \quad $a_1 = 11$
 R\'esoudre les r\'ecurrences 
 %
 \begin{enumerate}[(i)]
-\item $a_{n+2} = 3 a_{n+1} + 4 a_{n}$ pour $n \geqslant 0$,\hfill
-      $a_0 = 1$, \quad $a_1 = 3$
-
-\item $a_{n+3} - 6 a_{n+2} + 11 a_{n+1} - 6 a_{n}=0$ pour $n \geqslant 0$,\hfill
-      $a_0 = 2$, \quad $a_1 = 0$, \quad $a_2 = -2$
 
 \item $a_{n+3} = 3 a_{n+1} - 2 a_{n}$ pour $n \geqslant 0$,\hfill
       $a_0 = 1$, \quad $a_1 = 0$, \quad $a_2 = 0$
       
 \item $a_{n+3} + 3 a_{n+2} + 3 a_{n+1} + a_n = 0$
 
-\item $a_{n+4} + 4 a_{n} = 0$     
 \end{enumerate}
 \end{exo}
 
@@ -101,24 +100,7 @@ R\'esoudre les r\'ecurrences
       
 \item $a_{n+2} - 6 a_{n+1} + 9 a_{n} = 2^n + n$ pour $n \geqslant 0$
 
-\item $n a_n = (n+3) a_{n-1} + n^2 + n$ pour $n \geqslant 1$            
 \end{enumerate}
-\end{exo}
-
-\begin{exo}
-Que vaut le d\'eterminant de la matrice $n \times n$
-$$
-\left( 
-\begin{array}{rrrrrrrr}
-2 &1 &0  &0  &\cdots &0 &0 &0\\
-1 & 2 &1 &0  &\cdots &0 &0 &0\\
-0 & 1 &2  &1 &\cdots &0 &0 &0\\
-\vdots & \vdots & \vdots & \vdots && \vdots & \vdots &\vdots\\
-0 & 0 & 0 & 0 & \cdots & 1 &2 &1\\
-0 & 0 & 0 & 0 & \cdots & 0 &1 &2\\
-\end{array}
-\right) \qquad ?
-$$
 \end{exo}
 
 \begin{exo}
@@ -131,18 +113,22 @@ Avec l'alphabet $\{A,B,C\}$, combien peut-on \'ecrire de mots de $n$ lettres dan
 \end{enumerate}
 \end{exo}
 
+\begin{enumerate}[(i)]
+\item
+
+\item $a_n$ mots qui finissent par A, $b_n$ mots qui finissent par B, $c_n$ mots qui finissent par C.
+
+\item 
+\end{enumerate}
+
 \begin{exo}
 Donner le comportement asymptotique des suites $T(n)$ pour chacune des r\'ecurrences suivantes~:
 %
 \begin{enumerate}[(i)]
 \item $T(n) = 2T(\lceil n/2 \rceil) + n^2$
-\item $T(n) = T(\lfloor 9n/10 \rfloor) + n$
 \item $T(n) = 16T(\lceil n/4 \rceil) + n^2$
-\item $T(n) = 7 T(\lceil n/3 \rceil) + n^2$
 \item $T(n) = 7 T(\lceil n/2 \rceil) + n^2$
-\item $T(n) = 2 T(\lfloor n/4 \rfloor) + \sqrt{n}$
 \item $T(n) = T(n-1) + n$
-\item $T(n) = T(\lfloor \sqrt{n} \rfloor) + 1$
 \end{enumerate}
 \end{exo}
 
@@ -163,42 +149,4 @@ Combien y a-t-il de matrices $2 \times n$ \`a coefficients entiers v\'erifiant l
 \item Dans chacune des deux lignes, chacun des entiers $1$, $2$, \ldots, $n$ appara\^\i{}t une et une seule fois.
 \item Dans chacune des $n$ colonnes, les deux coefficients diff\`erent d'au plus $1$.
 \end{itemize}
-\end{exo}
-
-\begin{exo} (Examen ao\^ut 2011.)
-Soient $x$ et $y$ deux naturels de $2n$ bits, c'est-\`a-dire dont l'\'ecriture binaire occupe au plus $2n$ bits. %Supposons que $x = \sum_{i=0}^{2n-1} x_i 2^i$ et $y = \sum_{i=0}^{2n-1} y_i 2^i$ sont les \'ecritures binaires de $x$ et $y$. Cela peut s'\'ecrire aussi $x = (x_{2n-1}x_{2n-2}\cdots{}x_1x_0)_2$ et $y =  (y_{2n-1}y_{2n-2}\cdots{}y_1y_0)_2$. Posons maintenant $X_0 := (x_{n-1}x_{n-2}\cdots{}x_1x_0)_2$, $X_1 := (x_{2n-1}x_{2n-2}\cdots{}x_{n+1}x_n)_2$, $Y_0 := (y_{n-1}y_{n-2}\cdots{}y_1y_0)_2$ et $Y_1 := (y_{2n-1}y_{2n-2}\cdots{}y_{n+1}y_n)_2$. Donc $X_0$, $X_1$, $Y_0$ et $Y_1$ sont quatre naturels de $n$ bits tels que $x = 2^n X_1 + X_0$ et $y = 2^n Y_1 + Y_0$.\medskip
-Soient $X_0$, $X_1$, $Y_0$ et $Y_1$ quatre naturels de $n$ bits tels que $x = 2^n X_1 + X_0$ et $y = 2^n Y_1 + Y_0$.\medskip
-
-\begin{enumerate}[a)]
-\item V\'erifier que
-%
-$$
-xy = (2^{2n} + 2^n) X_1 Y_1 + 2^n (X_1 - X_0)(Y_0 - Y_1) + (2^n + 1)X_0Y_0\ .
-$$
-
-\item Consid\'erons l'algorithme r\'ecursif qui multiplie les naturels $x$ et $y$ en appliquant l'\'equation ci-dessus. Soit $f(n)$ le nombre d'op\'erations \underline{simples} (additions ou soustractions de bits, d\'ecalages, comparaisons\ldots{} etc) n\'ecessaires pour le calcul r\'ecursif du produit $xy$ par le biais de cette \'equation. Ecrire une relation de r\'ecurrence du type ``diviser pour r\'egner'' pour $f(n)$. (Il n'est pas n\'ecessaire de calculer avec pr\'ecision le nombre d'op\'erations simples requises, calculer ce nombre \`a une constante pr\`es est suffisant.)
-
-\item Sur base de cette r\'ecurrence, d\'eterminer le comportement asymptotique de $f(n)$.
-\end{enumerate}
-\end{exo}
-
-\begin{exo} (Difficile.)
-R\'esoudre la r\'ecurrence (discuter en fonction de $a_0$)
-$$
-a_n = a_{n-1}^2 + 2 \quad \forall n \geqslant 1
-$$
-(Hint~: poser $a_n = b_n + 1/b_n$.)
-\end{exo}
-
-\begin{exo} (Difficile.)
-Montrer que la solution de la r\'ecurrence 
-$$
-\begin{array}{l}
-a_n = \sin (a_{n-1}) \quad \forall n \geqslant 1\\
-a_0 = 1
-\end{array}
-$$
-v\'erifie $\lim_{n \to \infty} a_n = 0$ et $a_n = O(1/\sqrt{n})$.
-
-(Hint~: poser $b_n = 1/a_{n}$.)
 \end{exo}
