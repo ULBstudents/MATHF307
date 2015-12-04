@@ -6,20 +6,15 @@
 \colorlet{color1}{red!50!white}
 \colorlet{color0}{white}
 
-\begin{figure}[!h]
-\centering
-
-  \begin{tikzpicture}[scale=0.5]
-      \foreach \code [count=\i from=1] in {110,010,000,001,011,111,101,100} {
-        \node at (\i*45:5.5) {\code}; % Label each code
-        % Draw sectors from outside to inside
-        \foreach \r in  {5,3,1} {
-           \StrRight{\code}{1}[\bit]         % Get the rightmost bit
-           \StrGobbleRight{\code}{1}[\code]  % Get the remaining left bits
-           \xdef\code{\code}  % Set them for the next iteration
-           \sector{0,0}{\r}{45*\i}{45*\i-45}{color\bit, draw=black, thick}
-         }
-      }
-  \end{tikzpicture}
-  
-\end{figure}
+\begin{tikzpicture}[scale=0.5]
+    \foreach \code [count=\i from=1] in {110,010,000,001,011,111,101,100} {
+      \node at (\i*45:5.5) {\code}; % Label each code
+      % Draw sectors from outside to inside
+      \foreach \r in  {5,3,1} {
+         \StrRight{\code}{1}[\bit]         % Get the rightmost bit
+         \StrGobbleRight{\code}{1}[\code]  % Get the remaining left bits
+         \xdef\code{\code}  % Set them for the next iteration
+         \sector{0,0}{\r}{45*\i}{45*\i-45}{color\bit, draw=black, thick}
+       }
+    }
+\end{tikzpicture}

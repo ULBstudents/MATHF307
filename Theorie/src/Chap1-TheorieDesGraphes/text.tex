@@ -115,8 +115,7 @@ Dans un arbre, les sommets de degré 1 sont appellés les feuilles.\\
 \end{defn}
 
 \begin{exmp}
-% Cheating a bit putting the image out of the Example. 
-% For some weird reason, the image took precedence to the title.
+
 \end{exmp}
 
 \input{Chap1-TheorieDesGraphes/Figures/TreeExample.tikz}
@@ -180,8 +179,7 @@ Un arbre à poids est un couple $(\Gamma,w)$ où $\Gamma$ est un arbre w est une
 \end{defn}
 
 \begin{exmp}
-% Cheating a bit putting the image out of the Example. 
-% For some weird reason, the image took precedence to the title.
+
 \end{exmp}
 
 \input{Chap1-TheorieDesGraphes/Figures/WeightedGraph.tikz}
@@ -197,8 +195,7 @@ Deux graphes $\Gamma_{1} = (V_{1},E_{1},\gamma_{1})$ et $\Gamma_{2} = (V_{2},E_{
 Deux graphes isomorphes ont les mêmes propriétés.
 
 \begin{exmp}
-% Cheating a bit putting the image out of the Example. 
-% For some weird reason, the image took precedence to the title.
+
 \end{exmp}
 
 \input{Chap1-TheorieDesGraphes/Figures/IsomorphGraphs.tikz}
@@ -214,8 +211,7 @@ Hamilton propose le problème suivant: Considérons le graphe du dodécaèdre. E
 L'exemple suivant montre un chemin qui réponds à ce problème. \\
 
 \begin{exmp}
-% Cheating a bit putting the image out of the Example. 
-% For some weird reason, the image took precedence to the title.
+
 \end{exmp}
 
 \input{Chap1-TheorieDesGraphes/Figures/HamiltonianGraphAndPath.tikz}
@@ -231,8 +227,10 @@ Un graphe $\Gamma = (V,E)$ est biparti si on peu écrire $V=B \cup W$ avec $B \c
 \end{defn}
 
 \begin{exmp}
-<DESSIN GRAPHE BIPARTI PAGE 12>
+
 \end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/GrapheBiparti.tikz}
 
 \begin{lemme}
 Si $\Gamma$ est biparti, alors $\Gamma$ ne contient pas de cycle simple de longueur impaire.
@@ -247,8 +245,10 @@ Pour être hamiltonien, il doit admettre un cycle simple passant par tous ses so
 \end{demo}
 
 \begin{exmp}
-<DESSIN GRAPHE CARRE PAGE 12>
+
 \end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/SquareBiparti.tikz}
 
 % COURS 3
 
@@ -281,19 +281,26 @@ $\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},
 
 \end{demo}
 
+\newpage
 
-Illustration: Code de Gray
+\textbf{Illustration: Code de Gray}
 
 Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires de longueur n tels que 2 mots adjacents ne diffèrent qu'en une seule position.\\
 
 \begin{exmp}
+Le code de Grey ci-dessous provient d'un cycle hamiltonien sur le graphe du cube:\\
 \end{exmp}
 
-\input{Chap1-TheorieDesGraphes/Figures/GrayCode.tikz}
-
-Le code de Grey ci-dessus provient d'un cycles hamiltonien sur le graphe du.\\
-
-<DESSIN CUBE ET CYCLE>\\
+\begin{figure}[!tbph]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \input{Chap1-TheorieDesGraphes/Figures/GrayCode.tikz}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \input{Chap1-TheorieDesGraphes/Figures/GrayCube.tikz}
+  \end{minipage}
+\end{figure}
 
 Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n comme suit:
 
@@ -304,6 +311,8 @@ Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n
 
 %----------------------------------------------------
 
+\newpage
+
 \subsection{Graphes Eulériens}
 
 \begin{defn}
@@ -312,7 +321,7 @@ Un graphe est Eulérien s'il contient un cycle Eulérien.\\
 \end{defn}
 
 \begin{exmp}
-SOME EXAMPLE\\
+<EXEMPLE PAGE 15>\\
 \end{exmp}
 
 \begin{prop}

@@ -1,0 +1,28 @@
+\begin{figure}[!h]
+\centering
+	\begin{tikzpicture}
+
+	\tikzstyle{every node}=[draw,minimum size=10pt,inner sep=2pt]
+	\tikzstyle{every label}=[position=above]
+	\tikzstyle{frame_blue} = [line width=2pt, draw=blue, inner sep=0.2em, minimum width=1cm,minimum height=2cm]
+	\tikzstyle{frame_red} = [line width=2pt, draw=red, inner sep=0.2em, minimum width=1cm,minimum height=2cm]
+
+	\node[circle,fill=red] (r1) at (1,-0.5) { };
+	\node[circle,fill=red] (r2) at (1,-1.5) { };
+	\node[circle,fill=red] (r3) at (1,0.5) { };
+	\node[circle,fill=red] (r4) at (1,1.5) { };
+	\node[circle,fill=blue] (b1) at (3,0.5) { };
+	\node[circle,fill=blue] (b2) at (3,-0.5) { };
+
+	\draw  (r4) edge (b1);
+	\draw  (b1) edge (r3);
+	\draw  (r3) edge (b2);
+	\draw  (b2) edge (r1);
+	\draw  (r2) edge (b1);
+
+	\node[frame_red,fit=(r1)(r2)(r3)(r4)]{ };
+	\node[frame_blue,fit=(b1)(b2)]{ };
+
+	\end{tikzpicture}
+\caption{B en rouge, W en bleu}
+\end{figure}

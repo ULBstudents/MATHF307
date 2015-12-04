@@ -124,7 +124,7 @@ $7 \equiv 0(mod\;7)$
 Pour comprendre le système de cryptage RSA, on aura besoin d'un résultat technique.
 
 \begin{lemme}
-$\forall z \in \N: (z+1)^p \equiv n^p + 1(mod p)$ si p est un nombre premier.
+$\forall z \in \N: (z+1)^p \equiv n^p + 1(mod\;p)$ si p est un nombre premier.
 \end{lemme}
 
 \begin{thrm}[Le petit théorème de Fermat]
@@ -144,6 +144,37 @@ Nous allons procéder par plusieurs étapes.\\
 	\item On va maintenant utiliser $p\cancel{\;|\;}a$.\\
 	On a: $\forall a \in \N: a^p \equiv a(mod\;p)$.\\
 	$\Rightarrow$ Dans $\Z/p\Z: \overline{ap}=\overline{a}$ et comme $p\cancel{\;|\;}a: \exists \overline{b} \in \Z/p\Z$ un inverse de $\overline{a}$.\\
+	$\Rightarrow \overline{b}\overline{a^p} = \overline{b}\overline{a}$\\
+	$\Rightarrow \overline{b}\overline{a}^p = \overline{1}$\\
+	$\Rightarrow \overline{a}^{p-1} = \overline{1} \Leftrightarrow a^{p-1} \equiv 1(mod\;p)$\\ 
 
 \end{enumerate}
 \end{demo}
+
+\begin{demo} [du Lemme]
+<WHOLE DEMO>
+\end{demo}
+
+\subsubsection{Fonctionnement des clés de chiffrement RSA}
+
+2 personnes (A et B) veulent communiquer de manière sûre entre elles.\\
+
+A choisit 2 nombres premiers p et q $\in \N$ appelés clé privée. A calcule:\\
+
+\begin{enumerate}
+\item $N = pq$
+\item $O(N) = (p-1)(q-1)$
+\item $e \in \Z$ tel que pgcd(e, O(N)) = 1
+\end{enumerate}
+
+appelé l'exposant de chiffrement.\\
+
+O(N) et e sont premiers entre eux $\Rightarrow \exists 0 < s < O(N): es \equiv 1(mod\;O(N))$, c'est à dire que $\overline{s}$ est l'inverse de $\overline{e}$ dans $\Z/O(N)\Z$. \textbf{s est gardé secret}. \\
+
+A publie les nombres (N,e) appelés la clé publique.\\
+
+B souhaite envoyer un message à A. Dans le système RSA, la taille du message est $0<M<N$.\\
+
+B utilise la clé publique et envoie le message chiffré: $\tilde{M} = M^e (mod\;N)$\\
+
+Pour déchiffrer le message, A utilise s et obtient: $\tilde{M}^s = M^{es}(mod\;N) = M(mod\;N)$ (par le théorème suivant)\\
