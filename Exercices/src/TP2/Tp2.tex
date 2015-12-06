@@ -6,7 +6,7 @@ Consid\'erez la grille $n \times n$, le graphe obtenu selon la Figure~\ref{fig:g
 D\'emontrez que $n$ est pair si et seulement si le graphe est hamiltonien.
 \end{exo}
 
-\input{../Figures/Grille.tikz}
+\input{Figures/Grille.tikz}
 
 Nous cherchons à prouver que tout graphe du style de la figure \ref{fig:grille} avec un n pair est un graphe hamiltonien. C'est à dire n pair $\Leftrightarrow$ graphe hamiltonien. \\
 
@@ -14,24 +14,44 @@ $\Rightarrow$ \\
 
 $\Leftarrow$ \\
 
+%-----------------------------------------------------------------
+
 \begin{exo}
 Prouvez que pour tout $n \geq 3$, le graphe complet $K_n$ poss\`ede exactement $\frac{1}{2}(n-1)!$ cycles hamiltoniens.
 \end{exo}
+
+%-----------------------------------------------------------------
 
 \begin{exo}
 Combien d'arbres couvrants poss\`edent les deux graphes de la Figure~\ref{fig:arbrecouvrant}?
 \end{exo}
 
-\input{../Figures/ArbreCouvrant.tikz}
+\input{Figures/ArbreCouvrant.tikz}
+
+\textbf{Graphe de gauche:} Il existe 4 arbres couvrants\\
+
+\begin{figure}[!h]
+\centering
+\scalebox{.825}{\input{Figures/Exo11.tikz}}
+\end{figure}
+
+\textbf{Graphe de droite:} Il existe 40 arbres couvrants. Trop nombreux pour que je les dessine tous.\\
+
+
+%-----------------------------------------------------------------
 
 \begin{exo}
 Montrez que tous les alcools $C_nH_{2n+1}OH$ sont des mol\'ecules dont le graphe est un arbre, en sachant que les valences de $C, O$ et de $H$ sont respectivement $4, 2, 1$.
 \end{exo}
 
+%-----------------------------------------------------------------
+
 \begin{exo}
 D\'emontrez que si un graphe hamiltonien $G = (V,E)$ est biparti selon la bipartition $V = A \cup B$, alors $|A|= |B|$. En d\'eduire que $K_{n,m}$, le graphe biparti complet, est hamiltonien si et seulement si $m=n \geq 2$.
 
 \end{exo}
+
+%-----------------------------------------------------------------
 
 \begin{exo}
 Pour chaque graphe de la Figure~\ref{fig:graphes}, d\'eterminez si 
@@ -42,6 +62,6 @@ Pour chaque graphe de la Figure~\ref{fig:graphes}, d\'eterminez si
 \end{enumerate}
 \end{exo}
 
-\input{../Figures/TrioGraphes.tikz}
+\input{Figures/TrioGraphes.tikz}
 
-\thispagestyle{empty}
+%-----------------------------------------------------------------

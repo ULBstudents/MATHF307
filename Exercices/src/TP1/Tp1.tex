@@ -5,6 +5,15 @@
 Construisez un graphe simple et connexe sur $8$ sommets tel que chaque sommet est contenu dans exactement trois ar\^etes. Pouvez-vous faire la m\^eme chose avec $9$ sommets?
 \end{exo}
 
+\begin{figure}[!h]
+\centering
+\scalebox{.825}{\input{Figures/Exo1.tikz}}
+\end{figure}
+
+Pas possible pour n=9.
+
+%-----------------------------------------------------------------
+
 \begin{exo}
 Dans un groupe de personnes, il y a toujours deux individus qui connaissent exactement le m\^eme nombre de membres du groupe.
 \begin{enumerate}
@@ -13,19 +22,32 @@ Dans un groupe de personnes, il y a toujours deux individus qui connaissent exac
 \end{enumerate}
 \end{exo}
 
-Par l'absurde: Il n'existe pas de $e_{1}, e_{2}: deg(e_{1}) = deg(e_{2})$. \\
+\begin{enumerate}
+\item Soit $\Gamma$ un graphe à n sommets. $\exists u,v \in V(\Gamma)$ tq $deg(u)=deg(v)$
+\item Par l'absurde: Supposons que $\cancel{\exists}{} e_{1}, e_{2}: deg(e_{1}) = deg(e_{2})$. \\
 
-$0 \leq deg(e_{1} \leq n-1$\\
+Les degrés sont tous compris entre 0 et n-1 (c'est à dire qu'on a un sommet pour chaque degré). Il existe donc un sommet qui est isolé (celui de degré 0) et un sommet qui est relié à ``tous'' les autres sommets (celui de degré n-1), ce qui est impossible.
+\end{enumerate}
 
-(...)
+%-----------------------------------------------------------------
 
 \begin{exo}
 Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^etes. Montrez que $G$ contient un triangle.
 \end{exo}
 
+%-----------------------------------------------------------------
+
 \begin{exo}
 Soit $G$ un graphe simple avec $2p$ sommets. On suppose que le degr\'e de chaque sommet est au moins \'egal \`a $p$. D\'emontrez que ce graphe est connexe.
 \end{exo}
+
+Démontrons par l'absurde: Supposons que le graphe ne soit pas connexe.\\
+
+Soient x et y deux sommets tels qu'il n'existe pas de chemin entre x et y. Vu que $\forall v: deg(v)\geq p$, x a au moins p voisins (et y aussi). Les voisins de x sont différents des voisins de y, sinon il existerait un chemin entre x et y.\\
+
+Le graphe est donc composé de $\underbrace{1+p}_{\text{x et ses voisins}}+\underbrace{1+p}_{\text{y et ses voisins}} = 2p+2$ sommets. Ceci est impossible, car l'énoncé dit que le graphe est composé de 2p sommets.
+
+%-----------------------------------------------------------------
 
 \begin{exo}
 Soit $G$ un graphe simple.
@@ -34,6 +56,8 @@ Soit $G$ un graphe simple.
 \item D\'eduisez-en que, si $G$ est connexe et $|V(G)|=n\geq 2$, alors $G$ contient au moins $n-1$ ar\^etes.
 \end{enumerate}
 \end{exo}
+
+%-----------------------------------------------------------------
 
 \begin{exo}
 Donnez un graphe simple et connexe sur au moins $5$ sommets qui est:
@@ -45,40 +69,53 @@ Donnez un graphe simple et connexe sur au moins $5$ sommets qui est:
 \end{itemize}
 \end{exo}
 
+%-----------------------------------------------------------------
+
 \begin{exo}
 Le graphe 1 est-il isomorphe \`a un (ou \`a plusieurs) des graphes ci-dessous~?
 \end{exo}
 
 \begin{figure}[!h]
 \centering
-\scalebox{.825}{\input{../Figures/figure19.tikz}}
+\scalebox{.825}{\input{Figures/figure19.tikz}}
 \caption{}
 \end{figure}
 
 \begin{figure}[!h]
-\scalebox{.825}{\input{../Figures/figure20.tikz}}
+\scalebox{.825}{\input{Figures/figure20.tikz}}
 \caption{}
 \end{figure}
 
+Le troisième et le sixième.
+
 \newpage
+
+%-----------------------------------------------------------------
+
 \begin{exo}
 Les graphes suivants sont-ils isomorphes~? (Ne vous contentez pas d'une justification approximative: essayez de d\'emontrer rigoureusement vos affirmations.)
 \end{exo}
 
 \begin{figure}[!h]
 \centering
-\input{../Figures/figure21.tikz}
+\input{Figures/figure21.tikz}
 \caption{}
 \end{figure}%
 
-\begin{figure}[!h]
-\centering
-\input{../Figures/figure22.tikz}
-\caption{}
-\end{figure}
+Non isomorphes. \\
 
 \begin{figure}[!h]
 \centering
-\input{../Figures/figure23.tikz}
+\input{Figures/figure22.tikz}
 \caption{}
 \end{figure}
+
+Non isomorphes.\\
+
+\begin{figure}[!h]
+\centering
+\input{Figures/figure23.tikz}
+\caption{}
+\end{figure}
+
+Isomorphes.\\
