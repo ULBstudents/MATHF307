@@ -320,10 +320,6 @@ Un cycle Eulérien dans un graphe $\Gamma$ est un cycle qui contient toutes les 
 Un graphe est Eulérien s'il contient un cycle Eulérien.\\
 \end{defn}
 
-\begin{exmp}
-<EXEMPLE PAGE 15>\\
-\end{exmp}
-
 \begin{prop}
 Si un graphe est Eulérien, alors tous ses sommets sont de degré pair.\\
 \end{prop}
@@ -333,8 +329,9 @@ Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'en
 \end{lemme}
 
 \begin{exmp}
-<DRAWING 3 CYCLES PAGE 15>\\
+
 \end{exmp}
+\input{Chap1-TheorieDesGraphes/Figures/CyclesAreteDisjointe.tikz}
 
 \begin{demo}
 Par récurrence, sur le nombre d'arêtes
@@ -369,7 +366,7 @@ $\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de c
 
 Objet mathématique: Un graphe valué (à chaque arête est associé un nombre appelé poids) où les sommets représentent les librairies et les arêtes représentent les routes.\\
 
-<VALUED K5 GRAPH HERE PAGE 17>\\
+\input{Chap1-TheorieDesGraphes/Figures/K5ValuedGraph.tikz}
 
 Objectif: Trouver un cycle hamiltonien de poids minimal.\\
 
@@ -381,10 +378,6 @@ Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cy
 Un arbre couvrant dans un graphe $\Gamma$ est un arbre qui est un sous-graphe de $\Gamma$ et qui contient tous les sommets de $\Gamma$.\\
 \end{defn}
 
-\begin{exmp}
-<GRAPH TO MIN SPANNING TREE EXAMPLES HERE>\\
-\end{exmp}
-
 Il existe un algorithme qui donne des arbres couvrants de poids minimum dans un graphe valué.\\
 
 Algorithme de Kurskal:
@@ -395,8 +388,9 @@ Algorithme de Kurskal:
 \end{enumerate}
 
 \begin{exmp}
-<GRAPH K5 WITH PATH HERE>\\
+
 \end{exmp}
+\input{Chap1-TheorieDesGraphes/Figures/K5ValuedGraphWithPath.tikz}
 
 Remarque: Si C est un cycles hamiltonien dans un graphe $\Gamma$, alors $\forall e \in E$ arête de C: $ C \setminus\{e\}$ est un arbre couvrant.\\
 
@@ -411,6 +405,8 @@ Remarque: Il existe une borne supérieure à TSP en utilisant des cycles euléri
 %----------------------------------------------------
 
 \subsection{Ordres partiels}
+
+\textbf{ [ Ce dernier sous-chapitre est en désordre total, un truc plus structuré arrive bientôt. ] } 
 
 \begin{defn}
 Soit P un ensemble. Un ordre partiel sur P est une relation sur P, c'est à dire un ensemble de couples $(p_{1},p_{2}) \in P\times P$, noté $p{1} \leq p{2}$ tel que:
