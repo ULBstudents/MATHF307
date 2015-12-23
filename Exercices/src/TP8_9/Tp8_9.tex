@@ -8,7 +8,7 @@ De combien de fa\c{c}ons diff\'erentes peut-on monter un escalier de 30 marches,
 
 \begin{exo} 
 Que vaut le d\'eterminant de la matrice $n \times n$ 
-$$
+\[
 \left( 
 \begin{array}{rrrrrrrr}
 1 &-1 &0  &0  &\cdots &0 &0 &0\\
@@ -19,14 +19,14 @@ $$
 0 & 0 & 0 & 0 & \cdots & 0 &1 &1\\
 \end{array}
 \right) \qquad ?
-$$
+\]
 \end{exo}
 
 Soit $M_n$ la matrice de dimension $n\times n$ de l'exercice.
 
 Si on calcule le déterminant selon la première ligne, on a 
 
-$$|M_n| = \underbrace{1\cdot (-1)^{1+1} \cdot |M_{n-1}|}_{\text{En enlevant première ligne, première colonne}} + \underbrace{(-1) \cdot (-1)^{1+2} \cdot |X|}_{\text{En enlevant première ligne, deuxième colonne}} = |M_{n-1}| + |X|$$. 
+\[|M_n| = \underbrace{1\cdot (-1)^{1+1} \cdot |M_{n-1}|}_{\text{En enlevant première ligne, première colonne}} + \underbrace{(-1) \cdot (-1)^{1+2} \cdot |X|}_{\text{En enlevant première ligne, deuxième colonne}} = |M_{n-1}| + |X|\].
 
 (X étant la sous-matrice de $M_n$ à laquelle on a enlevé la première ligne et première colonne (DESSIN). Nous pouvons voir que pour calculer le déterminant de X, en appliquant la même méthode on a $1 \cdot (-1)^{1+1} \cdot |M_{n-2}| = |M_{n-2}|$.
 
@@ -40,18 +40,18 @@ On retombe sur Fibo.
 
 \begin{exo} 
 Que vaut
-$$
+\[
 \lim_{n \to \infty} \frac{F_{n+1}}{F_n} \quad ?
-$$
+\]
 \end{exo}
 
 %-----------------------------------------------------------------
 
 \begin{exo} 
 Prouver que, pour tout entier $n \geqslant 1$, 
-$$
+\[
 \varphi^n = F_n \cdot \varphi + F_{n-1}\ ,
-$$
+\]
 o\`u $\varphi := \frac{1+\sqrt{5}}{2}$ est le {\DEF nombre d'or}.
 \end{exo}
 
@@ -92,12 +92,12 @@ R\'esoudre les r\'ecurrences
 
 \begin{exo}
 R\'esoudre la r\'ecurrence
-$$
+\[
 \begin{array}{ll}
 a_{n+2} - (2 \cos \alpha) a_{n+1} + a_n = 0\quad \forall n \geqslant 0\\
 a_1 = \cos \alpha, \quad a_2 = \cos 2 \alpha
 \end{array}
-$$
+\]
 \end{exo}
 
 %-----------------------------------------------------------------
@@ -154,12 +154,12 @@ Donner le comportement asymptotique des suites $T(n)$ pour chacune des r\'ecurre
 
 \begin{exo}
 R\'esoudre la r\'ecurrence
-$$
+\[
 \begin{array}{l}
 a_n = \sqrt{a_{n-1} a_{n-2}} \quad \forall n \geqslant 2\\
 a_0 = 1, \quad a_1 = 2
 \end{array}
-$$
+\]
 \end{exo}
 
 %-----------------------------------------------------------------

@@ -63,16 +63,16 @@ Voir syllabus année passée page 8.
 
 \begin{exo}
 Donner deux d\'emonstrations de
-$$
+\[
 \sum_{k=0}^n {n \choose k} = 2^n\ .
-$$
+\]
 \end{exo}
 
 Première démonstration: 
 
 Via le Binôme de Newton, on sait que
 
-$$(x+y)^n = \sum_{k=0}^n {n \choose k} x^{n-k} y^k$$
+\[(x+y)^n = \sum_{k=0}^n {n \choose k} x^{n-k} y^k\]
 
 Si on pose x=1 et y=1, on a: 
 
@@ -85,15 +85,15 @@ Deuxième démonstration:
 
 ${n \choose k}$ est le nombre de sous-ensembles à k éléments d'un ensemble à n éléments. 
 
-$$ |\{ 0,1 \}^n| = 2^n $$
+\[ |\{ 0,1 \}^n| = 2^n \]
 
 %----------------------------------------------
 
 \begin{exo}
 Qu'obtient-on comme identit\'e sur les coefficients binomiaux en \'ecrivant
-$$
+\[
 (x+y)^{2n} = (x+y)^n(x+y)^n\ ?
-$$
+\]
 \end{exo}
 
 (Voir avec assistants)
@@ -118,13 +118,13 @@ $ { s + d - 1 \choose d - 1 } = { 15 + 4 - 1 \choose 4 - 1} = {18 \choose 3 }$
 
 \begin{exo} 
 Combien l'\'equation
-$$
+\[
 x + y + z + t + u = 60
-$$
+\]
 poss\`ede-t-elle de solutions enti\`eres $(x,y,z,t,u)$ telles que
-$$
+\[
 x > 0\ ,\quad y \geqslant 9\ , \quad z > -2\ , \quad t \geqslant 0 \quad \textrm{ et }  \quad u > 10 \quad ?
-$$
+\]
 \end{exo}
 
 On doit procéder à un changement de variables.
@@ -140,9 +140,9 @@ ${s + d - 1 \choose d - 1} = {40 + 5 - 1 \choose 5 - 1} = {44 \choose 4}$
 
 \begin{exo} 
 Trouver le nombre de solutions de l'in\'equation
-$$
+\[
 x + y + z + t \leqslant 6
-$$
+\]
 %
 \begin{enumerate}[(i)]
 \item dans les naturels;
@@ -180,19 +180,19 @@ Faire mots de 12 lettres sans U. Rajouter probabilité de mettre les U dans les 
 
 \begin{exo} 
 Si $0 \leqslant m \leqslant n$, que vaut
-$$
+\[
 \sum_{k=m}^n {k \choose m}{n \choose k}\quad ?
-$$
+\]
 (Hint~: essayer une preuve bijective.)
 \end{exo}
 
 Preuve version "étudiant": 
 
 \begin{align*}
- \sum_{k=m}^n {k \choose m}{n \choose k} &= \sum_{k=m}^n \frac{\cancel{k!}}{m!(k-m)!} \frac{n!}{\cancel{k!}(n-k)!} = \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} 
- &= \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \frac{(n-m)!}{(n-m)!} = {n \choose m} \sum_{k=m}^n \frac{(n-m)!}{(k-m)!(n-k)!} 
- &= {n \choose m} \sum_{k=m}^n {n-m \choose k-m} \vspace{1cm} \qquad \text{On pose} \quad r=k-m 
- &= {n \choose m} \sum_{r=0}^{n-m} {n-m \choose r} 1^{r} 1^{n-m-r} \qquad \text{Formule du binôme de Newton} 
+ \sum_{k=m}^n {k \choose m}{n \choose k} &= \sum_{k=m}^n \frac{\cancel{k!}}{m!(k-m)!} \frac{n!}{\cancel{k!}(n-k)!} = \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \\
+ &= \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \frac{(n-m)!}{(n-m)!} = {n \choose m} \sum_{k=m}^n \frac{(n-m)!}{(k-m)!(n-k)!} \\
+ &= {n \choose m} \sum_{k=m}^n {n-m \choose k-m} \vspace{1cm} \qquad \text{On pose} \quad r=k-m \\
+ &= {n \choose m} \sum_{r=0}^{n-m} {n-m \choose r} 1^{r} 1^{n-m-r} \qquad \text{Formule du binôme de Newton} \\
  &= {n \choose m} (1+1)^{n-m} = {n \choose m} 2^{n-m} 
 \end{align*}
 
@@ -227,7 +227,7 @@ Donc au total il y a ${n \choose m} 2^{n-m}$ choix.
 \item \textbf{S'il y en a n:} on choisit n éléments parmi n et m éléments parmi ces n éléments, c'est à dire ${n \choose m}{n \choose n}$ 
 \end{enumerate}
 
-Il suffit de tout sommer (car "ou exclusif"). Donc: $$ \sum_{k=m}^n {k \choose m}{n \choose k} = {n \choose m} 2^{(n-m)}$$
+Il suffit de tout sommer (car "ou exclusif"). Donc: \[ \sum_{k=m}^n {k \choose m}{n \choose k} = {n \choose m} 2^{(n-m)}\]
 
 \vspace{1cm}
 
