@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+\node (v2) at (-3.5,2) {};
+\node (v1) at (-4.5,1) {};
+\node (v3) at (-2.5,1) {};
+\node (v5) at (-4,0) {};
+\node (v4) at (-3,0) {};
+\draw  (v1) edge (v2);
+\draw  (v2) edge (v3);
+\draw  (v3) edge (v4);
+\draw  (v4) edge (v5);
+\draw  (v5) edge (v1);
+\node (v10) at (-1,0) {};
+\node (v6) at (-1,1.5) {};
+\node (v7) at (0.5,1.5) {};
+\node (v9) at (0.5,0) {};
+\node (v8) at (2,0.75) {};
+\draw  (v6) edge (v7);
+\draw  (v7) edge (v8);
+\draw  (v8) edge (v9);
+\draw  (v9) edge (v10);
+\draw  (v10) edge (v6);
+\draw  (v7) edge (v9);
+\draw  (v9) edge (v6);
+\draw  (v7) edge (v10);
+\node (v11) at (3,1.5) {};
+\node (v12) at (3,0) {};
+\node (v13) at (3.5,0.5) {};
+\node (v14) at (4,1) {};
+\node (v15) at (4.5,1.5) {};
+\node (v16) at (4.5,0) {};
+\draw  (v11) edge (v12);
+\draw  (v11) edge (v13);
+\draw  (v11) edge (v14);
+\draw  (v11) edge (v15);
+\draw  (v15) edge (v16);
+\draw  (v16) edge (v14);
+\draw  (v16) edge (v13);
+\draw  (v16) edge (v12);
+\node (v17) at (5.5,0) {};
+\node (v18) at (5.5,1) {};
+\node (v19) at (6.5,0.5) {};
+\node (v20) at (7.5,0.5) {};
+\draw  (v17) edge (v18);
+\draw  (v19) edge (v17);
+\draw  (v19) edge (v18);
+\draw  (v19) edge (v20);
+\end{tikzpicture}

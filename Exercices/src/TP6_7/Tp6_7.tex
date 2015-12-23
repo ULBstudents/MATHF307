@@ -68,22 +68,22 @@ $$
 $$
 \end{exo}
 
-Première démonstration: \\
+Première démonstration: 
 
-Via le Binôme de Newton, on sait que\\
+Via le Binôme de Newton, on sait que
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k} x^{n-k} y^k$$
 
-Si on pose x=1 et y=1, on a: \\
+Si on pose x=1 et y=1, on a: 
 
 \begin{align*}
- (1+1)^n &= \sum_{k=0}^n {n \choose k} \cdot \underbrace{1^{n-k}}_{=1} \cdot \underbrace{1^k}_{=1} \\
+ (1+1)^n &= \sum_{k=0}^n {n \choose k} \cdot \underbrace{1^{n-k}}_{=1} \cdot \underbrace{1^k}_{=1} 
  2^n &= \sum_{k=0}^n {n \choose k}
 \end{align*}
 
-Deuxième démonstration: \\
+Deuxième démonstration: 
 
-${n \choose k}$ est le nombre de sous-ensembles à k éléments d'un ensemble à n éléments. \\
+${n \choose k}$ est le nombre de sous-ensembles à k éléments d'un ensemble à n éléments. 
 
 $$ |\{ 0,1 \}^n| = 2^n $$
 
@@ -127,13 +127,13 @@ x > 0\ ,\quad y \geqslant 9\ , \quad z > -2\ , \quad t \geqslant 0 \quad \textrm
 $$
 \end{exo}
 
-On doit procéder à un changement de variables.\\
+On doit procéder à un changement de variables.
 
 ${x}' = x-1 \Leftrightarrow x= {x}'+1 \qquad {y}' = y-9 \Leftrightarrow y= {y}'+9 \qquad {z}' = z+1 \Leftrightarrow z= {z}'-1 $
 
-$\qquad \qquad \qquad \qquad \qquad {t}' = t \qquad {u}' = u-11 \Leftrightarrow u= {u}'+11$\\
+$\qquad \qquad \qquad \qquad \qquad {t}' = t \qquad {u}' = u-11 \Leftrightarrow u= {u}'+11$
 
-${x}'+{y}'+{z}'+{t}'+{u}' = 60 - 1 - 9 + 1 - 11 = 40$\\
+${x}'+{y}'+{z}'+{t}'+{u}' = 60 - 1 - 9 + 1 - 11 = 40$
 
 ${s + d - 1 \choose d - 1} = {40 + 5 - 1 \choose 5 - 1} = {44 \choose 4}$
 %----------------------------------------------
@@ -159,7 +159,7 @@ Même chose que les exos précédents (réponse dans un prochain épisode...).
 Avec les lettres du mot MISSISSIPPI, combien peut-on \'ecrire de mots diff\'erents de 11 lettres~?
 \end{exo}
 
-Lettres du mot: 1 M, 4 I, 4 S, 2 P \\
+Lettres du mot: 1 M, 4 I, 4 S, 2 P 
 
 Mots de 11 lettres: $ \frac{11!}{(4!)(4!)(2!)(1!)}$
 
@@ -186,45 +186,45 @@ $$
 (Hint~: essayer une preuve bijective.)
 \end{exo}
 
-Preuve version "étudiant": \\
+Preuve version "étudiant": 
 
 \begin{align*}
- \sum_{k=m}^n {k \choose m}{n \choose k} &= \sum_{k=m}^n \frac{\cancel{k!}}{m!(k-m)!} \frac{n!}{\cancel{k!}(n-k)!} = \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \\
- &= \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \frac{(n-m)!}{(n-m)!} = {n \choose m} \sum_{k=m}^n \frac{(n-m)!}{(k-m)!(n-k)!} \\
- &= {n \choose m} \sum_{k=m}^n {n-m \choose k-m} \vspace{1cm} \qquad \text{On pose} \quad r=k-m \\
- &= {n \choose m} \sum_{r=0}^{n-m} {n-m \choose r} 1^{r} 1^{n-m-r} \qquad \text{Formule du binôme de Newton} \\
- &= {n \choose m} (1+1)^{n-m} = {n \choose m} 2^{n-m} \\
+ \sum_{k=m}^n {k \choose m}{n \choose k} &= \sum_{k=m}^n \frac{\cancel{k!}}{m!(k-m)!} \frac{n!}{\cancel{k!}(n-k)!} = \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} 
+ &= \sum_{k=m}^n \frac{n!}{m!(k-m)!(n-k)!} \frac{(n-m)!}{(n-m)!} = {n \choose m} \sum_{k=m}^n \frac{(n-m)!}{(k-m)!(n-k)!} 
+ &= {n \choose m} \sum_{k=m}^n {n-m \choose k-m} \vspace{1cm} \qquad \text{On pose} \quad r=k-m 
+ &= {n \choose m} \sum_{r=0}^{n-m} {n-m \choose r} 1^{r} 1^{n-m-r} \qquad \text{Formule du binôme de Newton} 
+ &= {n \choose m} (1+1)^{n-m} = {n \choose m} 2^{n-m} 
 \end{align*}
 
-Preuve bijective version assistants: \\
+Preuve bijective version assistants: 
 
 \begin{minipage}{0.4\textwidth}
 \input{TP6_7/Figures/Ensembles.tikz}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}
-Fixons $0 \leq m \leq n$\\
-Comptons de 2 manières différentes le nombre de triples (M, K, N) où $M \subseteq K \subseteq N$ et |M| = m, |N| = n, |K| = k\\
+Fixons $0 \leq m \leq n$
+Comptons de 2 manières différentes le nombre de triples (M, K, N) où $M \subseteq K \subseteq N$ et |M| = m, |N| = n, |K| = k
 
 \begin{enumerate}
 \item On choisit un ensemble de taille m dans N: il y a ${n \choose m}$ façons de choisir
-\item K peut avoir m éléments, m+1, ..., n éléments \\
+\item K peut avoir m éléments, m+1, ..., n éléments 
 \end{enumerate}
 \end{minipage}
 
 \vspace{1cm}
 
-\textbf{1. On choisit un ensemble de taille m dans N: il y a ${n \choose m}$ façons de choisir}\\
+\textbf{1. On choisit un ensemble de taille m dans N: il y a ${n \choose m}$ façons de choisir}
 
-Ensuite, nous complétons cet ensemble M pour obtenir K, c'est à dire il y a $$\sum_{k=0}^{n-m} {n-m \choose k} = 2^{n-m} \quad \text{choix}$$ \\
+Ensuite, nous complétons cet ensemble M pour obtenir K, c'est à dire il y a $$\sum_{k=0}^{n-m} {n-m \choose k} = 2^{n-m} \quad \text{choix}$$ 
 
-Donc au total il y a ${n \choose m} 2^{n-m}$ choix.\\
+Donc au total il y a ${n \choose m} 2^{n-m}$ choix.
 
-\textbf{2. K peut avoir m éléments, m+1, ..., n éléments} \\
+\textbf{2. K peut avoir m éléments, m+1, ..., n éléments} 
 
 \begin{enumerate}
 \item \textbf{S'il y en a m:} on choisit m éléments parmi n et m éléments parmi ces m éléments, c'est à dire ${m \choose m}{n \choose m}$
 \item \textbf{S'il y en a m+1:} on choisit m+1 éléments parmi n et m éléments parmi ces m+1 éléments, c'est à dire ${m+1 \choose m}{n \choose m+1}$
-\item \textbf{S'il y en a n:} on choisit n éléments parmi n et m éléments parmi ces n éléments, c'est à dire ${n \choose m}{n \choose n}$ \\
+\item \textbf{S'il y en a n:} on choisit n éléments parmi n et m éléments parmi ces n éléments, c'est à dire ${n \choose m}{n \choose n}$ 
 \end{enumerate}
 
 Il suffit de tout sommer (car "ou exclusif"). Donc: $$ \sum_{k=m}^n {k \choose m}{n \choose k} = {n \choose m} 2^{(n-m)}$$

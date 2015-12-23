@@ -5,12 +5,16 @@
 Construisez un graphe simple et connexe sur $8$ sommets tel que chaque sommet est contenu dans exactement trois ar\^etes. Pouvez-vous faire la m\^eme chose avec $9$ sommets?
 \end{exo}
 
+Les sommets d'un graphe à un nombre pair de sommets sont de degré impair. Voici donc un exemple pour $n=8$.
+
 \begin{figure}[!h]
 \centering
 \scalebox{.825}{\input{TP1/Figures/Exo1.tikz}}
 \end{figure}
 
-Pas possible pour n=9.
+Le nombre d'arêtes est donc de 12 ( $ \frac{n*d(v)}{2} = \frac{8*3}{2} = 12$) 
+
+Pas possible pour n=9 car $ \frac{n*d(v)}{2} = \frac{9*3}{2} \cancel{\in} \N $
 
 %-----------------------------------------------------------------
 
@@ -24,7 +28,7 @@ Dans un groupe de personnes, il y a toujours deux individus qui connaissent exac
 
 \begin{enumerate}
 \item Soit $\Gamma$ un graphe à n sommets. $\exists u,v \in V(\Gamma)$ tq $deg(u)=deg(v)$
-\item Par l'absurde: Supposons que $\cancel{\exists}{} e_{1}, e_{2}: deg(e_{1}) = deg(e_{2})$. \\
+\item Par l'absurde: Supposons que $\cancel{\exists}{} e_{1}, e_{2}: deg(e_{1}) = deg(e_{2})$. 
 
 Les degrés sont tous compris entre 0 et n-1 (c'est à dire qu'on a un sommet pour chaque degré). Il existe donc un sommet qui est isolé (celui de degré 0) et un sommet qui est relié à ``tous'' les autres sommets (celui de degré n-1), ce qui est impossible.
 \end{enumerate}
@@ -32,8 +36,10 @@ Les degrés sont tous compris entre 0 et n-1 (c'est à dire qu'on a un sommet po
 %-----------------------------------------------------------------
 
 \begin{exo}
-Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^etes. Montrez que $G$ contient un triangle.
+Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^etes. Montrez par récurrence que $G$ contient un triangle.
 \end{exo}
+
+<MISSING>
 
 %-----------------------------------------------------------------
 
@@ -41,9 +47,9 @@ Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^ete
 Soit $G$ un graphe simple avec $2p$ sommets. On suppose que le degr\'e de chaque sommet est au moins \'egal \`a $p$. D\'emontrez que ce graphe est connexe.
 \end{exo}
 
-Démontrons par l'absurde: Supposons que le graphe ne soit pas connexe.\\
+Démontrons par l'absurde: Supposons que le graphe ne soit pas connexe.
 
-Soient x et y deux sommets tels qu'il n'existe pas de chemin entre x et y. Vu que $\forall v: deg(v)\geq p$, x a au moins p voisins (et y aussi). Les voisins de x sont différents des voisins de y, sinon il existerait un chemin entre x et y.\\
+Soient x et y deux sommets tels qu'il n'existe pas de chemin entre x et y. Vu que $\forall v: deg(v)\geq p$, x a au moins p voisins (et y aussi). Les voisins de x sont différents des voisins de y, sinon il existerait un chemin entre x et y.
 
 Le graphe est donc composé de $\underbrace{1+p}_{\text{x et ses voisins}}+\underbrace{1+p}_{\text{y et ses voisins}} = 2p+2$ sommets. Ceci est impossible, car l'énoncé dit que le graphe est composé de 2p sommets.
 
@@ -57,6 +63,8 @@ Soit $G$ un graphe simple.
 \end{enumerate}
 \end{exo}
 
+<MISSING>
+
 %-----------------------------------------------------------------
 
 \begin{exo}
@@ -69,10 +77,18 @@ Donnez un graphe simple et connexe sur au moins $5$ sommets qui est:
 \end{itemize}
 \end{exo}
 
+\begin{figure}[!h]
+\centering
+\scalebox{.825}{\input{TP1/Figures/Exo6.tikz}}
+\caption{Exemples pour chaque question, de gauche à droite.}
+\end{figure}
+
+Pour le quatrième, tout graphe contentant une feuille est une réponse possible.
+
 %-----------------------------------------------------------------
 
 \begin{exo}
-Le graphe 1 est-il isomorphe \`a un (ou \`a plusieurs) des graphes ci-dessous~?
+Le graphe de la figure 2 est-il isomorphe \`a un (ou \`a plusieurs) des graphes de la figure 3?
 \end{exo}
 
 \begin{figure}[!h]
@@ -102,7 +118,7 @@ Les graphes suivants sont-ils isomorphes~? (Ne vous contentez pas d'une justific
 \caption{}
 \end{figure}%
 
-Non isomorphes. \\
+Non isomorphes. 
 
 \begin{figure}[!h]
 \centering
@@ -110,7 +126,7 @@ Non isomorphes. \\
 \caption{}
 \end{figure}
 
-Non isomorphes.\\
+Non isomorphes (il existe un sommet de degré 2 dans le graphe de gauche, tandis qu'aucun sommet du graphe de droite est de degré 2).
 
 \begin{figure}[!h]
 \centering
@@ -118,4 +134,4 @@ Non isomorphes.\\
 \caption{}
 \end{figure}
 
-Isomorphes.\\
+Isomorphes.
