@@ -1,0 +1,35 @@
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[shorten >=1pt,auto,node distance=1.5cm,thick]
+
+	\node (c1) {C};
+	\node (c2) [right of=c1] {C};
+	\node (h1) [above of=c1] {H};
+	\node (h2) [left of=c1] {H};
+	\node (h3) [below of=c1] {H};
+	\node (h4) [above of=c2] {H};
+	\node (h5) [below of=c2] {H};
+
+	\node (c3) [right of=c2] {C};
+	\node (c4) [right of=c3] {C};
+	\node (h6) [above of=c3] {H};
+	\node (h7) [below of=c3] {H};
+	\node (h8) [above of=c4] {H};
+	\node (h9) [below of=c4] {H};
+
+	\node (o) [right of=c4] {O};
+	\node (hX) [right of=o] {H};
+
+	\draw (h2) -- (c1) -- (c2);
+	\draw (c3) -- (c4) -- (o) -- (hX);
+
+	\draw[dashed] (c2) -- (c3);
+
+	\draw (h1) -- (c1) -- (h3);
+	\draw (h5) -- (c2) -- (h4);
+	\draw (h6) -- (c3) -- (h7);
+	\draw (h8) -- (c4) -- (h9);
+
+	\end{tikzpicture}
+
+\end{figure}

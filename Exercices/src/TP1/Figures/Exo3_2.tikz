@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+
+\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+\draw  (0,0) ellipse (2 and 3);
+\node (v1) at (5,1.5) {v1};
+\node (v2) at (5,-1) {v2};
+\draw  (v1) edge (v2);
+\node at (-0.5,2) {};
+\node at (0.5,2) {};
+\node at (0.5,1) {};
+\node at (0,1) {};
+\node at (-1,0.5) {};
+\node at (-1,-0.5) {};
+\node at (-0.5,-1.5) {};
+\node at (0.5,-2) {};
+\node at (0,-2.5) {};
+\node at (1,-0.5) {};
+\node at (1,0.5) {};
+\node at (1,-1.5) {};
+\end{tikzpicture}

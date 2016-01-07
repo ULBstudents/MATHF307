@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+
+\tikzstyle{every node}=[circle, draw, fill=white, inner sep=0pt, minimum size=5pt]
+
+\node (v4) at (0,0) {};
+\node (v3) at (1.5,0) {};
+\node (v1) at (0,-1.5) {};
+\node (v2) at (1.5,-1.5) {};
+\draw (v1) -- (v2) -- (v3) -- (v4) -- (v1) -- (v3);
+\end{tikzpicture}

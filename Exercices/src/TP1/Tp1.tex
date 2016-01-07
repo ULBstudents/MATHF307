@@ -9,12 +9,16 @@ Les sommets d'un graphe à un nombre pair de sommets sont de degré impair. Voic
 
 \begin{figure}[!h]
 \centering
-\scalebox{.825}{\input{TP1/Figures/Exo1.tikz}}
+\input{TP1/Figures/Exo1.tikz}
 \end{figure}
 
-Le nombre d'arêtes est donc de 12 ( $ \frac{n*d(v)}{2} = \frac{8*3}{2} = 12$) 
+Le nombre d'arêtes est donc de
 
-Pas possible pour n=9 car $ \frac{n*d(v)}{2} = \frac{9*3}{2} \cancel{\in} \N $
+\[ \frac{n*d(v)}{2} = \frac{8*3}{2} = 12 \] 
+
+Pas possible pour n=9 car 
+
+\[ \frac{n*d(v)}{2} = \frac{9*3}{2} \cancel{\in} \N \]
 
 %-----------------------------------------------------------------
 
@@ -27,11 +31,18 @@ Dans un groupe de personnes, il y a toujours deux individus qui connaissent exac
 \end{exo}
 
 \begin{enumerate}
-\item Soit $\Gamma$ un graphe à n sommets. $\exists u,v \in V(\Gamma)$ tq $deg(u)=deg(v)$
-\item Par l'absurde: Supposons que $\cancel{\exists}{} e_{1}, e_{2}: deg(e_{1}) = deg(e_{2})$. 
+\item Soit $\Gamma$ un graphe à n sommets.
+
+\[ \exists u,v \in V(\Gamma) \; \text{tq} \; deg(u)=deg(v) \]
+
+\item Par l'absurde: Supposons que 
+
+\[ \cancel{\exists}{} e_{1}, e_{2}: deg(e_{1}) = deg(e_{2}) \] 
 
 Les degrés sont tous compris entre 0 et n-1 (c'est à dire qu'on a un sommet pour chaque degré). Il existe donc un sommet qui est isolé (celui de degré 0) et un sommet qui est relié à ``tous'' les autres sommets (celui de degré n-1), ce qui est impossible.
 \end{enumerate}
+
+\newpage
 
 %-----------------------------------------------------------------
 
@@ -39,7 +50,30 @@ Les degrés sont tous compris entre 0 et n-1 (c'est à dire qu'on a un sommet po
 Soit $n\geq 2$ et soit $G$ un graphe simple avec $2n$ sommets et $n^2+1$ ar\^etes. Montrez par récurrence que $G$ contient un triangle.
 \end{exo}
 
-<MISSING>
+\textbf{Cas de base: }Pour $n=2$ nous avons donc 4 sommets et 5 arêtes. En voici un exemple:
+
+\begin{figure}[!h]
+\centering
+\scalebox{.825}{\input{TP1/Figures/Exo3.tikz}}
+\end{figure}
+
+\textbf{Récurrence: }Supposons le résultat vrai pour n. Vérifions qu'il l'est également pour n+1.
+
+Sommets: $2(n+1)=2n+2$. Arêtes: $(n+1)^2 + 1 = n^2 + 2n + 2$ 
+
+On peut construire un graphe sur $2n$ sommets avec $n^2$ arêtes sans triangle (par hypothèse d'induction).
+
+\begin{figure}[!h]
+\centering
+\scalebox{.825}{\input{TP1/Figures/Exo3_2.tikz}}
+\end{figure}
+
+Nous avons donc à gauche 2n sommets avec $n^2$ arêtes et à droite 2 sommets supplémentaires avec 1 arête les reliant. Arrivant donc à $2n + 2$ sommets, on doit encore placer $2n + 1$ arêtes. Il y a deux façons de le faire:
+
+\begin{enumerate}
+\item On ajoute une arête vers $v_1$ ou $v_2$ à chacun des 2n sommets. Il en reste une à placer. Si, par exemple, on la place entre $v_1$ et un des sommets à gauche, on a créé un triangle.
+\item On fait partir les arêtes de $v_1$ seulement. Il en reste une à placer. Si on la place en $v_2$, on crée alors un triangle. 
+\end{enumerate}
 
 %-----------------------------------------------------------------
 
@@ -53,6 +87,8 @@ Soient x et y deux sommets tels qu'il n'existe pas de chemin entre x et y. Vu qu
 
 Le graphe est donc composé de $\underbrace{1+p}_{\text{x et ses voisins}}+\underbrace{1+p}_{\text{y et ses voisins}} = 2p+2$ sommets. Ceci est impossible, car l'énoncé dit que le graphe est composé de 2p sommets.
 
+\newpage
+
 %-----------------------------------------------------------------
 
 \begin{exo}
@@ -63,7 +99,15 @@ Soit $G$ un graphe simple.
 \end{enumerate}
 \end{exo}
 
-<MISSING>
+\begin{enumerate}
+\item Soient u et v des sommets de $G\setminus\{x\}$. Si G est connexe, il existe un chemin de u à v dans G. Si x est dans ce chemin, vu qu'il est de degré 1, le chemin fait un ``aller-retour'' en x. Donc, le sommet avant x et le sommet après x dans le chemin sont le même. On peut donc supprimer x sans que le reste du chemin soit ``déconnecté''. Donc, le chemin existant toujours de u à v dans $G\setminus\{x\}$, celui-ci est bel et bien connexe.
+\item <MISSING>
+%- \item Par induction sur n. Pour n=2, le graphe est connexe et contient une arête (entre les deux sommets). Supposons vrai pour tout graphe connexe à n-1 sommets. Soit G un graphe connexe à n sommets. On distingue 2 cas.
+	%\begin{enumerate}
+	%\item Soit on sait que il existe un sommet x de degré 1, et au vu de la réponse 1
+	%\item
+	%\end{enumerate}
+\end{enumerate}
 
 %-----------------------------------------------------------------
 
@@ -79,12 +123,13 @@ Donnez un graphe simple et connexe sur au moins $5$ sommets qui est:
 
 \begin{figure}[!h]
 \centering
-\scalebox{.825}{\input{TP1/Figures/Exo6.tikz}}
+\input{TP1/Figures/Exo6.tikz}
 \caption{Exemples pour chaque question, de gauche à droite.}
 \end{figure}
 
 Pour le quatrième, tout graphe contentant une feuille est une réponse possible.
 
+\newpage
 %-----------------------------------------------------------------
 
 \begin{exo}
@@ -103,8 +148,6 @@ Le graphe de la figure 2 est-il isomorphe \`a un (ou \`a plusieurs) des graphes 
 \end{figure}
 
 Le troisième et le sixième.
-
-\newpage
 
 %-----------------------------------------------------------------
 

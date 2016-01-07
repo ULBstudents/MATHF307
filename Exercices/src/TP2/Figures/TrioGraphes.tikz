@@ -1,6 +1,7 @@
 \begin{figure}[!h]
 \centering
-\begin{tikzpicture}[scale = 0.5]
+\begin{tikzpicture}[scale = 0.8]
+
 \tikzstyle{every node}=[draw,circle,fill=black,minimum size=4pt,inner sep=0pt]
 \node (a1) at (0,4) [shape= circle, draw, fill = white] {};
 \node (a2) at (-2,0) [shape= circle, draw, fill = white] {};

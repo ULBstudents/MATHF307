@@ -10,12 +10,27 @@ D\'emontrez que $n$ est pair si et seulement si le graphe est hamiltonien.
 
 Nous cherchons à prouver que tout graphe du style de la figure \ref{fig:grille} avec un n pair est un graphe hamiltonien. C'est à dire n pair $\Leftrightarrow$ graphe hamiltonien.
 
-$\Rightarrow$ 
+$\Leftarrow$ Si n est impair, alors $n=2k + 1$ et le graphe a $n^2 = (2k + 1)^2 = 4k^2 + 4k + 1$ sommets, c'est à dire un nombre impair de sommets.
 
-$\Leftarrow$ 
+Or, le graphe est biparti (via les diagonales).
 
-<C'est super long, et y'a des couleurs partout. TO DO plus tard.>
+\input{TP2/Figures/GrilleBicolore.tikz}
 
+Si le graphe est hamiltonien, cela veut dire qu'il contient un cycle d'ordre impair, ce qui contredit G biparti.
+
+$\Rightarrow$ Démontrons par récurrence sur $2n \geq 4$ que la grille contient un cycle hamiltonien contenant une arête spécifique (pour nous faciliter la tâche) que l'on nommera ``E''.
+
+\textbf{Cas de base n=4: } OK
+
+\input{TP2/Figures/GrilleN4.tikz}
+
+\textbf{Étape d'induction}
+
+\input{TP2/Figures/GrilleNPlus2.tikz}
+
+Dans la grille $(2n+2) \times (2n+2)$, nous avons une sous-grille (en mauve) qui est de taille $2n \times 2n$. Par hypothèse d'induction, il existe un cycle hamiltonien contenant l'arête E. Dans ce cycle, si on élimine l'arête E et on rajoute le chemin en rouge (qui est composé des sommets ``+2''), nous obtenons un cycle hamiltonien.
+
+\newpage
 %-----------------------------------------------------------------
 
 \begin{exo}
@@ -46,7 +61,7 @@ Combien d'arbres couvrants poss\`edent les deux graphes de la Figure~\ref{fig:ar
 \scalebox{.825}{\input{TP2/Figures/Exo11.tikz}}
 \end{figure}
 
-\textbf{Graphe de droite:} Il existe 40 arbres couvrants. Trop nombreux pour que je les dessine tous.
+\textbf{Graphe de droite:} Il existe 16 arbres couvrants. Trop nombreux pour que je les dessine tous.
 
 
 %-----------------------------------------------------------------
@@ -55,7 +70,15 @@ Combien d'arbres couvrants poss\`edent les deux graphes de la Figure~\ref{fig:ar
 Montrez que tous les alcools $C_nH_{2n+1}OH$ sont des mol\'ecules dont le graphe est un arbre, en sachant que les valences de $C, O$ et de $H$ sont respectivement $4, 2, 1$.
 \end{exo}
 
-<TO DO>
+\[ \sum_{v\in V} deg(v) = (n\cdot 4) + (2n + 1)\cdot 1 + (1\cdot 2) + (1\cdot 1) = 6n + 4 = 2(3n + 2) \]
+
+Donc, $ |E| = 3n + 2$. Or, $|V| = 3n + 3$. Or, G connexe. $\Rightarrow$ G est un arbre.
+
+\input{TP2/Figures/Exo12Molecule.tikz}
+
+Les graphes correspondants sont des arbres, avec la molécule 0 comme racine, et à sa gauche et droite les sous-arbres.
+
+\newpage
 
 %-----------------------------------------------------------------
 
@@ -64,7 +87,7 @@ D\'emontrez que si un graphe hamiltonien $G = (V,E)$ est biparti selon la bipart
 
 \end{exo}
 
-<TO DO>
+<MISSING>
 
 %-----------------------------------------------------------------
 
@@ -80,11 +103,13 @@ Pour chaque graphe de la Figure~\ref{fig:graphes}, d\'eterminez si
 \input{TP2/Figures/TrioGraphes.tikz}
 
 
-\textbf{Graphe 1:}
+\textbf{Graphe 1:} Hamiltonien (voir chemin rouge). Non-eulérien ($deg(v_1)=3$). Non-biparti car $K_3$.
 
-\textbf{Graphe 2:}
+\textbf{Graphe 2:} Hamiltonien (voir chemin rouge). Non-eulérien ($deg(v_2)=3$). Non-biparti car $K_3$.
 
-\textbf{Graphe 3:}
+\textbf{Graphe 3:} Non-hamiltonien car $|A| \neq |B|$. Non-eulérien ($deg(v_3)=3$). Biparti.
+
+\input{TP2/Figures/TrioGraphesReponse.tikz}
 
 %-----------------------------------------------------------------
 
