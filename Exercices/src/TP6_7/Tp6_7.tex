@@ -13,7 +13,7 @@ Soient $A$ et $B$ deux ensembles finis avec $|A|=a$ et $|B|=b$ ($a,b \in \mathbb
 \begin{enumerate}[(i)]
 	\item $a\cdot b$
 	\item $b^a$
-	\item Si $\#B < \#A$ pas d'injection possible, donc vaut zéro. Sinon, $(b-a+1)\cdot ... \cdot (b-a) \cdot b$ = $ \frac{b!}{(b-a)!}$
+	\item Si $\#B < \#A$ pas d'injection possible, donc vaut zéro. Sinon: \[(b-a+1)\cdot ... \cdot (b-1) \cdot b = \frac{b!}{(b-a)!}\]
 	\item $a!$
 \end{enumerate}
 
@@ -28,8 +28,8 @@ Quels sont les ensembles $F$ non vides ayant la propri\'et\'e suivante:
 \end{exo}
 
 \begin{enumerate}[(i)]
-	\item $|F| = 1 $
-	\item Ensemble vide (mais pas possible par énoncé)
+	\item $|F^X| = |F|^{|X|} = 1 \Rightarrow |F| = 1 $
+	\item $|Y^F| = |Y|^{|F|} = 1 \Rightarrow |F| = 0 $. Il s'agit d'un ensemble vide (mais pas possible par énoncé).
 \end{enumerate}
 
 %----------------------------------------------
@@ -59,6 +59,8 @@ Donner une preuve bijective de l'identit\'e de somme parall\`ele ${k \choose k} 
 
 Voir syllabus année passée page 8.
 
+\newpage
+
 %----------------------------------------------
 
 \begin{exo}
@@ -77,7 +79,7 @@ Via le Binôme de Newton, on sait que
 Si on pose x=1 et y=1, on a: 
 
 \begin{align*}
- (1+1)^n &= \sum_{k=0}^n {n \choose k} \cdot \underbrace{1^{n-k}}_{=1} \cdot \underbrace{1^k}_{=1} 
+ (1+1)^n &= \sum_{k=0}^n {n \choose k} \cdot \underbrace{1^{n-k}}_{=1} \cdot \underbrace{1^k}_{=1} \\
  2^n &= \sum_{k=0}^n {n \choose k}
 \end{align*}
 
@@ -112,7 +114,9 @@ Qu'obtient-on en d\'erivant la formule du bin\^ome~?
 Trouver le nombre de solutions de l'\'equation $x + y + z + w = 15$, dans les naturels.
 \end{exo}
 
-$ { s + d - 1 \choose d - 1 } = { 15 + 4 - 1 \choose 4 - 1} = {18 \choose 3 }$
+\[ { s + d - 1 \choose d - 1 } = { 15 + 4 - 1 \choose 4 - 1} = {18 \choose 3 } \]
+
+\newpage
 
 %----------------------------------------------
 
@@ -133,9 +137,9 @@ ${x}' = x-1 \Leftrightarrow x= {x}'+1 \qquad {y}' = y-9 \Leftrightarrow y= {y}'+
 
 $\qquad \qquad \qquad \qquad \qquad {t}' = t \qquad {u}' = u-11 \Leftrightarrow u= {u}'+11$
 
-${x}'+{y}'+{z}'+{t}'+{u}' = 60 - 1 - 9 + 1 - 11 = 40$
+\[ {x}'+{y}'+{z}'+{t}'+{u}' = 60 - 1 - 9 + 1 - 11 = 40 \]
 
-${s + d - 1 \choose d - 1} = {40 + 5 - 1 \choose 5 - 1} = {44 \choose 4}$
+\[{s + d - 1 \choose d - 1} = {40 + 5 - 1 \choose 5 - 1} = {44 \choose 4} \]
 %----------------------------------------------
 
 \begin{exo} 
@@ -161,8 +165,11 @@ Avec les lettres du mot MISSISSIPPI, combien peut-on \'ecrire de mots diff\'eren
 
 Lettres du mot: 1 M, 4 I, 4 S, 2 P 
 
-Mots de 11 lettres: $ \frac{11!}{(4!)(4!)(2!)(1!)}$
+Mots de 11 lettres:
 
+\[ \frac{\overbrace{11!}^{\text{11 lettres}}}{\underbrace{(4!)}_{=I}\underbrace{(4!)}_{=S}\underbrace{(2!)}_{=P}\underbrace{(1!)}_{=M}} \]
+
+\newpage
 %----------------------------------------------
 
 \begin{exo} 
@@ -174,7 +181,16 @@ H\,U\,M\,U\,H\,U\,M\,U\,N\,U\,K\,U\,N\,U\,K\,U\,A\,P\,U\,A\,A
 (``poisson'' en hawa\"\i{}en), combien peut-on \'ecrire de mots diff\'erents de 21 lettres ne comprenant pas deux lettres U c\^ote \`a c\^ote~?
 \end{exo}
 
-Faire mots de 12 lettres sans U. Rajouter probabilité de mettre les U dans les 13 places qui restent pour faire des mots de 21 lettres. Donc, ${13 \choose 9}$
+Il y a deux étapes. Premièrement, il faut compter le nombre de mots possibles sans U. Ensuite, on rajoute la probabilité de mettre les 9 U dans les places qui restent.
+
+\textbf{Étape 1: } Sans les U, le mot contient 3 A, 2 H, 2 M, 2 N, 2K et 1 P.
+
+\[ \frac{12!}{3! 2! 2! 2! 2! 1!} \]
+
+\textbf{Étape 2: } Nous avons donc un mot de 12 lettres. On doit placer les U soit entre 2 lettres, soit au début du mot, soit en fin de mot. Ceci veut dire qu'il y a 12 places possibles. Donc, le nombre de possibilités est de $ {13 \choose 9} $.
+
+Donc, au total, il y a: \[ \frac{12!}{3! 2! 2! 2! 2! 1!} \cdot {13 \choose 9} \text{mots possibles} \]
+
 
 %----------------------------------------------
 
