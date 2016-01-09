@@ -6,13 +6,13 @@
 \subsection{Définitions}
 
 \begin{defn}
-Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On notera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.\\
+Un graphe $\Gamma$ est un triplet $(V,E,\gamma)$ où V est un ensemble fini dont les éléments sont appelés sommets, E est un ensemble fini dont les éléments sont appelés arêtes, $\gamma$ est une fonction $\gamma : E \rightarrow Paires(V)$. On notera le plus souvent $\Gamma = (V,E)$ en omettant la fonction $\gamma$.
 
 Soit $\gamma(e) = \{x,y\}$ pour $e \in E, x,y \in V$:
 \begin{enumerate}
 	\item On dit que x et y sont adjacents.
 
-	\item On dit que e est incidente à x et y. \\
+	\item On dit que e est incidente à x et y. 
 \end{enumerate}
 
 \end{defn}
@@ -23,7 +23,7 @@ Soit $\Gamma = (V,E,\gamma)$ un graphe.
 \begin{enumerate}
 	\item $\gamma(e)= \{x,x\}$ pour $e \in E, x \in V$ est appelé un lacet.
 	\item Si au moins 2 arêtes sont incidentes à 2 mêmes sommets, on les appelle arêtes multiples.
-	\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). \\
+	\item Un graphe est simple s'il n'a ni lacet, ni arêtes multiples. Dans ce cas, on omet la fonction $\gamma$,on note $\Gamma = (V,E)$ et E est identifié un sous-ensemble de Paires(V). 
 \end{enumerate}
 \end{defn}
 
@@ -46,7 +46,7 @@ Chaque arête contribue 2 fois dans la somme des degrés.
 \end{demo}
 
 \begin{corll}
-La somme des degrés des sommets d'un graphe est paire. \\
+La somme des degrés des sommets d'un graphe est paire. 
 \end{corll}
 
 \newpage
@@ -76,26 +76,26 @@ Montrer que $K_{m}$ possède $ q=\frac{1}{2}n(n-1)$ arêtes.
 \subsection{Chemins dans les graphes}
 
 \begin{defn}
-Soit $\Gamma = (V,E)$ et $v,w \in V$. Un chemin de v à w de longueur n est une séquence alternée de $(n+1)$ sommets $v_{0},v_{1},...,v_{n}$ et de n arêtes $e_{1},e_{2},...,e_{n}$ de la forme $$ (v_{0},e_{1},v_{1},e_{2},...,e_{n},v_{n})$$ dans laquelle chaque $e_{i}$ est incident à $v_{i-1}$ et $v_{i}$ pour $1 \leq i \leq n$ et $ e_{i} \neq e_{j} , \forall i \neq j \in 1,...,n$ \\
+Soit $\Gamma = (V,E)$ et $v,w \in V$. Un chemin de v à w de longueur n est une séquence alternée de $(n+1)$ sommets $v_{0},v_{1},\ldots,v_{n}$ et de n arêtes $e_{1},e_{2},\ldots,e_{n}$ de la forme $$ (v_{0},e_{1},v_{1},e_{2},\ldots,e_{n},v_{n})$$ dans laquelle chaque $e_{i}$ est incident à $v_{i-1}$ et $v_{i}$ pour $1 \leq i \leq n$ et $ e_{i} \neq e_{j} , \forall i \neq j \in 1,\ldots,n$ 
 
-Un chemin est simple si aucun sommet ne se répète sauf peut-être $v_{0}$ et $v_{n}$. \\
+Un chemin est simple si aucun sommet ne se répète sauf peut-être $v_{0}$ et $v_{n}$. 
 
-Dans un graphe simple on notera juste la suite des sommets lorsque l'on décrit un chemin. \\
+Dans un graphe simple on notera juste la suite des sommets lorsque l'on décrit un chemin. 
 
 \end{defn}
 
 \begin{defn}
-Un graphe $\Gamma = (V,E)$ est connexe si $\forall x,y \in V : \exists $ un chemin de x à y. \\
+Un graphe $\Gamma = (V,E)$ est connexe si $\forall x,y \in V : \exists $ un chemin de x à y. 
 
-La composante connexe de $\Gamma$ contenant x est le sous-graphe ${\Gamma}'$ de $\Gamma$ dont les sommets et les arêtes sont contenus dans un chemin de $\Gamma$ démarrant en x. \\
+La composante connexe de $\Gamma$ contenant x est le sous-graphe ${\Gamma}'$ de $\Gamma$ dont les sommets et les arêtes sont contenus dans un chemin de $\Gamma$ démarrant en x. 
 \end{defn}
 
 \begin{defn}
-Soit $\Gamma = (V,E)$ et $v \in V$.\\
+Soit $\Gamma = (V,E)$ et $v \in V$.
 
-Un cycle est un chemin de v à v.\\
+Un cycle est un chemin de v à v.
 
-Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété (mis à part le départ et l'arrivée).\\
+Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété (mis à part le départ et l'arrivée).
 \end{defn}
 
 \newpage
@@ -107,11 +107,11 @@ Un cycle simple est un cycle de v à v dans lequel aucun sommet n'est répété 
 \subsubsection{Définitions}
 
 \begin{defn}
-Un arbre est un graphe simple connexe qui ne contient aucun cycle.\\
+Un arbre est un graphe simple connexe qui ne contient aucun cycle.
 \end{defn}
 
 \begin{defn}
-Dans un arbre, les sommets de degré 1 sont appellés les feuilles.\\
+Dans un arbre, les sommets de degré 1 sont appellés les feuilles.
 \end{defn}
 
 \begin{exmp}
@@ -125,10 +125,10 @@ Si T est un arbre avec $p\geq2$ sommets, alors T contient au moins 2 feuilles.
 \end{prop}
 
 \begin{demo}
-T a p sommets. Tous les chemins sont de longueur inférieure ou égale à p. Considérons un chemin $v_{0},v_{1},...,v_{r}$ pour $v_{i} \in V$, $i=0,...,r$ de longueur maximale. Alors, $v_{0}$ et $v_{r}$ sont de degré 1.\\
+T a p sommets. Tous les chemins sont de longueur inférieure ou égale à p. Considérons un chemin $v_{0},v_{1},\ldots,v_{r}$ pour $v_{i} \in V$, $i=0,\ldots,r$ de longueur maximale. Alors, $v_{0}$ et $v_{r}$ sont de degré 1.
 \end{demo}
 
-\begin{thrm}
+\begin{thrm}[\textcolor{red}{ATTENTION! Ce théorème et sa démonstration font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)}]
 Soit T un graphe simple à p sommets. Alors les 3 assertions suivantes sont équivalentes:
 	\begin{enumerate}[i]
 		\item T est un arbre.
@@ -149,7 +149,7 @@ $\mathbf{(i) \Rightarrow (ii)}$\textbf{: Montrer qu'un arbre à p sommets a (p-1
 
 \hspace{-0.5cm}$\mathbf{(ii) \Rightarrow (iii)}$\textbf{: Supposons (ii) et T ne soit pas connexe.}
 
-	Notons $T_{1}, T_{2},...,T_{t}$ les composantes connexes de T avec $t \geq 2$. Chaque $T_{i}$ est un arbre, pour $1 \leq i \leq t$ (car pas de cycle). Soit $p_{i}$ le nombre de sommets de $T_{i}$, alors chaque $T_{i}$ a $(p_{i}-1)$ arêtes.\\
+	Notons $T_{1}, T_{2},\ldots,T_{t}$ les composantes connexes de T avec $t \geq 2$. Chaque $T_{i}$ est un arbre, pour $1 \leq i \leq t$ (car pas de cycle). Soit $p_{i}$ le nombre de sommets de $T_{i}$, alors chaque $T_{i}$ a $(p_{i}-1)$ arêtes.
 
 	\begin{minipage}{.5\textwidth}
 		\[\sum_{i=1}^{t} p_{i} = p$$ et $$p-1 = \sum_{i=1}^{t} (p_{i}-1) = p - t \]
@@ -185,6 +185,7 @@ Un arbre à poids est un couple $(\Gamma,w)$ où $\Gamma$ est un arbre w est une
 \input{Chap1-TheorieDesGraphes/Figures/WeightedGraph.tikz}
 
 %----------------------------------------------------
+\newpage
 
 \subsection{Isomorphisme}
 
@@ -200,15 +201,13 @@ Deux graphes isomorphes ont les mêmes propriétés.
 
 \input{Chap1-TheorieDesGraphes/Figures/IsomorphGraphs.tikz}
 
-\newpage
-
 %----------------------------------------------------
 
 \subsection{Graphes hamiltoniens}
 
-Hamilton propose le problème suivant: Considérons le graphe du dodécaèdre. Est-il possible, en partant d'un des vingts sommets et en suivant les arêtes du graphe, de visiter tous les sommets une et une seule fois et de revenir au sommet de départ? \\
+Hamilton propose le problème suivant: Considérons le graphe du dodécaèdre. Est-il possible, en partant d'un des vingts sommets et en suivant les arêtes du graphe, de visiter tous les sommets une et une seule fois et de revenir au sommet de départ? 
 
-L'exemple suivant montre un chemin qui réponds à ce problème. \\
+L'exemple suivant montre un chemin qui réponds à ce problème. 
 
 \begin{exmp}
 
@@ -216,14 +215,16 @@ L'exemple suivant montre un chemin qui réponds à ce problème. \\
 
 \input{Chap1-TheorieDesGraphes/Figures/HamiltonianGraphAndPath.tikz}
 
+\newpage
+
 \begin{defn}
-Un cycle hamiltonien dans un graphe $\Gamma$ est un cycle simple contenant tous les sommets de $\Gamma$. \\
+Un cycle hamiltonien dans un graphe $\Gamma$ est un cycle simple contenant tous les sommets de $\Gamma$. 
 \end{defn}
 
 Pour donner un exemple de graphe non-hamiltonien on introduit la notion de graphe biparti. 
 
 \begin{defn}
-Un graphe $\Gamma = (V,E)$ est biparti si on peu écrire $V=B \cup W$ avec $B \cap W = \varnothing $ et toute arête de $\Gamma$ joint un sommet dans B à un sommet dans W.\\
+Un graphe $\Gamma = (V,E)$ est biparti si on peu écrire $V=B \cup W$ avec $B \cap W = \varnothing $ et toute arête de $\Gamma$ joint un sommet dans B à un sommet dans W.
 \end{defn}
 
 \begin{exmp}
@@ -252,30 +253,32 @@ Pour être hamiltonien, il doit admettre un cycle simple passant par tous ses so
 
 % COURS 3
 
+\newpage
+
 \begin{thrm}[Dirac 1950]
 Soit $\Gamma = (V,E)$ un graphe simple avec $p \geq 3$ sommets. Si $\forall v \in V: deg(v) \geq \frac{1}{2}p$, alors $\Gamma$ est Hamiltonien.
 \end{thrm}
 
 \begin{demo}
-$\Gamma$ est connexe. Soit C = $(v_{0},v_{1},...,v_{k})$ un plus long chemin simple dans $\Gamma$ avec $v_{0} \neq v_{k}, k < p$.\\
+$\Gamma$ est connexe. Soit C = $(v_{0},v_{1},\ldots,v_{k})$ un plus long chemin simple dans $\Gamma$ avec $v_{0} \neq v_{k}, k < p$.
 
-$ deg(v_{0}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{0}$ sont dans $\{v_{1},...,v_{k}\}$\\
+$ deg(v_{0}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{0}$ sont dans $\{v_{1},\ldots,v_{k}\}$
 
-$ deg(v_{k}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{k}$ sont dans $\{v_{0},...,v_{k-1}\}$\\
+$ deg(v_{k}) \geq \frac{p}{2}$, tous les sommets adjacents à $v_{k}$ sont dans $\{v_{0},\ldots,v_{k-1}\}$
 
-Comme $k < q$, il doit exister $i \in \{0,...,k-1\}$ tel que $\{v_{i},v_{k}\} \in E$ et $\{v_{0},v_{i+1}\} \in E$. On obtient un cycle $\widetilde{C} = (v_{0},v_{1},...,v_{i},v_{k},v_{k-1},...,v_{i+1},v_{0})$ \\
+Comme $k < q$, il doit exister $i \in \{0,\ldots,k-1\}$ tel que $\{v_{i},v_{k}\} \in E$ et $\{v_{0},v_{i+1}\} \in E$. 
+
+On obtient un cycle $\widetilde{C} = (v_{0},v_{1},\ldots,v_{i},v_{k},v_{k-1},\ldots,v_{i+1},v_{0})$ 
 
 \input{Chap1-TheorieDesGraphes/Figures/CCtildePaths.tikz}
 
-On note que $\widetilde{C}$ est un cycle Hamiltonien.\\
+On note que $\widetilde{C}$ est un cycle Hamiltonien.
 
-Supposons:\\
+Supposons:
 
-$\exists  y \in \widetilde{C} \Rightarrow$ On peut supposer que $\{ v_{j},y\} \in E$ pour $j=\{0,...,k\}$.\\
+$\exists  y \in \widetilde{C} \Rightarrow$ On peut supposer que $\{ v_{j},y\} \in E$ pour $j=\{0,\ldots,k\}$.
 
-$\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},v_{i+1},...,v_{k},v_{i},v_{i-1},...,v_{j-1})$. $\overline{C}$ est un chemin plus long que C. \\
-
-\vspace{-0.8cm}
+$\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},\ldots v_{0},v_{i+1},\ldots,v_{k},v_{i},v_{i-1},\ldots,v_{j-1})$. $\overline{C}$ est un chemin plus long que C. 
 
 \input{Chap1-TheorieDesGraphes/Figures/CCtildePaths2.tikz}
 
@@ -285,10 +288,10 @@ $\Rightarrow$ On construit un chemin $\overline{C} = (y, v_{j},v_{j-1},...v_{0},
 
 \textbf{Illustration: Code de Gray}
 
-Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires de longueur n tels que 2 mots adjacents ne diffèrent qu'en une seule position.\\
+Un code de Gray d'ordre n est un arrangement cyclique de $2^{n}$ mots binaires de longueur n tels que 2 mots adjacents ne diffèrent qu'en une seule position.
 
 \begin{exmp}
-Le code de Grey ci-dessous provient d'un cycle hamiltonien sur le graphe du cube:\\
+Le code de Grey ci-dessous provient d'un cycle hamiltonien sur le graphe du cube:
 \end{exmp}
 
 \begin{figure}[!tbph]
@@ -311,21 +314,19 @@ Un code de Gray d'ordre (n+1) se construit à partir d'un code de Gray d'ordre n
 
 %----------------------------------------------------
 
-\newpage
-
 \subsection{Graphes Eulériens}
 
 \begin{defn}
 Un cycle Eulérien dans un graphe $\Gamma$ est un cycle qui contient toutes les arêtes de $\Gamma$.
-Un graphe est Eulérien s'il contient un cycle Eulérien.\\
+Un graphe est Eulérien s'il contient un cycle Eulérien.
 \end{defn}
 
 \begin{prop}
-Si un graphe est Eulérien, alors tous ses sommets sont de degré pair.\\
+Si un graphe est Eulérien, alors tous ses sommets sont de degré pair.
 \end{prop}
 
 \begin{lemme}
-Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'ensemble E se partitionne en une union de cycles (arête-)disjointe.\\
+Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'ensemble E se partitionne en une union de cycles (arête-)disjointe.
 \end{lemme}
 
 \begin{exmp}
@@ -333,27 +334,30 @@ Soit $\Gamma$ un graphe dans lequel chaque sommet est de degré pair, alors l'en
 \end{exmp}
 \input{Chap1-TheorieDesGraphes/Figures/CyclesAreteDisjointe.tikz}
 
+\newpage
+
 \begin{demo}
 Par récurrence, sur le nombre d'arêtes
 	\begin{enumerate}
 		\item Le lemme est vrai pour $q=2$.
 		\item Supposons qu'il soit vrai pour tout graphe à $q \leq k$ arêtes et montrons-le pour un graphe à (k+1) arêtes.
 		\item Soit $v_{0}$ un sommet de $\Gamma$. On démarre un chemin en $v_{0}$ et on le suit jusqu'à ce qu'un sommet soit répété 2 fois. On le note $v_{j}$ et C le cycle de $v_{j}$ à $v_{j}$.
-		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurrence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
-		\item Donc, $C_{1} \cup C_{2} \cup ... \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.\\
+		\item Soit ${\Gamma}'$ le sous-graphe de $\Gamma$, obtenu par $V={V}'$ et ${E}'=E \setminus C$. ${\Gamma}'$ a $\#{E}' \leq k$ arêtes. Par hypothèse de récurrence, les arêtes de ${\Gamma}'$ se partitionnent en une union arête-disjointe de cycles $C_{1} \cup C_{2} \cup \ldots \cup C_{n}$.
+		\item Donc, $C_{1} \cup C_{2} \cup \ldots \cup C_{n}$ est une partition arête-disjointe des arêtes de $\Gamma$.
 	\end{enumerate}
 \end{demo}
 
-\begin{thrm}
-Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulérien si et seulement si chaque sommet a un degré pair.\\
+\begin{thrm}[\textcolor{red}{ATTENTION! Ce théorème et sa démonstration font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)}]
+Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulérien si et seulement si chaque sommet a un degré pair.
 \end{thrm}
 
 \begin{demo}
-$\Rightarrow$ OK par proposition précédente.\\
-$\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de cycles $C_{1} \cup C_{2} \cup ... \cup C_{n}$.
+$\Rightarrow$ OK par proposition précédente.
+
+\hspace{-0.60cm}$\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de cycles $C_{1} \cup C_{2} \cup \ldots \cup C_{n}$.
 	\begin{enumerate}
 		\item Si n=1, c'est bon.
-		\item Si $n>1$, comme $\Gamma$ est connexe, $\exists$ une arête incidente à un $v \in C_{1}$ et un $w \notin C_{1}$. Cette arête est dans $C_{j}$ pour un $j=2,...,n$ (car on a une partition de E). On attache ce cycle en v. S'il reste des cycles dans la partition, on itère ce procédé jusqu'à avoir utilisé tous les cycles.\\
+		\item Si $n>1$, comme $\Gamma$ est connexe, $\exists$ une arête incidente à un $v \in C_{1}$ et un $w \notin C_{1}$. Cette arête est dans $C_{j}$ pour un $j=2,\ldots,n$ (car on a une partition de E). On attache ce cycle en v. S'il reste des cycles dans la partition, on itère ce procédé jusqu'à avoir utilisé tous les cycles.
 	\end{enumerate}
 \end{demo}
 %----------------------------------------------------
@@ -362,29 +366,31 @@ $\Leftarrow$ Par le Lemme: E se partitionne en une union (arête-)disjointe de c
 
 \subsubsection{Énoncé du problème}
 
-Énoncé: Un vendeur de livres démarre de chez lui et doit visiter un certain nombre de librairies avant de rentrer chez lui. Comment doit-il choisir sa route pour minimiser la distance parcourue? \\ 
+Énoncé: Un vendeur de livres démarre de chez lui et doit visiter un certain nombre de librairies avant de rentrer chez lui. Comment doit-il choisir sa route pour minimiser la distance parcourue?  
 
-Objet mathématique: Un graphe valué (à chaque arête est associé un nombre appelé poids) où les sommets représentent les librairies et les arêtes représentent les routes.\\
+Objet mathématique: Un graphe valué (à chaque arête est associé un nombre appelé poids) où les sommets représentent les librairies et les arêtes représentent les routes.
 
 \input{Chap1-TheorieDesGraphes/Figures/K5ValuedGraph.tikz}
 
-Objectif: Trouver un cycle hamiltonien de poids minimal.\\
+Objectif: Trouver un cycle hamiltonien de poids minimal.
 
-Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cycles hamiltoniens différents. Par exemple, pour $n=10 \Rightarrow$ 181440 cycles. On ne connait pas encore d'algorithme efficace qui donne une solution au problème.\\
+Remarque: Un graphe complet $K_{n}$ à n sommets possède $\frac{1}{2}(n-1)!$ cycles hamiltoniens différents. Par exemple, pour $n=10 \Rightarrow$ 181440 cycles. On ne connait pas encore d'algorithme efficace qui donne une solution au problème.
+
+\newpage
 
 \subsubsection{Arbres couvrant minimum}
 
 \begin{defn}
-Un arbre couvrant dans un graphe $\Gamma$ est un arbre qui est un sous-graphe de $\Gamma$ et qui contient tous les sommets de $\Gamma$.\\
+Un arbre couvrant dans un graphe $\Gamma$ est un arbre qui est un sous-graphe de $\Gamma$ et qui contient tous les sommets de $\Gamma$.
 \end{defn}
 
-Il existe un algorithme qui donne des arbres couvrants de poids minimum dans un graphe valué.\\
+Il existe un algorithme qui donne des arbres couvrants de poids minimum dans un graphe valué.
 
 Algorithme de Kurskal:
 \begin{enumerate}[i]
 	\item Choisir une arêtes de plus petit poids.
 	\item Choisir parmi les arêtes restantes une arête de plus petit poids dont l'inclusion ne crée pas un cycle.
-	\item Continuer jusqu'à obtenir un arbre couvrant.\\
+	\item Continuer jusqu'à obtenir un arbre couvrant.
 \end{enumerate}
 
 \begin{exmp}
@@ -392,17 +398,19 @@ Algorithme de Kurskal:
 \end{exmp}
 \input{Chap1-TheorieDesGraphes/Figures/K5ValuedGraphWithPath.tikz}
 
-Remarque: Si C est un cycles hamiltonien dans un graphe $\Gamma$, alors $\forall e \in E$ arête de C: $ C \setminus\{e\}$ est un arbre couvrant.\\
+Remarque: Si C est un cycles hamiltonien dans un graphe $\Gamma$, alors $\forall e \in E$ arête de C: $ C \setminus\{e\}$ est un arbre couvrant.
 
-$\Rightarrow$ (Solution de TSP) $\geq$ (longueur minimum d'un arbre couvrant)\\
+$\Rightarrow$ (Solution de TSP) $\geq$ (longueur minimum d'un arbre couvrant)
 
-Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes incidentes à v. Le reste du chemin est un arbre couvrant de $\Gamma \setminus\{v\}$.\\
+Mieux: Soit v un sommet de $\Gamma$. Tout cycle hamiltonien contient 2 arêtes incidentes à v. Le reste du chemin est un arbre couvrant de $\Gamma \setminus\{v\}$.
 
-$\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)\\
+$\Rightarrow$ (Solution de TSP) $\geq (\sum$ des longueurs des 2 plus courtes arêtes incidentes à v) + (longueur minimum d'un arbre couvrant de $\Gamma \setminus\{v\}$)
 
-Remarque: Il existe une borne supérieure à TSP en utilisant des cycles eulériens. \\
+Remarque: Il existe une borne supérieure à TSP en utilisant des cycles eulériens. 
 
 %----------------------------------------------------
+
+\newpage
 
 \subsection{Ordres partiels}
 
@@ -413,9 +421,9 @@ Soit P un ensemble. Un ordre partiel sur P est une relation sur P, c'est à dire
 	\begin{enumerate}
 		\item $p \leq p$ (réflexive)
 		\item $(p \leq q$ et $q \leq p ) \Rightarrow p = q$ (anti-symétrique)
-		\item $(p \leq q$ et $q \leq r ) \Rightarrow p \leq r$ (transitive)\\
+		\item $(p \leq q$ et $q \leq r ) \Rightarrow p \leq r$ (transitive)
 	\end{enumerate}
-On note $(P,\leq)$ un ensemble partiellement ordonné.\\
+On note $(P,\leq)$ un ensemble partiellement ordonné.
 \end{defn}
 
 Remarque: Soit $(P,\leq)$ un ensemble partiellement ordonné, alors on définit un ordre partiel $\geq$ par: $$x \geq y \Leftrightarrow y \leq x$$
@@ -424,22 +432,25 @@ Remarque: Soit $(P,\leq)$ un ensemble partiellement ordonné, alors on définit 
 Soit P un ensemble.
 	\begin{enumerate}
 		\item $(P,\leq)$ est dit totalement ordonné si $\forall p_{1},p_{2} \in P$, $p_{1} \leq p_{2}$ ou $p_{2} \leq p_{1}$
-		\item Soit $(P,\leq)$ un ordre partiel: une chaîne C est un sous-ensemble de P qui est totalement ordonné.\\
+		\item Soit $(P,\leq)$ un ordre partiel: une chaîne C est un sous-ensemble de P qui est totalement ordonné.
 	\end{enumerate}
 \end{defn}
 
 \begin{exmp}
-	\begin{enumerate}
-		\item $(\mathbb{N},\leq)$
-		\item $(\mathbb{N},\mid)$ où $a \mid b$ si $\exists c \in \mathbb{Z}$ tel que $a \cdot c = b$ $(a,b \in \mathbb{Z})$\\
-	\end{enumerate}
+$(\mathbb{N},\leq)$
+
+\hspace{-0.55cm}$(\mathbb{N},\mid)$ où $a \mid b$ si $\exists c \in \mathbb{Z}$ tel que $a \cdot c = b$ $(a,b \in \mathbb{Z})$
 \end{exmp}
 
 % COURS 4
 
-Une relation d'ordre partiel peut se représenter à l'aide d'un graphe dirigé, mais il est très compliqué. On le simplifie en laissant tomber toutes les relations qui s’obtiennent par transitivité et les lacets.\\
+\textbf{Lien avec la théorie des graphes:} 
 
-Par transitivité et anti-symétrie: on sait qu'il n'y a pas de cycles, on peut se passer des flèches et on note de bas en haut.\\
+Une relation d'ordre partiel peut se représenter à l'aide d'un graphe dirigé, mais il est très compliqué. On le simplifie en laissant tomber toutes les relations qui s’obtiennent par transitivité et les lacets.
+
+Par transitivité et anti-symétrie: on sait qu'il n'y a pas de cycles, on peut se passer des flèches et on note de bas en haut.
+
+Ex: (\{1,2,3,4,5,6,10,12,15,20,30,60\}, |)
 
 \input{Chap1-TheorieDesGraphes/Figures/HasseDiagram.tikz}
 
@@ -455,55 +466,66 @@ Soit $(P,\leq)$ un ensemble partiellement ordonné. Une anti-chaîne est un sous
 Soit $(P,\leq)$ un ensemble fini partiellement ordonné. Alors il existe une anti-chaîne A et une partition Q de P par des chaînes telle que $\#Q = \#A$.
 \end{thrm}
 
+\textbf{Lien avec les graphes bipartis:}
+
 \begin{thrm}
 Soit $\Gamma = (V,E)$ un graphe simple. 
 	\begin{enumerate}
 		\item Un couplage M de $\Gamma$ est un sous-ensemble d'arêtes de $\Gamma$, 2 à 2 non adjacentes. Les sommets incidents aux arêtes de M sont dits couplés.
-		\item Un transversal de $\Gamma$ est un sous-ensemble T de V tel que toute arêtes $\Gamma$ est incidente à au moins un sommet de T.\\
+		\item Un transversal de $\Gamma$ est un sous-ensemble T de V tel que toute arêtes $\Gamma$ est incidente à au moins un sommet de T.
 	\end{enumerate}
 \end{thrm}
-
-<IMAGE COUPLAGE TRANSVERSAL ANTICHAINE>
 
 \begin{thrm}[König]
 Soit $\Gamma = (B \vmodels W, E)$ un graphe biparti. La cardinalité maximale d'un couplage de $\Gamma$ est égale à la cardinalité minimum d'un transversal de $\Gamma$.
 \end{thrm}
 
-\begin{demo}
-<DEMO PAS CLAIRE, DEMANDER AU PROF>
-\end{demo}
+\begin{exmp}
+<PAGE 23>
+\end{exmp}
+
+\begin{defn}
+Soit $\Gamma = (B \vmodels W, E)$ un graphe biparti et M un couplage. Un chemin alterné est un chemin qui démarre en un sommet non-couplé de B et alterne une arrête de E|M puis une arrête dans M et ainsi de suite.
+\end{defn}
+
+\begin{exmp}
+<PAGE 23>
+\end{exmp}
 
 \newpage
 
+\begin{demo}
+<PAGE NOTE 2 et 3>
+\end{demo}
 % COURS 5
 
 \begin{demo}
-On va montrer König $\Rightarrow$ Dilworth.\\
+On va montrer König $\Rightarrow$ Dilworth.
 
-Soit $(P,\leq)$ un ordre partiel. On construit un graphe biparti $\Gamma = ( B \vmodels W, E)$ où B = $\{ (p,1) | p \in P \}$ et W = $\{ (p,2) | p \in P \}$ et $\{ (p,1) , (q,2) \} \in E \Leftrightarrow p \leq q$ et $ p \neq q$. \\
+Soit $(P,\leq)$ un ordre partiel. On construit un graphe biparti $\Gamma = ( B \vmodels W, E)$ où B = $\{ (p,1) | p \in P \}$ et W = $\{ (p,2) | p \in P \}$ et $\{ (p,1) , (q,2) \} \in E \Leftrightarrow p \leq q$ et $ p \neq q$. 
 
-Soit M un couplage de cardinalité maximale de $\Gamma$ et T un transversal de cardinalité minimale de $\Gamma$. Par König, $\#M = \#T$.\\
+Soit M un couplage de cardinalité maximale de $\Gamma$ et T un transversal de cardinalité minimale de $\Gamma$. Par König, $\#M = \#T$.
 
-On définit $A \subseteq P$ par $A = \{ p \in P | (p,1) \in T$ et $(p,2) \nsubseteq T \}$ et $\#A \geq \#P - \#T$. \\
+On définit $A \subseteq P$ par $A = \{ p \in P | (p,1) \in T$ et $(p,2) \nsubseteq T \}$ et $\#A \geq \#P - \#T$. 
 
-On construit des chaînes comme suit: Q = $\{ C_{1},...,C_{n} \}$ où
+On construit des chaînes comme suit: Q = $\{ C_{1},\ldots,C_{n} \}$ où
 
 \[ 
 \left \{
   \begin{tabular}{c}
-  Soit $C_{i}=\{ p_{0},...,p_{e}\}$, $l\geq 1$ si $\{ (p_{k},1), (p_{k+1},2)\} \in M$ et $(p_{e},1)$ n'est pas incident à M, $(p_{0},2)$ n'est pas incident à M. \\
-  Soit $C_{i}=\{p\}$ si (p,1) et (p,2) ne sont pas incidents à M.\\ 
+  Soit $C_{i}=\{ p_{0},\ldots,p_{e}\}$, $l\geq1$ si $\{ (p_{k},1), (p_{k+1},2)\} \in M$ et $ (p_e,1) $ n'est pas incident à M, $ (p_0,2) $ n'est pas incident à M. \\
+  Soit $C_{i}=\{p\}$ si (p,1) et (p,2) ne sont pas incidents à M. \\
   \end{tabular}
 \right .
 \]
 \end{demo}
 
-Alors, Q est une partition de P (car, par construction, $P= \bigcup_{i=1}^{n} C_{i}$ et $C_{i} \cap C_{j} = \varnothing, \forall i \neq j $)\\
+Alors, Q est une partition de P (car, par construction, $P= \bigcup_{i=1}^{n} C_{i}$ et $C_{i} \cap C_{j} = \varnothing, \forall i \neq j $)
 
-Et $\#P = \sum_{i=1}^{n} \#C_{i} = \#M + \#Q$ \\
+Et $\#P = \sum_{i=1}^{n} \#C_{i} = \#M + \#Q$ 
 
-$\Rightarrow$ $\#Q = \#P - \#M$ \\
+$\Rightarrow$ $\#Q = \#P - \#M$ 
 
-$\xRightarrow{(Konig)}$ $\#Q = \#P - \#T \leq \#A$ \\
+$\xRightarrow{(Konig)}$ $\#Q = \#P - \#T \leq \#A$ 
 
-$\Rightarrow$ $\#Q = \#A $ \\
+$\Rightarrow$ $\#Q = \#A $ 

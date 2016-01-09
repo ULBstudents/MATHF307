@@ -1,15 +1,20 @@
-\begin{tikzpicture}
-\tikzstyle{every node}=[circle,inner sep=2pt,draw] 
-\node (v7) at (-1,0) {};
-\node (v3) at (1,0) {};
-\node (v2) at (0,1) {};
-\node (v1) at (0,-1) {};
-\node (v6) at (4,0) {};
+\begin{figure}[!h]
+\centering
 
-\node at (6,0) {};
-\node (v5) at (5,1) {};
-\node (v4) at (5,-1) {};
-\draw[red] (v1) -- (v2) -- (v3) -- (v1);
-\draw[blue] (v4) -- (v5) -- (v6) -- (v4);
-\draw[green] (v1) -- (v7) -- (v2) -- (v5) -- (6,0) -- (v4) -- (v1);
-\end{tikzpicture}
+	\begin{tikzpicture}
+	\tikzstyle{every node}=[circle,inner sep=2pt,draw] 
+	\node (v7) at (-1,0) {};
+	\node (v3) at (1,0) {};
+	\node (v2) at (0,1) {};
+	\node (v1) at (0,-1) {};
+	\node (v6) at (4,0) {};
+
+	\node at (6,0) {};
+	\node (v5) at (5,1) {};
+	\node (v4) at (5,-1) {};
+	\draw[red] (v1) -- (v2) -- (v3) -- (v1);
+	\draw[blue] (v4) -- (v5) -- (v6) -- (v4);
+	\draw[green] (v1) -- (v7) -- (v2) -- (v5) -- (6,0) -- (v4) -- (v1);
+	\end{tikzpicture}
+	
+\end{figure}
