@@ -2,7 +2,7 @@
 
 \begin{figure}[htb]
 \centering
-	\begin{tikzpicture}[scale=0.4]	
+	\begin{tikzpicture}[scale=0.35]	
 		\SetUpEdge[lw = 1.5pt,color = black,labelcolor = white]
 		\GraphInit[vstyle=Normal] 
 		\SetGraphUnit{3}

@@ -144,7 +144,7 @@ $\mathbf{(i) \Rightarrow (ii)}$\textbf{: Montrer qu'un arbre à p sommets a (p-1
 	Par récurrence:
 		\begin{enumerate}
 			\item p = 1 OK 
-			\item Supposons que ce soit vrai pour tout arbre à $ k \geq 1$ sommets et montrons le pour un arbre à (k+1) sommets. Soit T un tel arbre, il a au moins 2 feuilles. Enlevons une de ces feuilles ainsi que l'arête incidente. On obtient un arbre ${T}'$ à k sommets. Par l’hypothèse de récurrence: ${T}'$ a (k-1) arêtes, donc T a k arêtes.
+			\item Supposons que ce soit vrai pour tout arbre à $ k \geq 1$ sommets et montrons le pour un arbre à (k+1) sommets. Soit T un tel arbre, il a au moins 2 feuilles (par Proposition 1). Enlevons une de ces feuilles ainsi que l'arête incidente. On obtient un arbre ${T}'$ à k sommets. Par l’hypothèse de récurrence: ${T}'$ a (k-1) arêtes, donc T a k arêtes.
 		\end{enumerate} 
 
 \hspace{-0.5cm}$\mathbf{(ii) \Rightarrow (iii)}$\textbf{: Supposons (ii) et T ne soit pas connexe.}
@@ -178,14 +178,11 @@ Dans certains problèmes, certaines arêtes sont plus importantes que d'autres. 
 Un arbre à poids est un couple $(\Gamma,w)$ où $\Gamma$ est un arbre w est une fonction $w: E \rightarrow \mathbb{R}^{+}$. Le nombre w(e) est appelé le poids de l'arête e.
 \end{defn}
 
-\begin{exmp}
-
-\end{exmp}
+\textbf{Exemple}
 
 \input{Chap1-TheorieDesGraphes/Figures/WeightedGraph.tikz}
 
 %----------------------------------------------------
-\newpage
 
 \subsection{Isomorphisme}
 
@@ -196,12 +193,11 @@ Deux graphes $\Gamma_{1} = (V_{1},E_{1},\gamma_{1})$ et $\Gamma_{2} = (V_{2},E_{
 Deux graphes isomorphes ont les mêmes propriétés.
 
 \begin{exmp}
-
 \end{exmp}
-
 \input{Chap1-TheorieDesGraphes/Figures/IsomorphGraphs.tikz}
 
 %----------------------------------------------------
+\newpage
 
 \subsection{Graphes hamiltoniens}
 
@@ -214,8 +210,6 @@ L'exemple suivant montre un chemin qui réponds à ce problème.
 \end{exmp}
 
 \input{Chap1-TheorieDesGraphes/Figures/HamiltonianGraphAndPath.tikz}
-
-\newpage
 
 \begin{defn}
 Un cycle hamiltonien dans un graphe $\Gamma$ est un cycle simple contenant tous les sommets de $\Gamma$. 
@@ -347,7 +341,7 @@ Par récurrence, sur le nombre d'arêtes
 	\end{enumerate}
 \end{demo}
 
-\begin{thrm}[\textcolor{red}{ATTENTION! Ce théorème et sa démonstration font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)}]
+\begin{thrm}[\textcolor{red}{ATTENTION! Ce théorème et sa démonstration ainsi que le lemme et la proposition utilisés dans la démonstration font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)}]
 Soit $\Gamma$ un graphe connexe. Alors, $\Gamma$ est eulérien si et seulement si chaque sommet a un degré pair.
 \end{thrm}
 
@@ -414,8 +408,6 @@ Remarque: Il existe une borne supérieure à TSP en utilisant des cycles euléri
 
 \subsection{Ordres partiels}
 
-\textbf{ [ Ce dernier sous-chapitre est en désordre total, un truc plus structuré arrive bientôt. ] } 
-
 \begin{defn}
 Soit P un ensemble. Un ordre partiel sur P est une relation sur P, c'est à dire un ensemble de couples $(p_{1},p_{2}) \in P\times P$, noté $p{1} \leq p{2}$ tel que:
 	\begin{enumerate}
@@ -453,6 +445,7 @@ Par transitivité et anti-symétrie: on sait qu'il n'y a pas de cycles, on peut 
 Ex: (\{1,2,3,4,5,6,10,12,15,20,30,60\}, |)
 
 \input{Chap1-TheorieDesGraphes/Figures/HasseDiagram.tikz}
+\newpage
 
 \begin{defn}
 Soit $(P,\leq)$ un ensemble partiellement ordonné. Une anti-chaîne est un sous-ensemble A de P tel que $\forall a_{1},a_{2} \in A: $ $ a_{1} \nleqslant a_{2} $ et $ a_{2} \nleqslant a_{1} $
@@ -481,23 +474,54 @@ Soit $\Gamma = (B \vmodels W, E)$ un graphe biparti. La cardinalité maximale d'
 \end{thrm}
 
 \begin{exmp}
-<PAGE 23>
+
 \end{exmp}
+
+\input{Chap1-TheorieDesGraphes/Figures/KonigCouplageTransversal.tikz}
+
+\newpage
 
 \begin{defn}
 Soit $\Gamma = (B \vmodels W, E)$ un graphe biparti et M un couplage. Un chemin alterné est un chemin qui démarre en un sommet non-couplé de B et alterne une arrête de E|M puis une arrête dans M et ainsi de suite.
 \end{defn}
 
 \begin{exmp}
-<PAGE 23>
+
 \end{exmp}
 
-\newpage
+\input{Chap1-TheorieDesGraphes/Figures/CouplageMax.tikz}
 
 \begin{demo}
-<PAGE NOTE 2 et 3>
+Soit M un couplage de cardinalité maximale. $\forall$ arête de M, choisissons un de ses sommets incidents comme suit:
+\begin{enumerate}
+\item Le sommet dans W s'il existe un chemin alternant arrivant à ce sommet.
+\item Le sommet dans B sinon.
+\end{enumerate}
+Notons U cet ensemble de sommets. Il faut montrer que cet ensemble U de $\#M$ sommets est un transversal de $\Gamma$.
+
+\hspace{-0.55cm}Soit $e=\{b,w\} \in E$, il faut montrer que soit $b\in U$, soit $w\in U$. On peut supposer que $e \notin M$.
+
+\hspace{-0.55cm}M est maximal $\Rightarrow \exists {e}' \in M$ tel que ${b}'=b$ ou ${w}' = w$
+
+\hspace{-0.55cm}On peut supposer ${b}' = b$ (car si b n'est pas couplé et ${w}' = w \Rightarrow \{b,w\} = \{b,{w}'\}$ est donc un chemin alterné et ${w}' \in U$ par construction).  
+
+\hspace{-0.55cm}Donc, il existe un chemin alterné P terminant en ${w}'$.
+
+\hspace{-0.55cm}Donc, il existe un chemin alterné ${P}'$ terminant en w:
+
+	\begin{enumerate}
+	\item Soit ${P}' = P \setminus \{ \{ w,b \}, \{ b, {w}' \} \} \Rightarrow w \in U$ car ${P}'$ est un chemin alterné arrivant en W.
+	\item Soit on définit un nouveau chemin en rajoutant 2 arêtes ${P}'= P \cup \{ {w}',b\} \cup \{ b, w \}$.
+
+		\begin{enumerate}
+		\item Si w est couplé $\Rightarrow w \in U$
+		\item Si w pas couplé, on construit un matching + grand en gardant les arêtes de M qui ne sont pas dans ${P}'$ et en ajoutant les arêtes de ${P}'$ qui ne sont pas dans M (impossible?).
+		\end{enumerate}
+	\end{enumerate}
 \end{demo}
 % COURS 5
+
+\newpage
 
 \begin{demo}
 On va montrer König $\Rightarrow$ Dilworth.
