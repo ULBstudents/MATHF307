@@ -98,8 +98,23 @@ Qu'obtient-on comme identit\'e sur les coefficients binomiaux en \'ecrivant
 \]
 \end{exo}
 
-(Voir avec assistants)
+\[ 
+\sum_{k=0}^{2n} x^k y^{2n-k} = \left( \sum_{i=0}^{n} {n \choose i} x^i y^{n-i} \right)^2 = \sum_{i=0}^{n} \sum_{j=0}^{n} {n \choose i} {n \choose j} x^{i+j} y^{2n-i-j}
+\]
 
+Donc pour $k = i+j$, nous avons
+
+\[
+{2n \choose k} = \sum_{ \substack{0 \leq i, j \leq n \\ i+j = k} } {n \choose i} {n \choose j} = 2 \sum_{ \substack{0 \leq i \leq j \leq n \\ i+j = k} } {n \choose i} {n \choose j} = \sum_{i=0}^{n} {n \choose i} {n \choose k-i}
+\]
+
+En particulier si $k=n$
+
+\[
+{2n \choose n} = \sum_{i=0}^{n} {n \choose i } {n \choose n-i}
+\]
+
+\newpage
 %----------------------------------------------
 
 \begin{exo}
@@ -115,8 +130,6 @@ Trouver le nombre de solutions de l'\'equation $x + y + z + w = 15$, dans les na
 \end{exo}
 
 \[ { s + d - 1 \choose d - 1 } = { 15 + 4 - 1 \choose 4 - 1} = {18 \choose 3 } \]
-
-\newpage
 
 %----------------------------------------------
 

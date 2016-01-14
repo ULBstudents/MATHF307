@@ -18,6 +18,22 @@ Donc \[ \sum_{n=0}^\infty H_n \frac{1}{10^n} = \frac{1}{1-\frac{1}{10}} ln(\frac
 Trouver la fonction g\'en\'eratrice ordinaire de $(2^n + 3^n)_{n \in \mathbb{N}}$, en forme close.
 \end{exo}
 
+Posons:
+
+\[
+A(x) = \sum_{n=0}^{\infty} 2^n x^n = \sum_{n=0}^{\infty} (2x)^n = \frac{1}{1-2x}
+\]
+
+\[
+B(x) = \sum_{n=0}^{\infty} 3^n x^n = \sum_{n=0}^{\infty} (3x)^n = \frac{1}{1-3x}
+\]
+
+Donc:
+
+\[
+\sum_{n=0}^{\infty} (2^n + 3^n) \cdot x^n = A(x) + B(x) = \frac{1}{1-2x} + \frac{1}{1-3x}
+\]
+
 %--------------------
 
 \begin{exo} (Examen janvier 2011.) 
@@ -30,10 +46,17 @@ Calculer la somme de chacune des s\'eries suivantes.
 \end{exo}
 
 \begin{enumerate}[a)]
-\item Il s'agit de la FGO de $\frac{1}{1-\frac{1}{2}}*ln(\frac{1}{1-\frac{1}{2}}) = 2*ln(2)$.
+\item Il s'agit de la FGO de \[ \frac{1}{1-\frac{1}{2}}*ln(\frac{1}{1-\frac{1}{2}}) = 2*ln(2) \]
 
-\item Nous savons que 
+\item Nous savons que la FGO de $\left( {n \choose k} \right)_{n \in \N}, \;$ k fixé est: \[ \frac{x^k}{(1-x)^{k+1}} \]
+
+Donc cette série vaut, pour $k=2$ et $x = \frac{1}{10}$ 
+\[
+\frac{ (\frac{1}{10})^2  }{ (1-\frac{1}{10})^{2-1} } = \frac{ \frac{1}{100} }{ \frac{9^3}{1000}} = \frac{10}{729}
+\]
 \end{enumerate}
+
+\newpage
 
 %--------------------
 
@@ -50,9 +73,9 @@ Calculer la somme de chacune des s\'eries suivantes.
 ATTENTION: n=1 dans chaque exercice!
 
 \begin{enumerate}[a)]
-\item $\displaystyle \sum_{n=1}^\infty \frac{1}{2^n} = \sum_{n=0}^\infty \frac{1}{2^n} - 1 = \frac{1}{1-\frac{1}{2}} - 1 = 2 - 1 = 1 $
-\item $\displaystyle \sum_{n=1}^\infty \frac{n}{2^n}$
-\item $\displaystyle \sum_{n=1}^\infty \frac{1}{n 2^n}$ 
+\item $\displaystyle \sum_{n=1}^\infty \frac{1}{2^n} = -1 + \sum_{n=0}^\infty \frac{1}{2^n}= -1 + \frac{1}{1-\frac{1}{2}} = -1 + 2 = 1 $
+\item $\displaystyle \sum_{n=1}^\infty \frac{n}{2^n} = \frac{1/2}{ (1-1/2)^2 } = \frac{1/2}{(1/2)^2} = \frac{1}{1/2} = 2$
+\item $\displaystyle \sum_{n=1}^\infty \frac{1}{n 2^n} = ??$ 
 \end{enumerate}
 
 %--------------------

@@ -99,14 +99,16 @@ Soit $G$ un graphe simple.
 \end{enumerate}
 \end{exo}
 
-\begin{enumerate}
+\begin{enumerate}[a)]
 \item Soient u et v des sommets de $G\setminus\{x\}$. Si G est connexe, il existe un chemin de u à v dans G. Si x est dans ce chemin, vu qu'il est de degré 1, le chemin fait un ``aller-retour'' en x. Donc, le sommet avant x et le sommet après x dans le chemin sont le même. On peut donc supprimer x sans que le reste du chemin soit ``déconnecté''. Donc, le chemin existant toujours de u à v dans $G\setminus\{x\}$, celui-ci est bel et bien connexe.
-\item <MISSING>
-%- \item Par induction sur n. Pour n=2, le graphe est connexe et contient une arête (entre les deux sommets). Supposons vrai pour tout graphe connexe à n-1 sommets. Soit G un graphe connexe à n sommets. On distingue 2 cas.
-	%\begin{enumerate}
-	%\item Soit on sait que il existe un sommet x de degré 1, et au vu de la réponse 1
-	%\item
-	%\end{enumerate}
+\item Par induction sur n. Pour n=2, le graphe est connexe et contient une arête (entre les deux sommets). Supposons vrai pour tout graphe connexe à n-1 sommets. Soit G un graphe connexe à n sommets. On distingue 2 cas.
+	\begin{enumerate}[1.]
+	\item Il existe un sommet x de degré 1 et, au vu de la réponse (a), $G \setminus \{x\}$ est connexe et avec n-1 sommets. Donc, par l'hypothèse de récurrence, il possède n-2 arêtes. Ces arêtes sont encore dans G et on doit ajouter l'arête menant à x, donc G a n-1 arêtes.
+	\item Tous les sommets sont de degré au moins 2. Notons m le nombre d'arêtes. $$ 2m = \sum_{x \in G} d(x) \geq 2n $$
+	Donc $m \geq n > n-1$
+	\end{enumerate}
+
+Dans tous les cas, G a au moins n-1 arêtes.
 \end{enumerate}
 
 %-----------------------------------------------------------------

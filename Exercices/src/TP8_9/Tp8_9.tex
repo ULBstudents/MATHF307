@@ -4,6 +4,24 @@
 De combien de fa\c{c}ons diff\'erentes peut-on monter un escalier de 30 marches, si on monte \`a chaque pas soit d'une seule marche soit de deux marches \`a la fois~?
 \end{exo}
 
+Soit $u_n$ le nombre de façons différentes de monter n marches.
+
+Nous avons $u_1 = 1$ (monter une marche) et $u_2 = 2$ (monter les deux marches à la fois ou deux fois une marche).
+
+Pour arriver en haut de l'escalier de n+1 marches, on monte soit les 2 dernières marches d'un coup ( $u_{n-1}$ façons) soit la dernière marche toute seule ($u_n$ façons). C'est à dire: \[u_{n+1} = u_n + u_{n-1} \quad \forall n \geq 2 \]
+
+Donc $u_n = F_{n+1}$ (le n+1ème terme de la suite de Fibonacci). Par conséquent: 
+
+\[
+u_n = \frac{1}{\sqrt{5}} \left( (\frac{1+\sqrt{5}}{2})^{n+1} - (\frac{1-\sqrt{5}}{2})^{n+1} \right)
+\]
+
+Donc: 
+
+\[
+u_{30} = \frac{1}{\sqrt{5}} \left( (\frac{1+\sqrt{5}}{2})^{31} - (\frac{1-\sqrt{5}}{2})^{31} \right) = 1,346269 \cdot 10^6 = 1346269
+\]
+
 %-----------------------------------------------------------------
 
 \begin{exo} 
@@ -35,6 +53,8 @@ Maintenant qu'on a le déterminant de X, nous pouvons le remplacer dans la premi
 $|M_{n}| = |M_{n-1}| + |M_{n-2}|$
 
 On retombe sur Fibo.
+
+\newpage
 
 %-----------------------------------------------------------------
 
