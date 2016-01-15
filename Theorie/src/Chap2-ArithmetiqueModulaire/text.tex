@@ -33,7 +33,7 @@ Propriétés:
 		\item \textbf{Élément neutre} $1 \in \Z$: $1 \cdot a=a=a \cdot 1$, $\forall a \in \Z$
 		\item $\forall a,b,c \in \Z: a\cdot c = a \cdot b \Rightarrow c=b$ \\
 	\end{enumerate}
-On dit que $(\Z,+,\cdot)$ est un anneau ($(\Z,+)$ est un groupe commutatif et $\cdot$ satisfait a et b) unital (d), commutatif (c) et intègre (e).\\
+On dit que $(\Z,+,\cdot)$ est un anneau ($(\Z,+)$ est un groupe commutatif et $\cdot$ satisfait (a) et (b) ) unital (d), commutatif (c) et intègre (e).\\
 \end{enumerate}
 
 On a aussi sur $\Z$ une relation d'ordre $\leq$ telle que:
@@ -77,14 +77,132 @@ Soit $a,b \in \Z$, on dit que a divise b, et on note $a|b$, si $\exists c \in \Z
 \end{prop}
 
 \begin{thrm}[Division Euclidienne]
-$\forall a,b \in \Z$, $b \neq 0$, $\exists$ des entiers uniques q et r tels que $a= bq + r$ et $0 \leq r < |b|$
+$\forall a,b \in \Z$, $b \neq 0$, $\exists$ des entiers uniques q (quotient) et r (reste) tels que $a= bq + r$ et $0 \leq r < |b|$
 \end{thrm}
 
-<PAGES 3 À 6>
+\begin{defn}
+Un nombre $p \in \Z$ est premier si $p \neq 1, -1, 0$ et p n'est divisible que par 1, -1, p et -p.
+\end{defn}
+
+\begin{defn}
+Un entier d est un plus grand commun diviseur (pgcd) de 2 entiers a et b ssi:
+\begin{enumerate}
+\item d|a, d|b
+\item Si $c \in \Z: c|a$ et $c|b \Rightarrow c|d$
+\end{enumerate}
+
+On note pgcd(a,b) le pgcd positif de a et b $\in \Z_0$ et on pose pgcd(a,0) = |a|, $\forall a \in \Z_0$
+\end{defn}
+
+\subsubsection{L'algorithme d'Euclide}
+
+\begin{prop}
+Si $a, b \in \Z, b \neq 0$ et $q,r \in \Z$ tel que $a=bq + r$, alors pgcd(a,b) = pgcd(b,r).
+\end{prop}
+
+\begin{demo}
+Comme a = bq + r, si c|b et r $\Rightarrow$ c|a.
+Comme a - bq = r, si c|a et b $\Rightarrow$ c|r.
+Donc, l'ensemble des diviseurs communs de b et r est égal à l'ensemble des diviseurs communs de a et b.
+\end{demo}
+
+\hspace{-0.55cm}\textbf{Algorithme d'Euclide:} Pour trouver explicitement pgcd(a,b) $\forall a,b \in \Z, b\neq 0$, on procède comme suit:
+
+On suppose que a et b $\geq 0$ car pgcd(a,b) = pgcd(-a,b) = pgcd(a,-b) = pgcd(-a,-b).
+
+Par le théorème de division euclidienne: $a = bq_1 + r_1$ pour $q_1 \in \Z$ et $0 \leq r_1 < b$ alors $pgcd(a,b) = pgcd(b,r_1)$. 
+
+Si $r_1 = 0$ alors pgcd(a,b) = pgcd(b,0) = b. Sinon, $r_1 > 0$ et par division euclidienne: $b = r_1 q_2 + r_2 \;\; 0 \leq r_2 < r_1$.
+
+Si $r_2 = 0 \Rightarrow pgcd(a,b) = r_1$. Sinon, on itère $r_1 = r_2 q_3 + r_3 \;\; 0 \leq r_3 < r_2$.
+
+On obtient des restes $r_1,r_2,\ldots$ qui sont des entiers non négatifs décroissants. Il doit donc exister $n \in \N_0$ tel que $r_{n+1} = 0$ et $r_n \neq 0$.
+
+$pgcd(a,b) = pgcd(b,r_1) = pgcd(r_1,r_2) = \ldots = pgcd(r_{n-1},r_n) = pgcd(r_n,0) = r_n$
+
+\begin{prop}
+Soit $a,b \in \Z$, alors $\exists c,t \in \Z$ tels que pgcd(a,b) = ca + tb.
+\end{prop}
+
+\begin{demo}
+Supposons que a et b > 0. Soient $r_1,\ldots ,r_n$ les restes de la division euclidienne donnés par l'algorithme d'Euclide tels que:
+
+<PAGES 4 a 6>
+\end{demo}
 
 \subsection{Groupes, anneaux et entiers modulo n}
 
-<PAGES 7 À 18>
+\subsubsection{Définitions}
+
+Les groupes apparaissent naturellement dès qu'on parle des symétries d'un objet. 
+
+\begin{defn}
+Un groupe $(G,*)$ est un ensemble non vide G muni d'une loin de composition $* : G \times G \rightarrow G$ tel que:
+
+\begin{enumerate}[(i)]
+\item * soit associative
+\item $\exists e \in G: g*e = g = e*g$ (e est appelé le neutre)
+\item $\forall g \in G: \exists g^{-1} \in G$ tq $g*g^{-1} = e = g^{-1}*g$
+\end{enumerate}
+\end{defn}
+
+\begin{exmp}
+	\begin{enumerate}
+	\item $(\Z,+)$ est un groupe
+	\item $(\Z_0,\cdot)$ n'est pas un groupe
+	\item $(\R,\cdot)$ n'est pas un groupe
+	\item $(\R_0,\cdot)$ est un groupe
+	\end{enumerate}
+\end{exmp}
+
+\begin{defn}
+Soit (G,*) un groupe. Un sous-ensemble $H \subseteq G$ est un sous-groupe de G si (H,*) est un groupe. On note $H \leq G$ ou $(H,*) \leq (G,*)$
+\end{defn}
+
+\begin{prop}
+Soit (G,*) un groupe. $H \subseteq G$ est un sous-groupe de G ssi:
+	\begin{enumerate}
+	\item $e \in H$
+	\item $\forall g,h \in H: g*h^{-1} \in H$
+	\end{enumerate} 
+\end{prop}
+
+<PAGES 7 a 8b>
+
+\subsubsection{Groupes quotients}
+
+<PAGES 9 a 11>
+
+\subsubsection{Isomorphismes de groupe}
+
+<PAGES 11 a 15>
+
+\subsubsection{Les anneaux}
+
+\begin{defn}
+Un anneau $(A,+,\cdot)$ est un ensemble non vide A muni de 2 lois de composition: $+ : A \times A \rightarrow A \;\; (a,b) \rightarrow a+b$ et $\cdot : A \times A \rightarrow \;\; (a,b) \rightarrow a\cdot b$
+
+\begin{enumerate}
+	\item (A,+) est un groupe commutatif
+	\item La multiplication est associative: (ab)c = a(bc), $\forall a,b,c \in A$.
+	\item La multiplication est distributive: (a+b)c = ac + bc et a(b+c)= ab + ac, $\forall a,b,c \in A$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Lorsque $\cdot$ est commutative: $(A,+,\cdot)$ est un anneau commutatif.
+
+Si $\exists 1 \in A$ tq $a\cdot 1 = a = 1 \cdot a \quad \forall a \neq 0 \in A \Rightarrow (A,+,\cdot)$ est un anneau unital.
+\end{defn}
+
+\begin{exmp}
+	\begin{enumerate}
+	\item $(\Z,+,\cdot)$ anneau commutatif unital.
+	\item $(M_2 (\R) = { \bigl( \begin{smallmatrix} a b&\\c d& \end{smallmatrix}\bigr)  | a,b,c,d \in \R },+,\cdot )$ anneau unital (non commutatif) 
+	\end{enumerate}
+\end{exmp}
+
+<PAGE 16 a 18>
 
 \subsubsection{Relation de congruence}
 
@@ -118,6 +236,8 @@ En conséquence: $\forall c\in \Z: a_1 c \equiv a_2 c(mod\;k)$
 $6 \equiv 2(mod\;4)$\\
 $7 \equiv 0(mod\;7)$
 \end{exmp}
+
+\newpage
 
 \subsection{Cryptologie: Le système RSA}
 
