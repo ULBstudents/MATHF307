@@ -120,14 +120,51 @@ On obtient des restes $r_1,r_2,\ldots$ qui sont des entiers non négatifs décro
 
 $pgcd(a,b) = pgcd(b,r_1) = pgcd(r_1,r_2) = \ldots = pgcd(r_{n-1},r_n) = pgcd(r_n,0) = r_n$
 
+\newpage
+
 \begin{prop}
-Soit $a,b \in \Z$, alors $\exists c,t \in \Z$ tels que pgcd(a,b) = ca + tb.
+Soit $a,b \in \Z$, alors $\exists s,t \in \Z$ tels que pgcd(a,b) = sa + tb.
 \end{prop}
 
 \begin{demo}
 Supposons que a et b > 0. Soient $r_1,\ldots ,r_n$ les restes de la division euclidienne donnés par l'algorithme d'Euclide tels que:
 
-<PAGES 4 a 6>
+\begin{minipage}{.4\textwidth}
+	$a = bq_1 + r_1$\\
+	$b = r_1 q_2 + r_2$\\
+	$r_i = r_{i+1} q_{i+2}+r_{i+2}$\\
+	$r_{n-3} = r_{n-2} q_{n-1}+r_{n-1}$\\
+	$r_{n-2} = r_{n-1} q_{n}+r_{n}$\\
+	$r_{n-1} = r_{n} q_{n+1}+0$
+\end{minipage}
+\begin{minipage}{.4\textwidth}
+	$0 < r_1 < b$\\
+	$0 < r_2 < r_1$\\
+	$0 < r_{i+2} < r_{i+1}$\\
+	$0 < r_n < r_{n-1}$
+\end{minipage}
+
+\hspace{-0.5cm}$pgcd(a,b) = pgcd(b,r_1) = pgcd(r_2,r_3) = \ldots = pgcd(r_{n-1},r_n)$
+
+\hspace{-0.5cm}On pose $r_0 = b$ et $r_{-1} = a$ pour l'algo.
+
+\hspace{-0.5cm}On construit s et t comme suit:
+
+\[
+pgcd(a,b) = r_n = r_{n_2} - q_n r_{n-1} = s_1 r_{n-2} + t_1 r_{n-1} \quad \text{avec} \;\; s_1 =1 , t_1 = -q_n
+\]
+
+\hspace{-0.5cm}Ensuite, on utilise $r_{n-3} = r_{n-2} q_{n-1} + r_{n-1} \Leftrightarrow r_{n-1} = r_{n-3} - q_{n-1} r_{n-2}$
+
+\begin{align*}
+\text{Donc,} \;\; pgcd(a,b) & = s_1 r_{n-2} + t_1 ( r_{n-3} - q_{n-1} r_{n-2} ) = t_1 r_{n-3} + (s_1 -q_{n-1} t_1) r_{n-2} \\
+ & = s_2 r_{n-3} + t_2 r_{n-2} \quad \text{avec} \;\; s_2 = t_1 , t_2 = s_1 - q_{n-2} t_1
+\end{align*}
+
+\hspace{-0.5cm}Inductivement, on construit $s_k = t_{k-1}$ et $t_k = s_{k-1} - t_{k-1} q_{n-(k-1)}$ tel que pgcd(a,b) = $s_k r_{n-(k+1)} + t_k r_{n-k}$
+
+\hspace{-0.5cm}$\Rightarrow pgcd(a,b) = pgcd(r_{-1},r_0) = s_n r_{-1} + t_n r_0 = s_n a + t_n b$ avec $s_n = t_{n-1}$ et $t_n = s_{n-1}-t_{n-1} q_1$
+
 \end{demo}
 
 \subsection{Groupes, anneaux et entiers modulo n}
@@ -159,6 +196,8 @@ Un groupe $(G,*)$ est un ensemble non vide G muni d'une loin de composition $* :
 Soit (G,*) un groupe. Un sous-ensemble $H \subseteq G$ est un sous-groupe de G si (H,*) est un groupe. On note $H \leq G$ ou $(H,*) \leq (G,*)$
 \end{defn}
 
+\newpage
+
 \begin{prop}
 Soit (G,*) un groupe. $H \subseteq G$ est un sous-groupe de G ssi:
 	\begin{enumerate}
@@ -167,11 +206,80 @@ Soit (G,*) un groupe. $H \subseteq G$ est un sous-groupe de G ssi:
 	\end{enumerate} 
 \end{prop}
 
-<PAGES 7 a 8b>
+\begin{exmp}
+$2\Z = \{ \ldots, -2, 0, 2, \ldots \} = \{ 2z | z \in \Z \}$ est un sous-groupe de $(\Z,+)$\\
+
+\hspace{-0.5cm}$3\Z = \{ \ldots, -3, 0, 3, \ldots \} = \{ 3z | z \in \Z \}$ est un sous-groupe de $(\Z,+)$
+\end{exmp}
+
+\begin{prop}
+Soit $S \subseteq \Z$ un sous-ensemble non-vide tel que $(S,+) \leq (\Z,+) \Rightarrow \; \exists \; k \in \Z$ tel que $S = k\Z$
+\end{prop}
+
+\begin{demo}
+Posons k le plus petit entier positif dans S $\Rightarrow k\Z \subseteq S$
+
+\hspace{-0.5cm}Supposons que $\exists s \in S: s \notin k\Z$ (on peut supposer s > 0)
+
+\hspace{-0.5cm}$\overset{Div Eucl}{\Rightarrow} s=kq + r$ avec $0 < r < k$
+
+\hspace{-0.5cm}$\Rightarrow r = s-kq \in S \Rightarrow$ Incompatible avec le fait que k est le plus petit entier.
+\end{demo}
+
+\begin{exmp}
+Interprétation du pgcd: Soit $k, l \in \Z$. On définit $k\Z + l\Z = \{ kz_1 + lz_2 | z_1, z_2 \in \Z \}$. On a $k\Z + l\Z = pgcd(k,l)\Z$.
+\end{exmp}
+
+\begin{demo} $\;$
+\begin{enumerate}[1)]
+	\item Montrer que $pgcd(k,l)\Z \subseteq k\Z + l\Z$: On sait que $\exists s,t$ tel que $pgcd(k,l) = ks + lt \in k\Z + l\Z$.
+	\item Montrer que $k\Z + l\Z \subseteq pgcd(k,l)$: Soit $z_1,z_2 \in \Z$ et $kz_1 + lz_2 \in k\Z + l\Z$. Par définition du pgcd: $\exists y_1,y_2$ tel que $k=pgcd(k,l)y_1, \;\; l=pgcd(k,l)y_2 \Rightarrow lz_1 + lz_2 = pgcd(k,l)(y_1 z_1 + y_2 z_2) \in pgcd(k,l)\Z$ 
+\end{enumerate}
+\end{demo}
 
 \subsubsection{Groupes quotients}
 
-<PAGES 9 a 11>
+Soit (G,+) un groupe commutatif. Dans ce cas, on note l'inverse de g, $\overline{g}$.
+
+\begin{defn}
+Soit $(N,+) \leq (G,+)$. Une classe latérale de N est un ensemble $g + N : \{ g+n | n \in N \}$ pour un élément fixé $g \in G$.
+\end{defn}
+
+\begin{prop}
+Deux éléments $g, {g}' \in G$ dét. la même classe latérale de N ssi $g+N = {g}' + N \Leftrightarrow \forall n \in N, \exists! {n}' \in N$ tel que $g+n={g}' + {n}'$
+\end{prop}
+
+\begin{demo}
+$\Leftarrow$ OK
+
+\hspace{-0.55cm}$\Rightarrow$
+	\begin{enumerate}[$\cdot$]
+		\item $\forall n \in N: g+n \in g + N = {g}' + N \Rightarrow \exists {n}' \in N$ tq $g+n = {g}' + {n}'$
+		\item Unicité: ${n}'$ et ${n}''$ tels que ${g}' + {n}' = {g}' + {n}'' \Rightarrow {g}' + (-{g}') = {n}'' + (-{n}') \Rightarrow e={n}'' + (-{n}') \Leftrightarrow {n}' = {n}''$
+	\end{enumerate}
+\end{demo}
+
+\begin{defn}
+On note G/N l'ensemble de classe latérale de N. G/N = $\{ g + N | g \in G \}$
+\end{defn}
+
+\begin{exmp}
+$(\Z,+)$ et $7 \in \Z: \Z/7\Z = \{ 0+7\Z, 1+7\Z, \ldots, 6+7\Z \}$ que l'on note $\{ \overline{0}, \overline{1},\ldots, \overline{6}\}$. Remarque: $\overline{7} = \overline{0}$
+\end{exmp}
+
+\newpage
+
+\begin{prop}
+Soit le groupe $(\Z,+)$ et $k \in \Z$. Alors $\Z/k\Z$ est une partition de $\Z$.
+\end{prop}
+
+\begin{demo} $\;$
+\begin{enumerate}[$\cdot$]
+	\item $z \in \Z \Rightarrow \exists q,r$ tq $z = kq + r \in r+k\Z$
+	\item $r_1,r_2 \in \Z$: montrer que $r_1 + k\Z $ ($\cdots$)
+\end{enumerate}
+\end{demo}
+<PAGES 10 a 11>
 
 \subsubsection{Isomorphismes de groupe}
 
@@ -247,7 +355,7 @@ Pour comprendre le système de cryptage RSA, on aura besoin d'un résultat techn
 $\forall z \in \N: (z+1)^p \equiv n^p + 1(mod\;p)$ si p est un nombre premier.
 \end{lemme}
 
-\begin{thrm}[Le petit théorème de Fermat]
+\begin{thrm}[Le petit théorème de Fermat (\textcolor{red}{ATTENTION! Ce théorème, le lemme le précédent, et leurs démonstrations mutuelles font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)})]
 Soit $p\in \N$ un nombre premier.\\
 Soit $a\in \N$ un nombre tel que $p\cancel{\;|\;}a$ (p ne divise pas a).\\
 Alors, $a^{p-1} \equiv 1(mod\;p)$\\
@@ -272,7 +380,7 @@ Nous allons procéder par plusieurs étapes.\\
 \end{demo}
 
 \begin{demo} [du Lemme]
-<WHOLE DEMO>
+<PAGE 20>
 \end{demo}
 
 \subsubsection{Fonctionnement des clés de chiffrement RSA}
