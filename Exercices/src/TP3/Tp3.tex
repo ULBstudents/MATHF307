@@ -57,7 +57,17 @@ Sur $\R^2$, on d\'efinit les relations suivantes:
 Est-ce que les relations $\mathcal{R}$ et $\mathcal{S}$ sont des ordres?
 \end{exo}
 
-<MISSING>
+Un ordre est une relation:
+
+\begin{enumerate}
+\item Réflexive: $(x \leq x)$
+\item Transitive: $(x \leq y\;et\; y \leq z) \Rightarrow (x \leq z)$
+\item Antisymétrique: $(x \leq y\;et\; y \leq x) \Rightarrow x=y$
+\end{enumerate}
+
+< Amusez-vous pour le reste, c'est trop long à retranscrire et j'ai plus le temps >
+
+\newpage
 
 %-----------------------------------------------------------------
 
@@ -71,13 +81,38 @@ Consid\'erons le graphe biparti (bipartition donn\'ee par une coloration des som
 \end{enumerate}
 \end{exo}
 
-\begin{figure}[!h]
+\begin{figure}[!h,scale=0.80]
 \begin{center}
 \input{TP3/Figures/Konig.tikz}
 \end{center}
 \caption{}
 \end{figure}
 
-<MISSING>
+\begin{enumerate}[(a)]
+\item Clairement $\forall v \in V \qquad v \leq v$
+
+Si $u \leq v$ et $v \leq t$, on a deux situations:
+	\begin{enumerate}[-]
+		\item On a soit $u \in B, v, t \in W$. Mais vu que le graphe est biparti $\Rightarrow v=t$ et donc $u \leq v=t \Rightarrow u \leq t$
+		\item Soit $u,v \in B$ et $t\in W$. G biparti $\Rightarrow u=v$ et donc $u=v \leq t \Rightarrow u \leq t$
+	\end{enumerate}
+
+Si $u\leq v$ et $v \leq u$:
+	\begin{enumerate}[-]
+		\item Supposons $u \in B$ et $v \in W$ alors $v \leq u$ est impossible.
+		\item Sinon $u,v \in B$ ou $u,v \in W$. G biparti $\Rightarrow u=v$.
+	\end{enumerate}
+
+
+\item On sait partitionner les sommets en 7 chaînes (arêtes sommets-disjoints + sommets isolés):
+
+AM, BG, CH, DI, EJ, FL et K
+
+L'anti-chaîne qui contient 7 éléments est $W = \{ M, G, H, I, J, K, L \}$
+
+\item Les six arêtes sélectionnées en (b) forment un couplage maximal. Un transversal est $V \textbackslash \{\text{anti-chaîne}\}$ donc, dans ce cas-ci, $B=\{ A, B, C, D, E, F \}$
+
+\item On remarque que l'ensemble des chaînes à 2 éléments donne un couplage et le complémentaire d'une anti-chaîne A est un transversal car toute arête a au moins un sommet dans le complémentaire de A, sinon on a 2 éléments dans A qui son comparables.
+\end{enumerate}
 
 %-----------------------------------------------------------------

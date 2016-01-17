@@ -6,7 +6,10 @@ Montrer le r\'esultat suivant: si $a\equiv b ~(mod~n)$ et $c\equiv d ~(mod~n)$, 
 $$ a+c \equiv b+d ~(mod~n) ~\mathrm{et}~ a.c \equiv b.d ~(mod~n).$$
 \end{exo}
 
-$a\equiv b ~(mod~n) \Rightarrow b - a = kn $ \hspace{1cm} $c\equiv d ~(mod~n) \Rightarrow d - c = ln $ 
+\begin{enumerate}[$\cdot$]
+\item $n|a-b$ et $n|c-d \Rightarrow n|(a-b+c-d) \Leftrightarrow n|a+c-(b+d) \Leftrightarrow a+c \equiv b+d(mod\;n)$ 
+\item $ac-bd = ac-bc+bc-bd = c(a-b) + b(c-d) \Rightarrow n|(c(a-b)+b(c-d)) \Rightarrow n|ac-bd \Rightarrow ac \equiv bd(mod\;n)$  
+\end{enumerate}
 
 %-----------------------------------------------------------------
 
@@ -14,6 +17,10 @@ $a\equiv b ~(mod~n) \Rightarrow b - a = kn $ \hspace{1cm} $c\equiv d ~(mod~n) \R
 \begin{exo}
 Montrer que, si $a\equiv b ~(mod~n)$, alors $$a+c\equiv b+c ~(mod~n) ~\forall c \in \Z$$ et $$a.c\equiv b.c ~(mod~n) ~\forall c \in \Z.$$ 
 \end{exo}
+
+$\forall c \in \Z, c \equiv c(mod\;n)$
+
+Utiliser l'exércice précédent pour prouver.
 
 %-----------------------------------------------------------------
 
