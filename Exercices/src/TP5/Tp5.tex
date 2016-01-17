@@ -44,6 +44,18 @@ Trouver toutes les solutions aux congruences suivantes:
 Que pouvez-vous en d\'eduire?
 \end{exo}
 
+\begin{itemize}
+\item Pour $x \equiv 0 / 1 / 2 / 3$ (mod 4) on a $2x \equiv 0 / 2 / 4(=0) / 6(=2)$ (mod 4). Il y a donc pas de solution dans $\Z/4\Z$
+
+\item Pour $x \equiv 0 / 1 / 2 / 3$ (mod 4) on a $2x \equiv 0 / 2 / 4(=0) / 6(=2)$ (mod 4). Donc, $x \equiv 1 (mod\;4)$ ou $x \equiv 3 (mod\;4)$ sont donc des solutions dans $\Z/4\Z$
+
+\item Pour $x \equiv 0 / 1 / 2 / 3 / 4$ (mod 5) on a $2x \equiv 0 / 2 / 4 / 6(=1) / 8(=3)$ (mod 5). Donc, $x \equiv 4(mod\; 5)$ est la seule solution dans $\Z/5\Z$
+\end{itemize}
+
+On peut en déduire le Théorème de Gauss: La congruence $ax \equiv b(mod\; n)$ a une et une seule solution dans $\Z/n\Z$ ssi pgcd(a,n) = 1
+
+\newpage
+
 %-----------------------------------------------------------------
 
 \vspace*{0.8cm}
@@ -84,9 +96,23 @@ Montrer que $z \in a\Z \cap b\Z$, i.e. $\frac{a}{z}$ et $\frac{b}{z}$.
 
 \vspace*{0.3cm}
 
-\textbf{Sous-question 2:} 
+\textbf{Sous-question 2:}
+
+Nous voulons prouver $a\Z + b\Z = pgcd(a,b)\Z$.
+
+$(\subseteq)$ Soit $z_1,z_2 \in \Z$, alors $a z_1 + b z_2 \in a\Z + b\Z$. Par définition du pgcd, $\exists y_1,y_2 \in \Z$ tels que $a = pgcd(a,b)y_1$ et $b = pgcd(a,b)y_2$.
+
+Donc, $az_1 + bz_2 = pgcd(a,b)(y_1 z_1 + y_2 z_2) \in pgcd(a,b)\Z$
+
+$(\supseteq)$ Soit $z\in \Z$ alors $pgcd(a,b)z \in pgcd(a,b)\Z$
+
+On sait qu'il existe $x,y \in \Z$ tels que $pgcd(a,b) = ax + by$.
+
+$\Rightarrow pgcd(a,b)z = axz+byx \in a\Z + b\Z$
 
 \vspace*{0.8cm}
+
+\newpage
 
 %-----------------------------------------------------------------
 

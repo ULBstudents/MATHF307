@@ -84,6 +84,17 @@ ATTENTION: n=1 dans chaque exercice!
 Quelle est la FGO de $(1,1+3,1+3+3^2,1+3+3^2+3^3,\ldots)$?
 \end{exo}
 
+Posons la suite $a_n = \sum_{i=0}^n z^i$ pour $n\in \N$.
+
+La FGO de la suite $(a_n)_{n\in \N}$ est:
+
+\begin{align*}
+\sum_{n=0}^{\infty} ( \sum_{k=0}^{\infty} z^k \cdot 1) x^n &= (\sum_{n=0}^{\infty} z^n x^n) (\sum_{n=0}^{\infty} 1 x^n) \\
+&= (\sum_{n=0}^{\infty} (zx)^n) (\sum_{n=0}^{\infty} x^n)\\
+&= \frac{1}{1-3x} \cdot \frac{1}{1-x}\\
+&= \frac{1}{(1-3x)(1-x)}
+\end{align*}
+
 \newpage
 %--------------------
 
@@ -128,4 +139,6 @@ Par conséquent: $a_n = 4^{n+1} - 3^{n+1} \qquad \forall n \geq 0$
 Un collectionneur excentrique rafolle des pavages de rectangles $2 \times n$ par des dominos verticaux $2 \times 1$ et horizontaux $1 \times 2$. Il paye sans h\'esiter $4$\euro{} par domino vertical et $1$\euro{} par domino horizontal. Pour combien de pavages sera-t-il pr\^et \`a payer $n$\euro~?
 \end{exo}
 
+
+<La résolution de cet exo prends genre 3 ou 4 pages de calculs et explications donc je vais clairement pas la retranscrire>
 %--------------------
