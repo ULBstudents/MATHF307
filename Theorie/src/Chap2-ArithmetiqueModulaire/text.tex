@@ -122,7 +122,7 @@ $pgcd(a,b) = pgcd(b,r_1) = pgcd(r_1,r_2) = \ldots = pgcd(r_{n-1},r_n) = pgcd(r_n
 
 \newpage
 
-\begin{prop}
+\begin{prop}[\textcolor{red}{Identité de Bézout}]
 Soit $a,b \in \Z$, alors $\exists s,t \in \Z$ tels que pgcd(a,b) = sa + tb.
 \end{prop}
 
@@ -183,7 +183,7 @@ Un groupe $(G,*)$ est un ensemble non vide G muni d'une loin de composition $* :
 \end{enumerate}
 \end{defn}
 
-\begin{exmp}
+\begin{exmp} $\;$
 	\begin{enumerate}
 	\item $(\Z,+)$ est un groupe
 	\item $(\Z_0,\cdot)$ n'est pas un groupe
@@ -276,14 +276,126 @@ Soit le groupe $(\Z,+)$ et $k \in \Z$. Alors $\Z/k\Z$ est une partition de $\Z$.
 \begin{demo} $\;$
 \begin{enumerate}[$\cdot$]
 	\item $z \in \Z \Rightarrow \exists q,r$ tq $z = kq + r \in r+k\Z$
-	\item $r_1,r_2 \in \Z$: montrer que $r_1 + k\Z $ ($\cdots$)
+	\item $r_1,r_2 \in \Z$: montrer que $r_1 + k\Z \cap r_2 + k\Z \neq 0 \Leftrightarrow r_1 + k\Z = r_2 + k\Z \Leftrightarrow r_1 + k q_1 = r_2 + k q_2 \Leftrightarrow r_1 - r_2 = k(q_1-q_2) \in k\Z \Leftrightarrow r_1 + k\Z = r_2 + k\Z$  
 \end{enumerate}
 \end{demo}
-<PAGES 10 a 11>
+
+\begin{thrm}
+Soit (G,+) un groupe commutatif et $N \leq G$. Alors G/N est muni d'une loi $\overline{+}$ tel que $(G/N,\overline{+})$ soit un groupe commutatif. Précisément, on définit \[ \forall g,{g}' \in G: \overline{g} \overline{+} \overline{{g}'} = \overline{g+{g}'} = (g+N) \overline{+} ({g}' + N) = g + {g}' + N \]
+\end{thrm}
+
+\begin{demo} $\;$
+\begin{enumerate}[$\cdot$]
+	\item On montre que $\overline{+}$ est bien défini. C'est à dire: $g, {g}'$ et $h, {h}' \in G$ tels que $\overline{g} = \overline{h}$ et $\overline{{g}'} = \overline{{h}'}$. Montrons que $\overline{g+{g}'} = \overline{h+{h}'}$.
+
+	\hspace{1cm} $ \overline{g} = \overline{h} \Rightarrow g-h=n, \quad n\in N $
+
+	\hspace{1cm} $ \overline{{g}'} = \overline{{h}'} \Rightarrow {g}' - {h}' = {n}' , \quad {n}' \in N$
+
+	\hspace{1cm} Donc, $g+{g}' - (h+{h}') = g + {g}' + (-h) + (-{h}') = (g-h) + ({g}' + {h}') = n + {n}' \in N$
+
+	\hspace{1cm} $\Rightarrow \overline{g+{g}'} = \overline{h+{h}'}$
+	\item $\overline{+}$ est associative car + l'est: $\forall g,{g}',{g}''$
+
+	\hspace{1cm} $(\overline{g}\;\overline{+}\;\overline{{g}'})\;\overline{+}\;\overline{{g}''} = \overline{g + {g}'}\;\overline{+}\;\overline{{g}''} = \overline{(g+{g}')+{g}''}$
+
+	\hspace{1cm} $\overline{g}\;\overline{+}\;(\overline{{g}'}\;\overline{+}\;\overline{{g}''}) = \overline{g}\;\overline{+}\;\overline{{g}' + {g}''} = \overline{g+({g}' + {g}'')}$
+
+	\item $\overline{+}$ est commutative
+
+	\item le neutre est $\overline{e}$ où e est le neutre de (G,+)
+
+	\item L'inverse/opposé de $\overline{g}$ est $\overline{-g}$
+\end{enumerate}
+\end{demo}
+
+\begin{defn}[et exemple principal]
+Pour $n\in \N$, on définit le groupe des entiers modulo n comme le groupe quotient $(\Z/n\Z,+)$ où $\overline{a} + \overline{b} = \overline{a+b} \qquad \forall a,b \in \Z$
+\end{defn}
+
+\begin{exmp}
+$\Z/8\Z = \{ \overline{0}, \overline{1}, \ldots, \overline{7} \}$.
+
+\hspace{-0.55cm}$\overline{0}$ est neutre.
+
+\hspace{-0.55cm}$\overline{2} + \overline{3} = \overline{5}$
+
+\hspace{-0.55cm}$\overline{6} + \overline{10} = \overline{16} = \overline{0}$
+\end{exmp}
+
+\newpage
 
 \subsubsection{Isomorphismes de groupe}
 
-<PAGES 11 a 15>
+\begin{defn}
+Soit $(G,*)$ et $({G}',*)$ deux groupes. Un morphisme de groupe est une application $f: G \rightarrow {G}'$ tel que $\forall g,h \in G: f(g*h) = f(g) * f(h)$
+\end{defn}
+
+\begin{exmp}
+\textbf{1)} $(\R,+)$ et $(\R^+_0,\cdot) \qquad$ $exp: \begin{matrix} \R \rightarrow \R^+_0\\ x \rightarrow e^x \end{matrix}$ \\
+
+$morphisme \; \; e^{x+y} = e^x \cdot e^y$ \\
+
+\hspace{-0.55cm}\textbf{2)}  $(\R^+_0,\cdot)$ et $(\R,+) \qquad$ $exp: \begin{matrix} \R^+_0 \rightarrow \R \\ x \rightarrow log(x) \end{matrix}$ \\
+
+$morphisme \; \; log(x\cdot y) = log(x) + log(y)$ \\
+\end{exmp}
+
+\begin{defn}
+Un morphisme de groupe f: $G \rightarrow {G}'$ est dit:
+	\begin{description}
+	\item[Injectif:] Si $\forall g_1,g_2 \in G: f(g_1)=f(g_2) \Rightarrow g_1 = g_2$
+	\item[Surjectif:] Si $\forall {g}' \in G: \exists g\in G$ tq $f(g) = {g}'$
+	\end{description}
+\end{defn}
+
+\begin{defn}
+Soit (G,*) et $({G}',{*}')$ deux groupes et f: $G \rightarrow {G}'$ un morphisme de groupe.
+
+	\begin{enumerate}[-]
+	\item L'image de f est l'ensemble Im(f) = $\{ {g}' \in {G}' | \exists g \in G : f(g) = {g}' \} \subseteq {G}'$
+	\item Le noyau de f est l'ensemble Ker(f)= $\{ g\in G | f(g) = e \} \subseteq G$
+	\end{enumerate}
+\end{defn}
+
+\begin{prop}
+Soient (G,*) et $({G}',{*}')$ deux groupes et f: $G \rightarrow {G}'$ un morphisme de groupe. Alors:
+	\begin{enumerate}
+	\item f est injectif $\Leftrightarrow$ Ker(f) = $\{ e \}$
+	\item f est surjectif $\Leftrightarrow$ Im(f) = ${G}'$
+	\end{enumerate}
+\end{prop}
+
+\begin{defn}
+Soient (G,*) et $({G}',{*}')$ deux groupes. Un isomorphisme de groupe est un morphisme bijectif f: $G \rightarrow {G}'$. Ils sont dits isomorphes et on note $(G,*) \cong ({G}',{*}')$
+\end{defn}
+
+\begin{thrm}[Théorème d'isomorphisme]
+Soient (G,*) et $({G}',{*}')$ deux groupes commutatifs et f un morphisme de groupe surjectif: f: $G \rightarrow {G}'$, Im(f) = ${G}' \Rightarrow G/Ker(f) \cong {G}'$ 
+\end{thrm}
+
+\textbf{L'ordre d'un groupe et de ses éléments}
+
+\begin{defn}
+Soit (G,*) un groupe fini. L'ordre de G est le cardinal de G. On le note $\#G$.
+\end{defn}
+
+\begin{prop}
+Soit (G,*) un groupe et $g\in G, g \neq e \Rightarrow <g> = \{ g^k | k \in \Z \}$ est un sous-groupe commutatif de G où:
+	\begin{enumerate}
+		\item $g^0 = e$
+		\item $g^k = g*\ldots*g \qquad si\; k\in \N_0$
+		\item $g^{-k} = (g^{-1})^k \qquad si\; k\in \N_0$
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+Soit (G,*) un groupe fini et $e \neq g \in G \Rightarrow \exists k \in \N_0: g^k = e$
+\end{prop}
+
+\begin{defn}
+Soig (G,*) un groupe et $g\in G$. On définit l'ordre de g et on note O(g) le plus petit nombre naturel non nul tel que $g^{O(g)}=e$. Si $g^k \neq e, \forall k:$ on pose $O(g) = \infty$
+\end{defn}
 
 \subsubsection{Les anneaux}
 
@@ -303,14 +415,88 @@ Lorsque $\cdot$ est commutative: $(A,+,\cdot)$ est un anneau commutatif.
 Si $\exists 1 \in A$ tq $a\cdot 1 = a = 1 \cdot a \quad \forall a \neq 0 \in A \Rightarrow (A,+,\cdot)$ est un anneau unital.
 \end{defn}
 
-\begin{exmp}
+\begin{exmp} $\;$
 	\begin{enumerate}
 	\item $(\Z,+,\cdot)$ anneau commutatif unital.
 	\item $(M_2 (\R) = { \bigl( \begin{smallmatrix} a b&\\c d& \end{smallmatrix}\bigr)  | a,b,c,d \in \R },+,\cdot )$ anneau unital (non commutatif) 
 	\end{enumerate}
 \end{exmp}
 
-<PAGE 16 a 18>
+\begin{prop}
+Soit $k \neq 1 \in \Z_0$ et soit le groupe $(\Z/k\Z,\overline{+})$. On définit $\overline{\cdot}: \Z/k\Z \times \Z/k\Z \rightarrow \Z/k\Z$ tel que $\forall l,{l}' \in \Z: \overline{l}\; \overline{\cdot}\; \overline{{l}'} = \overline{l\;{l}'}$.
+
+\hspace{-0.55cm}Alors, $(\Z/k\Z,\overline{+},\overline{\cdot})$ est un anneau commutatif unital.
+\end{prop}
+
+\begin{demo}
+Il faut montrer que $\overline{\cdot}$ est bien défini.
+
+\[ l_1 \;et\; l_2 \;tq\; \overline{l_1} = \overline{l_2} \Rightarrow l_1 = l_2 + kz  \]
+
+\[ {l_1}' \;et\; {l_2}' \;tq\; \overline{{l_1}'} = \overline{{l_2}'} \Rightarrow {l_1}' = {l_2}' + k{z}' \]
+
+\[\Rightarrow l_2 \cdot {l_2}' = (l_1 - kz)({l_1}' - k{z}') = l_1 {l_1}' - k{l_1}'z - kl_1{z}' - kkz\overline{z} \]
+
+\[ \Rightarrow \overline{l_2 {l_2}'} = \overline{l_1 {l_1}'} \]
+
+Les autres propriétés découlent des propriétés de + et $\cdot$ dans $\Z$.
+
+Remarque: $\overline{1}$ est neutre pour $\overline{\cdot}$
+\end{demo}
+
+\begin{exmp}
+Dans $(\Z/10\Z, \overline{+}, \overline{\cdot})$: 
+
+\hspace{-0.55cm}$\overline{1}\; \overline{\cdot}\; \overline{2} = \overline{2}$
+
+\hspace{-0.55cm}$\overline{2}\; \overline{\cdot}\; \overline{5} = \overline{10} = \overline{0}$
+\end{exmp}
+
+\newpage
+
+\textbf{Interprétation des pgcd, nombres premiers:}
+
+\begin{defn}
+Soit $(A,+,\cdot)$ un anneau:
+	\begin{enumerate}
+		\item $a \in A$ est inversible si $\exists b \in A: ab=1$
+		\item $a \in A$ est un diviseur de 0 si $\exists b \in A, b \neq 0 : ab = 0$
+	\end{enumerate}
+\end{defn}
+
+\begin{exmp}
+Soient $0 < a \leq b < k \in \N_0$ tels que $ab = k$
+
+\hspace{-0.55cm}$\Rightarrow \overline{a}$ et $\overline{b}$ sont des div. de zéro dans $\Z/k\Z$
+\end{exmp}
+
+\begin{prop}[\textcolor{red}{ATTENTION! Cette proposition fait partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)}]
+Soit $k \in \N_0, k > 1$ et soit $l \in \Z$ alors: $\overline{l}$ est inversible dans $\Z/k\Z \Leftrightarrow$ l et k sont premiers entre eux.
+\end{prop}
+
+\begin{demo}
+$\Leftarrow$ : pgcd(l,k) = 1 $\Rightarrow \exists s,t \in \Z: sl + tk = 1$. Donc, $\overline{sl+tk} = \overline{1} \Rightarrow \overline{sl} = \overline{1} \Rightarrow \overline{s}\; \cdot \; \overline{l} = \overline{1}$ 
+
+\hspace{-0.55cm}$\Rightarrow$: $\exists s \in \Z$ tel que $\overline{l} \; \cdot \; \overline{s} = \overline{1} \Leftrightarrow \exists t \in \Z: ls= 1 + kt \Rightarrow sl + (-t)k = 1 \overset{Bezout}{\Rightarrow}$ k et l sont premiers entre eux.
+\end{demo}
+
+\begin{exmp}
+Dans $\Z/5\Z: \overline{2}$ est inversible $(\overline{2}\;\cdot\;\overline{3} = \overline{1})$
+
+\hspace{-0.55cm}Dans $\Z/6\Z: \overline{2}$ n'est inversible et $(\overline{2}\;\cdot\;\overline{3} = \overline{0})$
+\end{exmp}
+
+\begin{defn}
+$(K,+,\cdot)$ est un champ si $(K,+,\cdot)$ est un anneau commutatif unital et si tout élément non nul de K admet un inverse pour la multiplication.
+\end{defn}
+
+\begin{prop}
+Soit $k \in \N_0, k>1,$ alors: $\Z/k\Z$ est un champ ssi k est un nombre premier.
+\end{prop}
+
+\begin{demo}
+(SUPER LONG)
+\end{demo}
 
 \subsubsection{Relation de congruence}
 
@@ -352,7 +538,7 @@ $7 \equiv 0(mod\;7)$
 Pour comprendre le système de cryptage RSA, on aura besoin d'un résultat technique.
 
 \begin{lemme}
-$\forall z \in \N: (z+1)^p \equiv n^p + 1(mod\;p)$ si p est un nombre premier.
+$\forall n \in \N: (n+1)^p \equiv n^p + 1(mod\;p)$ si p est un nombre premier.
 \end{lemme}
 
 \begin{thrm}[Le petit théorème de Fermat (\textcolor{red}{ATTENTION! Ce théorème, le lemme le précédent, et leurs démonstrations mutuelles font partie de ceux à connaitre par coeur à l'examen! (pour l'année 2015-2016)})]
@@ -371,7 +557,7 @@ Nous allons procéder par plusieurs étapes.\\
 	Par le lemme, on sait que $(a+1)^p \equiv a^p + 1(mod\;p)$. Alors, par hypothèse de récurrence: $(a+1)^p \equiv a + 1(mod\;p)$.\\
 	\item On va maintenant utiliser $p\cancel{\;|\;}a$.\\
 	On a: $\forall a \in \N: a^p \equiv a(mod\;p)$.\\
-	$\Rightarrow$ Dans $\Z/p\Z: \overline{a^p}=\overline{a}$ et comme $p\cancel{\;|\;}a: \exists \overline{b} \in \Z/p\Z$ un inverse de $\overline{a}$.\\
+	$\Rightarrow$ Dans $\Z/p\Z: \overline{ap}=\overline{a}$ et comme $p\cancel{\;|\;}a: \exists \overline{b} \in \Z/p\Z$ un inverse de $\overline{a}$.\\
 	$\Rightarrow \overline{b}\overline{a^p} = \overline{b}\overline{a}$\\
 	$\Rightarrow \overline{b}\overline{a}^p = \overline{1}$\\
 	$\Rightarrow \overline{a}^{p-1} = \overline{1} \Leftrightarrow a^{p-1} \equiv 1(mod\;p)$\\ 
@@ -379,15 +565,36 @@ Nous allons procéder par plusieurs étapes.\\
 \end{enumerate}
 \end{demo}
 
-\begin{demo} [du Lemme]
-<PAGE 20>
+\begin{demo}
+\[
+(n+1)^p = \sum_{i=0}^p {p \choose i} n^i = n^p + \sum_{i=0}^{p-1} {p \choose i} n^i + 1 = n^p + 1 + \sum_{i=1}^{p-1} {p \choose i} n^i (mod \; p)
+\]
+
+Par récurrence sur i: on va montrer que $p|{p \choose i}$ pour $i=1,\ldots,(p-1)$. i=1: ${p \choose 1} = p$ et $p|p$
+
+Supposons que $p|{p \choose i}$ pour $1 \leq i < p-1$ et montrons que $p|{p \choose i+1}$
+
+\[ {p \choose i+1} = \frac{p!}{(i+1)!(p-i-1)} = {p \choose i} \frac{(p-i)}{(i+1)} \]
+
+\[ p|{p \choose i} \Rightarrow {p \choose i} = pb \text{\;pour\;} b\in\Z \Rightarrow {p \choose i+1} = \frac{pb(p-i)}{(i+1)} \in \N \]
+
+p premier et $1 < i+1 \leq p+1$
+
+\[ \Rightarrow (i+1)|b(p-i) \qquad (\text{\;car \;}(i+1)\cancel{\;|\;}p) \]
+
+\[ \Rightarrow {p \choose i+1} = p\cdot \frac{b(p-i)}{i+1} \Rightarrow p|{p \choose i+1} \]
+
+\[ \Rightarrow {p \choose i} = 0(mod\; p) \qquad \text{\;pour \;} i=1,\ldots,p-1 \]
+
+\[ \Rightarrow (n+1)^p = n^p + 1(mod\; p) \]
+
 \end{demo}
 
 \subsubsection{Fonctionnement des clés de chiffrement RSA}
 
-2 personnes (A et B) veulent communiquer de manière sûre entre elles.\\
+2 personnes (A et B) veulent communiquer de manière sûre entre elles.
 
-A choisit 2 nombres premiers p et q $\in \N$ appelés clé privée. A calcule:\\
+A choisit 2 nombres premiers p et q $\in \N$, $p \neq q$, appelés clé privée. A calcule:
 
 \begin{enumerate}
 \item $N = pq$
@@ -395,14 +602,50 @@ A choisit 2 nombres premiers p et q $\in \N$ appelés clé privée. A calcule:\\
 \item $e \in \Z$ tel que pgcd(e, O(N)) = 1
 \end{enumerate}
 
-appelé l'exposant de chiffrement.\\
+appelé l'exposant de chiffrement.
 
-O(N) et e sont premiers entre eux $\Rightarrow \exists 0 < s < O(N): es \equiv 1(mod\;O(N))$, c'est à dire que $\overline{s}$ est l'inverse de $\overline{e}$ dans $\Z/O(N)\Z$. \textbf{s est gardé secret}. \\
+O(N) et e sont premiers entre eux $\Rightarrow \exists 0 < s < O(N): es \equiv 1(mod\;O(N))$, c'est à dire que $\overline{s}$ est l'inverse de $\overline{e}$ dans $\Z/O(N)\Z$. \textbf{s est gardé secret}. 
 
-A publie les nombres (N,e) appelés la clé publique.\\
+A publie les nombres (N,e) appelés la clé publique.
 
-B souhaite envoyer un message à A. Dans le système RSA, la taille du message est $0<M<N$.\\
+B souhaite envoyer un message à A. Dans le système RSA, la taille du message est $0<M<N$.
 
-B utilise la clé publique et envoie le message chiffré: $\tilde{M} = M^e (mod\;N)$\\
+B utilise la clé publique et envoie le message chiffré: $\tilde{M} = M^e (mod\;N)$
 
-Pour déchiffrer le message, A utilise s et obtient: $\tilde{M}^s = M^{es}(mod\;N) = M(mod\;N)$ (par le théorème suivant)\\
+Pour déchiffrer le message, A utilise s et obtient: $\tilde{M}^s = M^{es}(mod\;N) = M(mod\;N)$ (par le théorème suivant)
+
+\begin{thrm}
+$\forall 0 < M < N = pq \in \Z$, p et q premiers. Soit $u = 1 (O(N))$. Alors $M^u = M(mod \; N)$.
+\end{thrm}
+
+\begin{demo}
+$O < M < N \Rightarrow p \cancel{\;|\;} M$ ou $q \cancel{\;|\;} M$
+
+\begin{description}
+	\item[Cas 1] $p \cancel{\;|\;} M$ et $q \cancel{\;|\;} M$
+		$\quad u = 1 + t O(N) = 1 + t(p-1)(q-1)$
+		$\Rightarrow M^u = M + M^{t(p-1)(q-1)}$
+		Or, par le petit théorème de Fermat: 
+			\[ (M^{t(p-1)})^{q-1} = 1 (mod\; q)\]
+			\[ (M^{t(q-1)})^{p-1} = 1 (mod\; p)\]
+			\[ \Rightarrow \left\{\begin{matrix}
+				M^u = M (mod\; q) \\ 
+				M^u = M (mod\; p)
+				\end{matrix}\right. \Rightarrow \left\{\begin{matrix}
+				M^u - M= 0(mod\;q)\\ 
+				M^u - M= 0(mod\;p)
+				\end{matrix}\right. \]
+			\[ \text{ie}\; p|M^u - M \text{et}\; q|M^u - M \Rightarrow pq| M^u - M \]
+			\[ \Rightarrow M^u - M = 0(mod\; N) \]
+			\[ \Rightarrow M^u = M(mod \; N) \]
+	\item[Cas 2] $ p | M$ et $ q \cancel{\;|\;} M$
+			$\quad u = 1 + t(p-1)(q-1)$
+			\[ q \cancel{\;|\;} M \xrightarrow[de\;\; Fermat]{Petit \;\;Thrm} (M^{t(p-1)})^{q-1} = 1(mod \; q) \]
+			\[ \Rightarrow M^{t(p-1)(q-1)} = 1 + lq \text{\;pour\;un\;} l \in \Z \]
+			\[ \text{Donc,\;} M^u = M M^{t(p-1)(q-1)} = M(1+lq) \]
+			\[ p|M \Rightarrow \exists c \in \Z: pc = M \]
+			\[ \Rightarrow M^u  = M(1+lq) = pc(1+lq) = pc + lpcq = M + lcpq \]
+			\[ \Rightarrow M^u = M(mod \; N) \]
+	\item[Cas 3] $p \cancel{\;|\;} M$ et $q | M$ (exo à faire chez soi)
+\end{description}
+\end{demo}
